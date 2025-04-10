@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Pliki źródłowe">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Pliki zasobów">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Pliki źródłowe\Functions">
+      <UniqueIdentifier>{7ee5ca52-064d-4dff-a9a1-a7a6c1004484}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\UI">
+      <UniqueIdentifier>{687f6eca-5c48-4ea8-b34c-70c03139dea3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\Sync">
+      <UniqueIdentifier>{a0e08483-128d-4ad6-be18-d13d60f9254f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\Screen Objects">
+      <UniqueIdentifier>{c757ecda-a0e3-4c54-920a-c5faa6360550}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\Screen Objects\Workers">
+      <UniqueIdentifier>{ead53c20-5c6d-4696-9a62-4f723c2693d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\Screen Objects\Buildings">
+      <UniqueIdentifier>{f1154a19-6f28-476d-8f51-eae74583efa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\Screen Objects">
+      <UniqueIdentifier>{20f9a0e3-6b2a-4edf-8c57-b78e056210a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\Screen Objects\Workers">
+      <UniqueIdentifier>{1b1f7681-d77c-4bd7-b1f4-20b6d18df688}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\Screen Objects\Buildings">
+      <UniqueIdentifier>{23896905-c169-43eb-a48e-04f71e350e39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\Functions">
+      <UniqueIdentifier>{bb3afa3a-8a3d-4f21-b7c4-5638700f0700}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\Sync">
+      <UniqueIdentifier>{33761e0f-9bed-49ef-85b9-233d19d3f994}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\UI">
+      <UniqueIdentifier>{bfaec1b6-8655-4362-a803-af785e8ed4be}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Road.cpp">
+      <Filter>Pliki źródłowe\Screen Objects\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Production_Hall.cpp">
+      <Filter>Pliki źródłowe\Screen Objects\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Warehouse.cpp">
+      <Filter>Pliki źródłowe\Screen Objects\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Loading_Ramp.cpp">
+      <Filter>Pliki źródłowe\Screen Objects\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Sorting_Area.cpp">
+      <Filter>Pliki źródłowe\Screen Objects\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Staff_Welfare_Area.cpp">
+      <Filter>Pliki źródłowe\Screen Objects\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Control_Laboratory.cpp">
+      <Filter>Pliki źródłowe\Screen Objects\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Packaging_Area.cpp">
+      <Filter>Pliki źródłowe\Screen Objects\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="check_If_Busy.cpp">
+      <Filter>Pliki źródłowe\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="create_ID.cpp">
+      <Filter>Pliki źródłowe\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="print_Player_Stats.cpp">
+      <Filter>Pliki źródłowe\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Screen.cpp">
+      <Filter>Pliki źródłowe\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Cursor.cpp">
+      <Filter>Pliki źródłowe\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Semaphore_1.cpp">
+      <Filter>Pliki źródłowe\Sync</Filter>
+    </ClCompile>
+    <ClCompile Include="Semaphore_2.cpp">
+      <Filter>Pliki źródłowe\Sync</Filter>
+    </ClCompile>
+    <ClCompile Include="User_Input_Keys.cpp">
+      <Filter>Pliki źródłowe\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="user_Input.cpp">
+      <Filter>Pliki źródłowe\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Screen_Object.cpp">
+      <Filter>Pliki źródłowe\Screen Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Screen_Object_Container.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="load_To_Screen.cpp">
+      <Filter>Pliki źródłowe\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="sell_Building.cpp">
+      <Filter>Pliki źródłowe\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="framerate.cpp">
+      <Filter>Pliki źródłowe\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="simulation.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Semaphore_3.cpp">
+      <Filter>Pliki źródłowe\Sync</Filter>
+    </ClCompile>
+    <ClCompile Include="Semaphore_4.cpp">
+      <Filter>Pliki źródłowe\Sync</Filter>
+    </ClCompile>
+    <ClCompile Include="Worker.cpp">
+      <Filter>Pliki źródłowe\Screen Objects\Workers</Filter>
+    </ClCompile>
+    <ClCompile Include="print_All_Objects.cpp">
+      <Filter>Pliki źródłowe\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="print_Time.cpp">
+      <Filter>Pliki źródłowe\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Clock.cpp">
+      <Filter>Pliki źródłowe\Sync</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Player.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Production_Hall.h">
+      <Filter>Pliki nagłówkowe\Screen Objects\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="Road.h">
+      <Filter>Pliki nagłówkowe\Screen Objects\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="Warehouse.h">
+      <Filter>Pliki nagłówkowe\Screen Objects\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="Loading_Ramp.h">
+      <Filter>Pliki nagłówkowe\Screen Objects\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="Sorting_Area.h">
+      <Filter>Pliki nagłówkowe\Screen Objects\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="Staff_Welfare_Area.h">
+      <Filter>Pliki nagłówkowe\Screen Objects\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="Control_Laboratory.h">
+      <Filter>Pliki nagłówkowe\Screen Objects\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="Packaging_Area.h">
+      <Filter>Pliki nagłówkowe\Screen Objects\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="check_If_Busy.h">
+      <Filter>Pliki nagłówkowe\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="create_ID.h">
+      <Filter>Pliki nagłówkowe\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="Semaphore_1.h">
+      <Filter>Pliki nagłówkowe\Sync</Filter>
+    </ClInclude>
+    <ClInclude Include="Semaphore_2.h">
+      <Filter>Pliki nagłówkowe\Sync</Filter>
+    </ClInclude>
+    <ClInclude Include="Cursor.h">
+      <Filter>Pliki nagłówkowe\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="print_Player_Stats.h">
+      <Filter>Pliki nagłówkowe\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Screen.h">
+      <Filter>Pliki nagłówkowe\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="user_Input.h">
+      <Filter>Pliki nagłówkowe\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="User_Input_Keys.h">
+      <Filter>Pliki nagłówkowe\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Screen_Object.h">
+      <Filter>Pliki nagłówkowe\Screen Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Screen_Object_Container.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="load_To_Screen.h">
+      <Filter>Pliki nagłówkowe\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="sell_Building.h">
+      <Filter>Pliki nagłówkowe\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="framerate.h">
+      <Filter>Pliki nagłówkowe\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="simulation.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Semaphore_3.h">
+      <Filter>Pliki nagłówkowe\Sync</Filter>
+    </ClInclude>
+    <ClInclude Include="Semaphore_4.h">
+      <Filter>Pliki nagłówkowe\Sync</Filter>
+    </ClInclude>
+    <ClInclude Include="Worker.h">
+      <Filter>Pliki nagłówkowe\Screen Objects\Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="print_All_Objects.h">
+      <Filter>Pliki nagłówkowe\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="print_Time.h">
+      <Filter>Pliki nagłówkowe\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Clock.h">
+      <Filter>Pliki nagłówkowe\Sync</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

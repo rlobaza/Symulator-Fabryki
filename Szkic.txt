@@ -1,0 +1,56 @@
+Gra Symulator Fabryki
+
+Interfejs:
+
+
+
+
+
+
+
+
+Budynki:
+
+Magazyn
+Rampa Załadunkowa
+Sortownia
+Hala Produkcyjna
+Zaplecze socjalne
+Laboratorium Kontrolne
+Strefa Pakowania
+Droga
+
+
+
+
+
+
+
+Gracz:
+
+Pieniadze
+Pracownicy
+
+
+
+
+
+
+Ludzie:
+
+Pracownik
+
+
+
+Produkcja
+
+Rampa Załadunkowa ->
+Magazyn ->
+Sortownia ->
+Magazyn ->
+Hala Produkcyjna ->
+Magazyn ->
+Strefa Pakowania ->
+Magazyn ->
+Rampa Załadunkowa ->
+
