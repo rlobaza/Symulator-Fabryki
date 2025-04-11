@@ -8,11 +8,12 @@
 #include "Clock.h"
 
 
-Clock::Clock()
+Clock::Clock(double target)
 {
 	FPS = 0;
-	TargetFPS = framerate();
+	TargetFPS = target;
 	duration = 0;
+	duration2 = 0;
 	SleepForMS = (1000 / TargetFPS);
 }
 

@@ -144,6 +144,12 @@
     <ClCompile Include="Clock.cpp">
       <Filter>Pliki źródłowe\Sync</Filter>
     </ClCompile>
+    <ClCompile Include="initial_Buffer.cpp">
+      <Filter>Pliki źródłowe\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="next_Frame.cpp">
+      <Filter>Pliki źródłowe\Functions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -235,6 +241,12 @@
     </ClInclude>
     <ClInclude Include="Clock.h">
       <Filter>Pliki nagłówkowe\Sync</Filter>
+    </ClInclude>
+    <ClInclude Include="initial_Buffer.h">
+      <Filter>Pliki nagłówkowe\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="next_Frame.h">
+      <Filter>Pliki nagłówkowe\Functions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

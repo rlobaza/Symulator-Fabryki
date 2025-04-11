@@ -134,8 +134,10 @@
     <ClCompile Include="create_ID.cpp" />
     <ClCompile Include="Cursor.cpp" />
     <ClCompile Include="framerate.cpp" />
+    <ClCompile Include="initial_Buffer.cpp" />
     <ClCompile Include="Loading_Ramp.cpp" />
     <ClCompile Include="load_To_Screen.cpp" />
+    <ClCompile Include="next_Frame.cpp" />
     <ClCompile Include="Packaging_Area.cpp" />
     <ClCompile Include="print_All_Objects.cpp" />
     <ClCompile Include="print_Time.cpp" />
@@ -167,8 +169,10 @@
     <ClInclude Include="create_ID.h" />
     <ClInclude Include="Cursor.h" />
     <ClInclude Include="framerate.h" />
+    <ClInclude Include="initial_Buffer.h" />
     <ClInclude Include="Loading_Ramp.h" />
     <ClInclude Include="load_To_Screen.h" />
+    <ClInclude Include="next_Frame.h" />
     <ClInclude Include="Packaging_Area.h" />
     <ClInclude Include="print_All_Objects.h" />
     <ClInclude Include="print_Time.h" />

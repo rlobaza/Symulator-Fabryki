@@ -44,6 +44,8 @@
 #include "framerate.h"
 #include "print_Time.h"
 #include "print_Player_Stats.h"
+#include "initial_Buffer.h"
+#include "next_Frame.h"
 
 
 int main()
@@ -54,16 +56,10 @@ int main()
 	bool Gameover = false;
 	char Input = ' ';
 
-	double FPS = 0;
-	double TargetFPS = framerate();
-	long long duration = 0;
-	int SleepForMS = (1000 / TargetFPS);
-
 	Screen s1;
 	Cursor c1;
 	Player p1;
-	Clock clk;
-
+	Clock clk(framerate());
 	Screen_Object_Container Container;
 
 
@@ -76,10 +72,9 @@ int main()
 	std::thread Simulation_Thread(simulation, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Container), std::ref(clk));
 
 
-	for (int i = 0; i < 10000; i++)
-	{
-		std::cout << std::endl;
-	}
+
+	initial_Buffer();
+
 
 	while (Gameover == false)
 	{
@@ -114,7 +109,7 @@ int main()
 
 
 
-
+		
 		
 
 		clk.Set_End_Time();
@@ -122,11 +117,10 @@ int main()
 		clk.Set_FPS();
 		clk.Sleep();
 
-		for (int i = 0; i < 50; i++)
-		{
-			std::cout << std::endl;
-		}
+		next_Frame();
 	}
+
+	system("cls");
 
 	Input_Thread.join();
 	Input_Keys_Thread.join();

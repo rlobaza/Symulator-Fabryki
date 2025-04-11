@@ -23,7 +23,7 @@ private:
 
 public:
 
-	Clock();
+	Clock(double);
 	~Clock();
 
 	void Set_Start_Time();
