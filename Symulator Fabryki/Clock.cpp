@@ -52,7 +52,8 @@ void Clock::Sleep()
 	}
 	else
 	{
-		std::this_thread::sleep_for(std::chrono::milliseconds((duration / SleepForMS) * SleepForMS - duration % SleepForMS));
+		//std::this_thread::sleep_for(std::chrono::milliseconds((duration / SleepForMS) * SleepForMS - duration % SleepForMS));
+		std::this_thread::sleep_for(std::chrono::milliseconds(duration%SleepForMS));
 	}
 
 	duration2 = duration;
@@ -60,11 +61,14 @@ void Clock::Sleep()
 	Durations.clear();
 }
 
-void Clock::Print_FPS()
+std::string Clock::Print_FPS()
 {
-	std::cout << std::endl;
-	std::cout << "Frame Duration: " << duration2 << " ms" << std::endl;
-	std::cout << "FPS: " << FPS << std::endl;
+	std::string str;
+	str = str + "Frame Duration: " + std::to_string(duration2) + " ms" + '\n';
+	str = str + "FPS: " + std::to_string(FPS) + '\n';
+	str = str + '\n';
+
+	return str;
 }
 
 void Clock::Set_FPS()

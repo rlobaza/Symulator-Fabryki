@@ -2,4 +2,4 @@
 
 #include "Screen_Object_Container.h"
 
-void print_All_Objects(Screen_Object_Container&);
+std::string print_All_Objects(Screen_Object_Container&);

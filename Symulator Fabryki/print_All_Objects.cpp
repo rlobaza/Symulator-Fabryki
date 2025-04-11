@@ -8,7 +8,7 @@
 
 
 
-void print_All_Objects(Screen_Object_Container& Container)
+std::string print_All_Objects(Screen_Object_Container& Container)
 {
 
 	std::string str;
@@ -66,5 +66,5 @@ void print_All_Objects(Screen_Object_Container& Container)
 		
 	}
 
-	std::cout << str << std::endl;
+	return str;
 }

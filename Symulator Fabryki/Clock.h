@@ -30,7 +30,7 @@ public:
 	void Set_End_Time();
 	void Add_Durations();
 	void Sleep();
-	void Print_FPS();
+	std::string Print_FPS();
 	void Set_FPS();
 
 };

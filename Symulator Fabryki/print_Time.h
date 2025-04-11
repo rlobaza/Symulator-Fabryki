@@ -1,6 +1,6 @@
 #pragma once
 
+#include <string>
 
 
-
-void print_Time();
+std::string print_Time();

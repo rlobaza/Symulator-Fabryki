@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 #include "Player.h"
 
-void print_Player_Stats(Player&);
+std::string print_Player_Stats(Player&);

@@ -18,6 +18,7 @@
 #include "Cursor.h"
 #include "Player.h"
 #include "print_All_Objects.h"
+#include "Frame.h"
 
 //sync
 #include "Semaphore_1.h"
@@ -59,8 +60,9 @@ int main()
 	Screen s1;
 	Cursor c1;
 	Player p1;
-	Clock clk(framerate());
+	Clock clk(/*framerate()*/60);
 	Screen_Object_Container Container;
+	Frame frm;
 
 
 	p1.ChangeMoney(10000);
@@ -93,17 +95,25 @@ int main()
 
 		/////////////////////////////////////////////
 
-		print_Time();
+		frm.Clear_Frame();
 
-		s1.Output();
 
-		print_Player_Stats(p1);
 
-		std::cout << std::endl;
+		frm.Add_To_Frame(next_Frame());
 
-		print_All_Objects(Container);
+		frm.Add_To_Frame(print_Time());
 
-		clk.Print_FPS();
+		frm.Add_To_Frame(s1.Output());
+
+		frm.Add_To_Frame(print_Player_Stats(p1));
+
+		frm.Add_To_Frame(print_All_Objects(Container));
+
+		frm.Add_To_Frame(clk.Print_FPS());
+
+
+
+		frm.Print_Frame();
 
 		///////////////////////////////////////////////
 
@@ -116,8 +126,6 @@ int main()
 		clk.Add_Durations();
 		clk.Set_FPS();
 		clk.Sleep();
-
-		next_Frame();
 	}
 
 	system("cls");

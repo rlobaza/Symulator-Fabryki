@@ -4,7 +4,7 @@
 
 #include "next_Frame.h"
 
-void next_Frame()
+std::string next_Frame()
 {
 	std::string str;
 
@@ -13,5 +13,5 @@ void next_Frame()
 		str = str + '\n';
 	}
 
-	std::cout << str;
+	return str;
 }

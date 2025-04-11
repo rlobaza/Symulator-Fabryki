@@ -1,4 +1,6 @@
 #pragma once
 
+#include <string>
 
-void next_Frame();
+
+std::string next_Frame();

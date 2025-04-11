@@ -55,7 +55,7 @@ void Screen::Input(int x, int y, char c) //dodaj do wyswietlenia
 
 }
 
-void Screen::Output() //wyswietl
+std::string Screen::Output()
 {
     for (int y = 0; y < 22; y++)
     {
@@ -67,8 +67,7 @@ void Screen::Output() //wyswietl
         pixelSTR = pixelSTR + '\n';
     }
 
-    std::cout << pixelSTR << std::endl;
-    std::cout << std::flush;
+    return pixelSTR;
 }
 
 void Screen::Clear() //wyczysc

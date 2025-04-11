@@ -20,7 +20,7 @@ public:
 
 	void Input(int, int, char); //dodaj do wyswietlenia
 
-	void Output(); //wyswietl
+	std::string Output(); //wyswietl
 
 	void Clear(); //wyczysc
 

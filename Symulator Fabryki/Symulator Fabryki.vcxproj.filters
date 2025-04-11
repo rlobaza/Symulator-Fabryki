@@ -150,6 +150,9 @@
     <ClCompile Include="next_Frame.cpp">
       <Filter>Pliki źródłowe\Functions</Filter>
     </ClCompile>
+    <ClCompile Include="Frame.cpp">
+      <Filter>Pliki źródłowe\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -247,6 +250,9 @@
     </ClInclude>
     <ClInclude Include="next_Frame.h">
       <Filter>Pliki nagłówkowe\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="Frame.h">
+      <Filter>Pliki nagłówkowe\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -133,6 +133,7 @@
     <ClCompile Include="Control_Laboratory.cpp" />
     <ClCompile Include="create_ID.cpp" />
     <ClCompile Include="Cursor.cpp" />
+    <ClCompile Include="Frame.cpp" />
     <ClCompile Include="framerate.cpp" />
     <ClCompile Include="initial_Buffer.cpp" />
     <ClCompile Include="Loading_Ramp.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="Control_Laboratory.h" />
     <ClInclude Include="create_ID.h" />
     <ClInclude Include="Cursor.h" />
+    <ClInclude Include="Frame.h" />
     <ClInclude Include="framerate.h" />
     <ClInclude Include="initial_Buffer.h" />
     <ClInclude Include="Loading_Ramp.h" />
