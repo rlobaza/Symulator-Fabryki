@@ -16,7 +16,6 @@ protected:
 public:
 
 	Screen_Object();
-    Screen_Object();
 	virtual ~Screen_Object();
 
 	virtual int Get_ID();

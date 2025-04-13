@@ -11,11 +11,6 @@ Screen_Object::Screen_Object()
 	Icon = '$';
 }
 
-Screen_Object::Screen_Object()
-{
-	ID = create_ID();
-}
-
 Screen_Object::~Screen_Object()
 {
 

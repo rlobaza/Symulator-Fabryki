@@ -61,10 +61,5 @@ std::string print_All_Objects(Screen_Object_Container& Container)
 		str = str + '\n';
 	}
 
-	for (int i = 0; i < Container.Get_Workers().size(); i++)
-	{
-		
-	}
-
 	return str;
 }

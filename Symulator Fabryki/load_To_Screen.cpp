@@ -21,46 +21,41 @@ void load_To_Screen(Screen& s1, Screen_Object_Container& Container)
 {
 	for (int i = 0; i < Container.Get_Control_Laboratories().size(); i++)
 	{
-		s1.Input(Container.Get_Control_Laboratories()[i].PosX, Container.Get_Control_Laboratories()[i].PosY, Container.Get_Control_Laboratories()[i].Icon);
+		s1.Input(Container.Get_Control_Laboratories()[i].Get_PosX(), Container.Get_Control_Laboratories()[i].Get_PosY(), Container.Get_Control_Laboratories()[i].Get_Icon());
 	}
 
 	for (int i = 0; i < Container.Get_Loading_Ramps().size(); i++)
 	{
-		s1.Input(Container.Get_Loading_Ramps()[i].PosX, Container.Get_Loading_Ramps()[i].PosY, Container.Get_Loading_Ramps()[i].Icon);
+		s1.Input(Container.Get_Loading_Ramps()[i].Get_PosX(), Container.Get_Loading_Ramps()[i].Get_PosY(), Container.Get_Loading_Ramps()[i].Get_Icon());
 	}
 
 	for (int i = 0; i < Container.Get_Packaging_Areas().size(); i++)
 	{
-		s1.Input(Container.Get_Packaging_Areas()[i].PosX, Container.Get_Packaging_Areas()[i].PosY, Container.Get_Packaging_Areas()[i].Icon);
+		s1.Input(Container.Get_Packaging_Areas()[i].Get_PosX(), Container.Get_Packaging_Areas()[i].Get_PosY(), Container.Get_Packaging_Areas()[i].Get_Icon());
 	}
 
 	for (int i = 0; i < Container.Get_Production_Halls().size(); i++)
 	{
-		s1.Input(Container.Get_Production_Halls()[i].PosX, Container.Get_Production_Halls()[i].PosY, Container.Get_Production_Halls()[i].Icon);
+		s1.Input(Container.Get_Production_Halls()[i].Get_PosX(), Container.Get_Production_Halls()[i].Get_PosY(), Container.Get_Production_Halls()[i].Get_Icon());
 	}
 
 	for (int i = 0; i < Container.Get_Roads().size(); i++)
 	{
-		s1.Input(Container.Get_Roads()[i].PosX, Container.Get_Roads()[i].PosY, Container.Get_Roads()[i].Icon);
+		s1.Input(Container.Get_Roads()[i].Get_PosX(), Container.Get_Roads()[i].Get_PosY(), Container.Get_Roads()[i].Get_Icon());
 	}
 
 	for (int i = 0; i < Container.Get_Sorting_Areas().size(); i++)
 	{
-		s1.Input(Container.Get_Sorting_Areas()[i].PosX, Container.Get_Sorting_Areas()[i].PosY, Container.Get_Sorting_Areas()[i].Icon);
+		s1.Input(Container.Get_Sorting_Areas()[i].Get_PosX(), Container.Get_Sorting_Areas()[i].Get_PosY(), Container.Get_Sorting_Areas()[i].Get_Icon());
 	}
 
 	for (int i = 0; i < Container.Get_Staff_Welfare_Areas().size(); i++)
 	{
-		s1.Input(Container.Get_Staff_Welfare_Areas()[i].PosX, Container.Get_Staff_Welfare_Areas()[i].PosY, Container.Get_Staff_Welfare_Areas()[i].Icon);
+		s1.Input(Container.Get_Staff_Welfare_Areas()[i].Get_PosX(), Container.Get_Staff_Welfare_Areas()[i].Get_PosY(), Container.Get_Staff_Welfare_Areas()[i].Get_Icon());
 	}
 
 	for (int i = 0; i < Container.Get_Warehouses().size(); i++)
 	{
-		s1.Input(Container.Get_Warehouses()[i].PosX, Container.Get_Warehouses()[i].PosY, Container.Get_Warehouses()[i].Icon);
-	}
-
-	for (int i = 0; i < Container.Get_Workers().size(); i++)
-	{
-		s1.Input(Container.Get_Workers()[i].PosX, Container.Get_Workers()[i].PosY, Container.Get_Workers()[i].Icon);
+		s1.Input(Container.Get_Warehouses()[i].Get_PosX(), Container.Get_Warehouses()[i].Get_PosY(), Container.Get_Warehouses()[i].Get_Icon());
 	}
 }

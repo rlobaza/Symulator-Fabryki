@@ -12,8 +12,6 @@
 #include "Staff_Welfare_Area.h"
 #include "Warehouse.h"
 
-#include "Worker.h"
-
 class Screen_Object_Container
 {
 
@@ -26,7 +24,6 @@ private:
 	std::vector<Sorting_Area> Sorting_Areas;
 	std::vector<Staff_Welfare_Area> Staff_Welfare_Areas;
 	std::vector<Warehouse> Warehouses;
-	std::vector<Worker> Workers;
 
 public:
 	Screen_Object_Container();
@@ -40,7 +37,6 @@ public:
 	void Add_Sorting_Areas(Sorting_Area);
 	void Add_Staff_Welfare_Areas(Staff_Welfare_Area);
 	void Add_Warehouses(Warehouse);
-	void Add_Workers(Worker);
 
 	void Remove_Control_Laboratories(int, int);
 	void Remove_Loading_Ramps(int, int);
@@ -50,7 +46,6 @@ public:
 	void Remove_Sorting_Areas(int, int);
 	void Remove_Staff_Welfare_Areas(int, int);
 	void Remove_Warehouses(int, int);
-	void Remove_Workers(int, int);
 
 	std::vector<Control_Laboratory>& Get_Control_Laboratories();
 	std::vector<Loading_Ramp>& Get_Loading_Ramps();
@@ -60,5 +55,4 @@ public:
 	std::vector<Sorting_Area>& Get_Sorting_Areas();
 	std::vector<Staff_Welfare_Area>& Get_Staff_Welfare_Areas();
 	std::vector<Warehouse>& Get_Warehouses();
-	std::vector<Worker>& Get_Workers();
 };

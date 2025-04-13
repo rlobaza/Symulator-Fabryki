@@ -162,7 +162,6 @@
     <ClCompile Include="user_Input.cpp" />
     <ClCompile Include="User_Input_Keys.cpp" />
     <ClCompile Include="Warehouse.cpp" />
-    <ClCompile Include="Worker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Building.h" />
@@ -198,7 +197,6 @@
     <ClInclude Include="user_Input.h" />
     <ClInclude Include="User_Input_Keys.h" />
     <ClInclude Include="Warehouse.h" />
-    <ClInclude Include="Worker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

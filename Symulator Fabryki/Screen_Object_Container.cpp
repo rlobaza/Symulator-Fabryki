@@ -9,7 +9,6 @@
 #include "Sorting_Area.h"
 #include "Staff_Welfare_Area.h"
 #include "Warehouse.h"
-#include "Worker.h"
 
 #include "Screen_Object_Container.h"
 
@@ -67,12 +66,6 @@ void Screen_Object_Container::Add_Warehouses(Warehouse w1)
 	Warehouses.push_back(w1);
 }
 
-void Screen_Object_Container::Add_Workers(Worker wrk1)
-{
-	Workers.push_back(wrk1);
-}
-
-
 void Screen_Object_Container::Remove_Control_Laboratories(int, int)
 {
 
@@ -113,12 +106,6 @@ void Screen_Object_Container::Remove_Warehouses(int, int)
 
 }
 
-void Screen_Object_Container::Remove_Workers(int, int)
-{
-
-}
-
-
 std::vector<Control_Laboratory>& Screen_Object_Container::Get_Control_Laboratories()
 {
 	return Control_Laboratories;
@@ -157,9 +144,4 @@ std::vector<Staff_Welfare_Area>& Screen_Object_Container::Get_Staff_Welfare_Area
 std::vector<Warehouse>& Screen_Object_Container::Get_Warehouses()
 {
 	return Warehouses;
-}
-
-std::vector<Worker>& Screen_Object_Container::Get_Workers()
-{
-	return Workers;
 }

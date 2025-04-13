@@ -21,8 +21,6 @@
 #include "Semaphore_4.h"
 #include "Clock.h"
 
-#include "Worker.h"
-
 #include "simulation.h"
 
 void simulation(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Screen_Object_Container& Container, Clock& clk)

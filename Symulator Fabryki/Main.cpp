@@ -38,7 +38,6 @@
 #include "Sorting_Area.h"
 #include "Staff_Welfare_Area.h"
 #include "Warehouse.h"
-#include "Worker.h"
 
 //functions
 #include "load_To_Screen.h"

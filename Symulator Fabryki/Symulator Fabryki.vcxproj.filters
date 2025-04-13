@@ -132,9 +132,6 @@
     <ClCompile Include="Semaphore_4.cpp">
       <Filter>Pliki źródłowe\Sync</Filter>
     </ClCompile>
-    <ClCompile Include="Worker.cpp">
-      <Filter>Pliki źródłowe\Screen Objects\Workers</Filter>
-    </ClCompile>
     <ClCompile Include="print_All_Objects.cpp">
       <Filter>Pliki źródłowe\UI</Filter>
     </ClCompile>
@@ -235,9 +232,6 @@
     </ClInclude>
     <ClInclude Include="Semaphore_4.h">
       <Filter>Pliki nagłówkowe\Sync</Filter>
-    </ClInclude>
-    <ClInclude Include="Worker.h">
-      <Filter>Pliki nagłówkowe\Screen Objects\Workers</Filter>
     </ClInclude>
     <ClInclude Include="print_All_Objects.h">
       <Filter>Pliki nagłówkowe\UI</Filter>

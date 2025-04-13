@@ -100,9 +100,9 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 		{
 			if (check_If_Busy(c1, Container) == false)
 			{
-				if (p1.Money >= Production_Hall::Cost)
+				if (p1.Money >= Production_Hall::Get_Cost())
 				{
-					p1.ChangeMoney(-Production_Hall::Cost);
+					p1.ChangeMoney(-Production_Hall::Get_Cost());
 					Container.Add_Production_Halls(Production_Hall(c1.SelX, c1.SelY));
 					c1.Unselect();
 				}
@@ -113,9 +113,9 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 		{
 			if (check_If_Busy(c1, Container) == false)
 			{
-				if (p1.Money >= Road::Cost)
+				if (p1.Money >= Road::Get_Cost())
 				{
-					p1.ChangeMoney(-Road::Cost);
+					p1.ChangeMoney(-Road::Get_Cost());
 					Container.Add_Roads(Road(c1.SelX, c1.SelY));
 					c1.Unselect();
 				}
@@ -152,15 +152,6 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 			{
 				sell_Building(c1, Container, p1);
 				p1.Update_Maxes(Container);
-				c1.Unselect();
-			}
-		}
-
-		if (Input == 't' && c1.Is_Locked == true) //Worker
-		{
-			if (check_If_Busy(c1, Container) == false)
-			{
-				Container.Add_Workers(Worker(c1.SelX, c1.SelY));
 				c1.Unselect();
 			}
 		}
