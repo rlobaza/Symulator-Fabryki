@@ -1,14 +1,29 @@
 #pragma once
 
-#include "Screen_Object.h"
+#include "Building.h"
 
-class Production_Hall : public Screen_Object
+class Production_Hall : public Building
 {
-public:
+
+protected:
 
 	static int Cost;
+	static char Icon;
+
+public:
 
 	Production_Hall(int, int);
 	~Production_Hall();
+
+	//this:
+	static int Get_Cost();
+
+	//Building:
+	virtual void Lvl_Up();
+	virtual void Calculate_Storage();
+
+	//Screen_Object:
+	virtual char Get_Icon();
+	virtual void Simulate();
 };
 

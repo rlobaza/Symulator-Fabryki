@@ -1,13 +1,28 @@
 #pragma once
 
-#include "Screen_Object.h"
+#include "Building.h"
 
-class Road : public Screen_Object
+class Road : public Building
 {
-public:
+
+protected:
 
 	static int Cost;
+	static char Icon;
+
+public:
 
 	Road(int, int);
 	~Road();
+
+	//this:
+	static int Get_Cost();
+
+	//Building:
+	virtual void Lvl_Up();
+	virtual void Calculate_Storage();
+
+	//Screen_Object:
+	virtual char Get_Icon();
+	virtual void Simulate();
 };

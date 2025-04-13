@@ -1,22 +1,14 @@
 #pragma once
 
-#include "Screen_Object.h"
+#include "Building.h"
 
-class Loading_Ramp : public Screen_Object
+class Loading_Ramp : public Building
 {
-private:
 
-	int Lvl;
+protected:
 
 	static int Cost;
-
-	int All_Storage;
-	int Materials_Storage;
-	int Packed_Products_Storage;
-
-	int All_Storage_Used;
-	int Materials_Storage_Used;
-	int Packed_Products_Storage_Used;
+	static char Icon;
 
 
 public:
@@ -24,17 +16,14 @@ public:
 	Loading_Ramp(int, int);
 	~Loading_Ramp();
 
-	
-	int Get_All_Storage();
-	int Get_Materials_Storage();
-	int Get_Packed_Products_Storage();
-	int Get_All_Storage_Used();
-	int Get_Materials_Storage_Used();
-	int Get_Packed_Products_Storage_Used();
-
-	virtual void Move(int, int);
-	virtual void Simulate();
+	//this:
 	static int Get_Cost();
+
+	//Building:
 	virtual void Lvl_Up();
 	virtual void Calculate_Storage();
+
+	//Screen_Object:
+	virtual char Get_Icon();
+	virtual void Simulate();
 };
