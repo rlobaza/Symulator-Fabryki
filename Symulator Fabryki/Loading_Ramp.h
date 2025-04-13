@@ -24,7 +24,7 @@ public:
 	Loading_Ramp(int, int);
 	~Loading_Ramp();
 
-	static int Get_Cost();
+	
 	int Get_All_Storage();
 	int Get_Materials_Storage();
 	int Get_Packed_Products_Storage();
@@ -32,5 +32,9 @@ public:
 	int Get_Materials_Storage_Used();
 	int Get_Packed_Products_Storage_Used();
 
+	virtual void Move(int, int);
 	virtual void Simulate();
+	static int Get_Cost();
+	virtual void Lvl_Up();
+	virtual void Calculate_Storage();
 };

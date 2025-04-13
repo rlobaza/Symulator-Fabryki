@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Building.cpp" />
     <ClCompile Include="check_If_Busy.cpp" />
     <ClCompile Include="Clock.cpp" />
     <ClCompile Include="Control_Laboratory.cpp" />
@@ -164,6 +165,7 @@
     <ClCompile Include="Worker.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Building.h" />
     <ClInclude Include="check_If_Busy.h" />
     <ClInclude Include="Clock.h" />
     <ClInclude Include="Control_Laboratory.h" />

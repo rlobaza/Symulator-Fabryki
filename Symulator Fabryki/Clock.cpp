@@ -49,14 +49,15 @@ void Clock::Sleep()
 	if (duration < SleepForMS)
 	{
 		std::this_thread::sleep_for(std::chrono::milliseconds(SleepForMS - duration));
+		duration2 = SleepForMS;
 	}
 	else
 	{
-		//std::this_thread::sleep_for(std::chrono::milliseconds((duration / SleepForMS) * SleepForMS - duration % SleepForMS));
-		std::this_thread::sleep_for(std::chrono::milliseconds(duration%SleepForMS));
+		std::this_thread::sleep_for(std::chrono::milliseconds((duration / SleepForMS) * SleepForMS - duration % SleepForMS));
+		//std::this_thread::sleep_for(std::chrono::milliseconds(duration%SleepForMS));
+		duration2 = duration + duration%SleepForMS;
 	}
 
-	duration2 = duration;
 	duration = 0;
 	Durations.clear();
 }
@@ -66,6 +67,7 @@ std::string Clock::Print_FPS()
 	std::string str;
 	str = str + "Frame Duration: " + std::to_string(duration2) + " ms" + '\n';
 	str = str + "FPS: " + std::to_string(FPS) + '\n';
+	str = str + "Pominiete klatki: " + std::to_string(duration2/SleepForMS - 1) + '\n';
 	str = str + '\n';
 
 	return str;
@@ -73,7 +75,7 @@ std::string Clock::Print_FPS()
 
 void Clock::Set_FPS()
 {
-	if (duration < SleepForMS)
+	if (duration <= SleepForMS)
 	{
 		FPS = TargetFPS;
 	}

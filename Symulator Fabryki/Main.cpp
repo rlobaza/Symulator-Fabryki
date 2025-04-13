@@ -60,7 +60,7 @@ int main()
 	Screen s1;
 	Cursor c1;
 	Player p1;
-	Clock clk(/*framerate()*/60);
+	Clock clk(framerate());
 	Screen_Object_Container Container;
 	Frame frm;
 
@@ -119,7 +119,6 @@ int main()
 
 
 
-		
 		
 
 		clk.Set_End_Time();

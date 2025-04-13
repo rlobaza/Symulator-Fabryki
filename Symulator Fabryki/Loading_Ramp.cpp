@@ -9,23 +9,12 @@ Loading_Ramp::Loading_Ramp(int PosX, int PosY) : Screen_Object(PosX, PosY, 'R')
 {
 	Lvl = 1;
 
-	All_Storage = Lvl * 50;
-	Materials_Storage = 0.60 * All_Storage;
-	Packed_Products_Storage = 0.40 * All_Storage;
-
-	All_Storage_Used = 0;
-	Materials_Storage_Used = 0;
-	Packed_Products_Storage_Used = 0;
+	Calculate_Storage();
 }
 
 Loading_Ramp::~Loading_Ramp()
 {
 
-}
-
-int Loading_Ramp::Get_Cost()
-{
-	return Cost;
 }
 
 int Loading_Ramp::Get_All_Storage()
@@ -58,6 +47,12 @@ int Loading_Ramp::Get_Packed_Products_Storage_Used()
 	return Packed_Products_Storage_Used;
 }
 
+void Loading_Ramp::Move(int x, int y)
+{
+	PosX += x;
+	PosY += y;
+}
+
 void Loading_Ramp::Simulate()
 {
 	int Delivery = Lvl;
@@ -66,4 +61,27 @@ void Loading_Ramp::Simulate()
 	{
 		Materials_Storage_Used += Delivery;
 	}
+}
+
+int Loading_Ramp::Get_Cost()
+{
+	return Cost;
+}
+
+void Loading_Ramp::Lvl_Up()
+{
+	Lvl++;
+
+	Calculate_Storage();
+}
+
+void Loading_Ramp::Calculate_Storage()
+{
+	All_Storage = Lvl * 50;
+	Materials_Storage = 6 * All_Storage / 10;
+	Packed_Products_Storage = 4 * All_Storage / 10;
+
+	All_Storage_Used = 0;
+	Materials_Storage_Used = 0;
+	Packed_Products_Storage_Used = 0;
 }
