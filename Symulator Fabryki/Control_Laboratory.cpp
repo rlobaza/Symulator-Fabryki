@@ -1,7 +1,9 @@
 
+#include <string>
 
 #include "Control_Laboratory.h"
 #include "Screen_Object.h"
+#include "Screen_Object_Container.h"
 
 int Control_Laboratory::Cost = 100;
 
@@ -42,6 +44,17 @@ void Control_Laboratory::Calculate_Storage()
 	Sorted_Materials_Storage_Used = 0;
 	Ready_Products_Storage_Used = 0;
 	Packed_Products_Storage_Used = 0;
+}
+
+std::string Control_Laboratory::Stats_String(Screen_Object_Container& Container, int i)
+{
+	std::string str = "";
+
+	str = str + "Laboratorium Kontrolne " + std::to_string(i + 1) + '\n';
+
+	str = str + '\n';
+
+	return str;
 }
 
 char Control_Laboratory::Get_Icon()

@@ -64,15 +64,13 @@ int main()
 	Frame frm;
 
 
-	p1.ChangeMoney(10000);
+	p1.Change_Money(10000);
 
 	std::thread Input_Thread(user_Input, std::ref(Input), std::ref(Gameover), std::ref(clk));
 
 	std::thread Input_Keys_Thread(user_Input_Keys, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Container), std::ref(clk));
 
 	std::thread Simulation_Thread(simulation, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Container), std::ref(clk));
-
-
 
 	initial_Buffer();
 
@@ -89,7 +87,7 @@ int main()
 
 		load_To_Screen(s1, Container);
 
-		s1.Input(c1.PosX, c1.PosY, c1.Icon);
+		s1.Input(c1.Get_PosX(), c1.Get_PosY(), c1.Get_Icon());
 
 
 		/////////////////////////////////////////////

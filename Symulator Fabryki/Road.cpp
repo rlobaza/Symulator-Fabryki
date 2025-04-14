@@ -1,7 +1,9 @@
 
+#include <string>
 
 #include "Road.h"
 #include "Screen_Object.h"
+#include "Screen_Object_Container.h"
 
 int Road::Cost = 10;
 
@@ -44,6 +46,17 @@ void Road::Calculate_Storage()
 	Sorted_Materials_Storage_Used = 0;
 	Ready_Products_Storage_Used = 0;
 	Packed_Products_Storage_Used = 0;
+}
+
+std::string Road::Stats_String(Screen_Object_Container& Container, int i)
+{
+	std::string str = "";
+
+	str = str + "Droga " + std::to_string(i + 1) + '\n';
+
+	str = str + '\n';
+
+	return str;
 }
 
 char Road::Get_Icon()

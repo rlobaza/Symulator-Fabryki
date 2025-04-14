@@ -21,6 +21,66 @@ Cursor::~Cursor()
 
 }
 
+int Cursor::Get_PosX()
+{
+	return PosX;
+}
+
+int Cursor::Get_PosY()
+{
+	return PosY;
+}
+
+char Cursor::Get_Icon()
+{
+	return Icon;
+}
+
+int Cursor::Get_SelX()
+{
+	return SelX;
+}
+
+int Cursor::Get_SelY()
+{
+	return SelY;
+}
+
+bool Cursor::Get_Is_Locked()
+{
+	return Is_Locked;
+}
+
+void Cursor::Set_PosX(int param)
+{
+	PosX = param;
+}
+
+void Cursor::Set_PosY(int param)
+{
+	PosY = param;
+}
+
+void Cursor::Set_Icon(char param)
+{
+	Icon = param;
+}
+
+void Cursor::Set_SelX(int param)
+{
+	SelX = param;
+}
+
+void Cursor::Set_SelY(int param)
+{
+	SelY = param;
+}
+
+void Cursor::Set_Is_Locked(bool param)
+{
+	Is_Locked = param;
+}
+
 void Cursor::CursorMoveUp()
 {
 	if (PosY > 1 && !Is_Locked)

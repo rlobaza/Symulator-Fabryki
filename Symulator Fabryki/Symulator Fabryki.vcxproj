@@ -139,6 +139,7 @@
     <ClCompile Include="initial_Buffer.cpp" />
     <ClCompile Include="Loading_Ramp.cpp" />
     <ClCompile Include="load_To_Screen.cpp" />
+    <ClCompile Include="lvl_Up.cpp" />
     <ClCompile Include="next_Frame.cpp" />
     <ClCompile Include="Packaging_Area.cpp" />
     <ClCompile Include="print_All_Objects.cpp" />
@@ -175,6 +176,7 @@
     <ClInclude Include="initial_Buffer.h" />
     <ClInclude Include="Loading_Ramp.h" />
     <ClInclude Include="load_To_Screen.h" />
+    <ClInclude Include="lvl_Up.h" />
     <ClInclude Include="next_Frame.h" />
     <ClInclude Include="Packaging_Area.h" />
     <ClInclude Include="print_All_Objects.h" />

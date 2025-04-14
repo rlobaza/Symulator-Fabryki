@@ -1,7 +1,9 @@
 
+#include <string>
 
 #include "Staff_Welfare_Area.h"
 #include "Screen_Object.h"
+#include "Screen_Object_Container.h"
 
 int Staff_Welfare_Area::Cost = 100;
 
@@ -44,6 +46,17 @@ void Staff_Welfare_Area::Calculate_Storage()
 	Sorted_Materials_Storage_Used = 0;
 	Ready_Products_Storage_Used = 0;
 	Packed_Products_Storage_Used = 0;
+}
+
+std::string Staff_Welfare_Area::Stats_String(Screen_Object_Container& Container, int i)
+{
+	std::string str = "";
+
+	str = str + "Zaplecze Socjalne " + std::to_string(i + 1) + '\n';
+
+	str = str + '\n';
+
+	return str;
 }
 
 char Staff_Welfare_Area::Get_Icon()

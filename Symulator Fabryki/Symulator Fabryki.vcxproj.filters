@@ -153,6 +153,9 @@
     <ClCompile Include="Building.cpp">
       <Filter>Pliki źródłowe\Screen Objects\Buildings</Filter>
     </ClCompile>
+    <ClCompile Include="lvl_Up.cpp">
+      <Filter>Pliki źródłowe\Functions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -253,6 +256,9 @@
     </ClInclude>
     <ClInclude Include="Building.h">
       <Filter>Pliki nagłówkowe\Screen Objects\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="lvl_Up.h">
+      <Filter>Pliki nagłówkowe\Functions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

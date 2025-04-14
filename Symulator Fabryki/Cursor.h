@@ -3,7 +3,9 @@
 
 class Cursor
 {
-public:
+
+private:
+
 	int PosX;
 	int PosY;
 
@@ -14,9 +16,24 @@ public:
 
 	bool Is_Locked;
 
+public:
 
 	Cursor();
 	~Cursor();
+
+	int Get_PosX();
+	int Get_PosY();
+	char Get_Icon();
+	int Get_SelX();
+	int Get_SelY();
+	bool Get_Is_Locked();
+
+	void Set_PosX(int);
+	void Set_PosY(int);
+	void Set_Icon(char);
+	void Set_SelX(int);
+	void Set_SelY(int);
+	void Set_Is_Locked(bool);
 
 	void CursorMoveUp();
 	void CursorMoveDown();

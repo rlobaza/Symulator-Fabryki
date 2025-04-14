@@ -1,5 +1,8 @@
 #pragma once
 
+#include <string>
+
+#include "Screen_Object_Container.h"
 #include "Screen_Object.h"
 
 class Building : public Screen_Object
@@ -53,4 +56,6 @@ public:
 
 	virtual void Lvl_Up() = 0;
 	virtual void Calculate_Storage() = 0;
+	virtual std::string Stats_String(Screen_Object_Container&, int) = 0;
+	virtual static int Get_Cost() = 0;
 };

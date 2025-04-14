@@ -14,6 +14,7 @@
 #include "Player.h"
 #include "check_If_Busy.h"
 #include "sell_Building.h"
+#include "lvl_Up.h"
 
 #include "Semaphore_1.h"
 #include "Semaphore_2.h"
@@ -151,6 +152,16 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 			if (check_If_Busy(c1, Container) == true)
 			{
 				sell_Building(c1, Container, p1);
+				p1.Update_Maxes(Container);
+				c1.Unselect();
+			}
+		}
+
+		if (Input == 'u' && c1.Is_Locked == true)
+		{
+			if (check_If_Busy(c1, Container) == true)
+			{
+				lvl_Up(c1, Container);
 				p1.Update_Maxes(Container);
 				c1.Unselect();
 			}
