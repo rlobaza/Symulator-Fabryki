@@ -3,7 +3,6 @@
 
 #include "Control_Laboratory.h"
 #include "Screen_Object.h"
-#include "Screen_Object_Container.h"
 
 int Control_Laboratory::Cost = 100;
 
@@ -19,11 +18,6 @@ Control_Laboratory::Control_Laboratory(int x, int y)
 Control_Laboratory::~Control_Laboratory()
 {
 
-}
-
-int Control_Laboratory::Get_Cost()
-{
-	return Cost;
 }
 
 void Control_Laboratory::Lvl_Up()
@@ -46,7 +40,7 @@ void Control_Laboratory::Calculate_Storage()
 	Packed_Products_Storage_Used = 0;
 }
 
-std::string Control_Laboratory::Stats_String(Screen_Object_Container& Container, int i)
+std::string Control_Laboratory::Stats_String(int i)
 {
 	std::string str = "";
 
@@ -65,4 +59,9 @@ char Control_Laboratory::Get_Icon()
 void Control_Laboratory::Simulate()
 {
 
+}
+
+int Control_Laboratory::Get_Cost()
+{
+	return Cost;
 }

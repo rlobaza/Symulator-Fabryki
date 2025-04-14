@@ -25,7 +25,7 @@ void Screen_Object_Container::Add_Buildings(Building* ptr)
 	Buildings.push_back(ptr);
 }
 
-void Screen_Object_Container::Remove_Buildings(int, int)
+void Screen_Object_Container::Remove_Buildings()
 {
 
 }

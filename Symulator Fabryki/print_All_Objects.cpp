@@ -15,7 +15,7 @@ std::string print_All_Objects(Screen_Object_Container& Container)
 
 	for (int i = 0; i < Container.Get_Buildings().size(); i++)
 	{
-		str = str + Container.Get_Buildings()[i]->Stats_String(Container, i);
+		str = str + Container.Get_Buildings()[i]->Stats_String(i);
 	}
 
 	return str;

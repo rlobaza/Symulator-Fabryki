@@ -9,6 +9,7 @@
 #include "Screen_Object.h"
 #include "Screen_Object_Container.h"
 #include "Production_Hall.h"
+#include "Loading_Ramp.h"
 #include "Road.h"
 #include "Warehouse.h"
 #include "Player.h"
@@ -63,7 +64,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 
 		if (Input == 'e')
 		{
-			if (c1.Is_Locked == false)
+			if (c1.Get_Is_Locked() == false)
 			{
 				c1.Select();
 			}
@@ -74,95 +75,96 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 			
 		}
 
-		if (Input == '1' && c1.Is_Locked == true)
+		if (Input == '1' && c1.Get_Is_Locked() == true)
 		{
 
 		}
 
-		if (Input == '2' && c1.Is_Locked == true)
+		if (Input == '2' && c1.Get_Is_Locked() == true)
 		{
 			if (check_If_Busy(c1, Container) == false)
 			{
-				if (p1.Money >= Loading_Ramp::Get_Cost())
+				Loading_Ramp* building = new Loading_Ramp(c1.Get_SelX(), c1.Get_SelY());
+				if (p1.Get_Money() >= building->Get_Cost())
 				{
-					p1.ChangeMoney(-Loading_Ramp::Get_Cost());
-					Container.Add_Loading_Ramps(Loading_Ramp(c1.SelX, c1.SelY));
+					p1.Change_Money(-building->Get_Cost());
+					Container.Add_Buildings(building);
 					c1.Unselect();
 				}
 			}
 		}
 
-		if (Input == '3' && c1.Is_Locked == true)
+		if (Input == '3' && c1.Get_Is_Locked() == true)
 		{
 
 		}
 
-		if (Input == '4' && c1.Is_Locked == true) //Production Hall
+		if (Input == '4' && c1.Get_Is_Locked() == true) //Production Hall
 		{
 			if (check_If_Busy(c1, Container) == false)
 			{
-				if (p1.Money >= Production_Hall::Get_Cost())
+				Production_Hall* building = new Production_Hall(c1.Get_SelX(), c1.Get_SelY());
+				if (p1.Get_Money() >= building->Get_Cost())
 				{
-					p1.ChangeMoney(-Production_Hall::Get_Cost());
-					Container.Add_Production_Halls(Production_Hall(c1.SelX, c1.SelY));
+					p1.Change_Money(-building->Get_Cost());
+					Container.Add_Buildings(building);
 					c1.Unselect();
 				}
 			}
 		}
 
-		if (Input == '5' && c1.Is_Locked == true) //Road
+		if (Input == '5' && c1.Get_Is_Locked() == true) //Road
 		{
 			if (check_If_Busy(c1, Container) == false)
 			{
-				if (p1.Money >= Road::Get_Cost())
+				Road* building = new Road(c1.Get_SelX(), c1.Get_SelY());
+				if (p1.Get_Money() >= building->Get_Cost())
 				{
-					p1.ChangeMoney(-Road::Get_Cost());
-					Container.Add_Roads(Road(c1.SelX, c1.SelY));
+					p1.Change_Money(-building->Get_Cost());
+					Container.Add_Buildings(building);
 					c1.Unselect();
 				}
 			}
 		}
 
-		if (Input == '6' && c1.Is_Locked == true)
+		if (Input == '6' && c1.Get_Is_Locked() == true)
 		{
 
 		}
 
-		if (Input == '7' && c1.Is_Locked == true)
+		if (Input == '7' && c1.Get_Is_Locked() == true)
 		{
 
 		}
 
-		if (Input == '8' && c1.Is_Locked == true) //Warehouse
+		if (Input == '8' && c1.Get_Is_Locked() == true) //Warehouse
 		{
 			if (check_If_Busy(c1, Container) == false)
 			{
-				if (p1.Money >= Warehouse::Get_Cost())
+				Warehouse* building = new Warehouse(c1.Get_SelX(), c1.Get_SelY());
+				if (p1.Get_Money() >= building->Get_Cost())
 				{
-					p1.ChangeMoney(-Warehouse::Get_Cost());
-					Container.Add_Warehouses(Warehouse(c1.SelX, c1.SelY));
-					p1.Update_Maxes(Container);
+					p1.Change_Money(-building->Get_Cost());
+					Container.Add_Buildings(building);
 					c1.Unselect();
 				}
 			}
 		}
 
-		if (Input == 'x' && c1.Is_Locked == true)
+		if (Input == 'x' && c1.Get_Is_Locked() == true)
 		{
 			if (check_If_Busy(c1, Container) == true)
 			{
 				sell_Building(c1, Container, p1);
-				p1.Update_Maxes(Container);
 				c1.Unselect();
 			}
 		}
 
-		if (Input == 'u' && c1.Is_Locked == true)
+		if (Input == 'u' && c1.Get_Is_Locked() == true)
 		{
 			if (check_If_Busy(c1, Container) == true)
 			{
 				lvl_Up(c1, Container);
-				p1.Update_Maxes(Container);
 				c1.Unselect();
 			}
 		}

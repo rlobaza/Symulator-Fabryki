@@ -3,7 +3,6 @@
 
 #include "Staff_Welfare_Area.h"
 #include "Screen_Object.h"
-#include "Screen_Object_Container.h"
 
 int Staff_Welfare_Area::Cost = 100;
 
@@ -19,11 +18,6 @@ Staff_Welfare_Area::Staff_Welfare_Area(int x, int y)
 Staff_Welfare_Area::~Staff_Welfare_Area()
 {
 
-}
-
-int Staff_Welfare_Area::Get_Cost()
-{
-	return Cost;
 }
 
 void Staff_Welfare_Area::Lvl_Up()
@@ -48,7 +42,7 @@ void Staff_Welfare_Area::Calculate_Storage()
 	Packed_Products_Storage_Used = 0;
 }
 
-std::string Staff_Welfare_Area::Stats_String(Screen_Object_Container& Container, int i)
+std::string Staff_Welfare_Area::Stats_String(int i)
 {
 	std::string str = "";
 
@@ -67,4 +61,9 @@ char Staff_Welfare_Area::Get_Icon()
 void Staff_Welfare_Area::Simulate()
 {
 
+}
+
+int Staff_Welfare_Area::Get_Cost()
+{
+	return Cost;
 }

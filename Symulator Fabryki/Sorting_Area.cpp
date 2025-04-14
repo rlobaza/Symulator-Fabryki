@@ -3,7 +3,6 @@
 
 #include "Sorting_Area.h"
 #include "Screen_Object.h"
-#include "Screen_Object_Container.h"
 
 int Sorting_Area::Cost = 100;
 
@@ -19,11 +18,6 @@ Sorting_Area::Sorting_Area(int x, int y)
 Sorting_Area::~Sorting_Area()
 {
 
-}
-
-int Sorting_Area::Get_Cost()
-{
-	return Cost;
 }
 
 void Sorting_Area::Lvl_Up()
@@ -48,7 +42,7 @@ void Sorting_Area::Calculate_Storage()
 	Packed_Products_Storage_Used = 0;
 }
 
-std::string Sorting_Area::Stats_String(Screen_Object_Container& Container, int i)
+std::string Sorting_Area::Stats_String(int i)
 {
 	std::string str = "";
 
@@ -67,4 +61,9 @@ char Sorting_Area::Get_Icon()
 void Sorting_Area::Simulate()
 {
 
+}
+
+int Sorting_Area::Get_Cost()
+{
+	return Cost;
 }

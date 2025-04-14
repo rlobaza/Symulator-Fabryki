@@ -3,7 +3,6 @@
 
 #include "Road.h"
 #include "Screen_Object.h"
-#include "Screen_Object_Container.h"
 
 int Road::Cost = 10;
 
@@ -19,11 +18,6 @@ Road::Road(int x, int y)
 Road::~Road()
 {
 
-}
-
-int Road::Get_Cost()
-{
-	return Cost;
 }
 
 void Road::Lvl_Up()
@@ -48,7 +42,7 @@ void Road::Calculate_Storage()
 	Packed_Products_Storage_Used = 0;
 }
 
-std::string Road::Stats_String(Screen_Object_Container& Container, int i)
+std::string Road::Stats_String(int i)
 {
 	std::string str = "";
 
@@ -67,4 +61,9 @@ char Road::Get_Icon()
 void Road::Simulate()
 {
 
+}
+
+int Road::Get_Cost()
+{
+	return Cost;
 }

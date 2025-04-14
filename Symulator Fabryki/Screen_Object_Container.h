@@ -6,7 +6,6 @@
 #include "Building.h"
 
 
-
 class Screen_Object_Container
 {
 
@@ -20,6 +19,6 @@ public:
 	~Screen_Object_Container();
 
 	void Add_Buildings(Building*);
-	void Remove_Buildings(int, int);
+	void Remove_Buildings();
 	std::vector<Building*>& Get_Buildings();
 };

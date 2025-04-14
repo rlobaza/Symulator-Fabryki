@@ -3,7 +3,6 @@
 
 #include "Warehouse.h"
 #include "Screen_Object.h"
-#include "Screen_Object_Container.h"
 
 int Warehouse::Cost = 100;
 
@@ -26,11 +25,6 @@ Warehouse::~Warehouse()
 
 }
 
-int Warehouse::Get_Cost()
-{
-	return Cost;
-}
-
 void Warehouse::Lvl_Up()
 {
 	Lvl++;
@@ -48,16 +42,16 @@ void Warehouse::Calculate_Storage()
 	Packed_Products_Storage = 15 * All_Storage / 100;
 }
 
-std::string Warehouse::Stats_String(Screen_Object_Container& Container, int i)
+std::string Warehouse::Stats_String(int i)
 {
 	std::string str = "";
 
 	str = str + "Magazyn " + std::to_string(i + 1) + '\n';
-	str = str + "Lvl: " + std::to_string(Container.Get_Buildings()[i]->Get_Lvl()) + '\n';
-	str = str + "Materialy: " + std::to_string(Container.Get_Buildings()[i]->Get_Materials_Storage_Used()) + " / " + std::to_string(Container.Get_Buildings()[i]->Get_Materials_Storage()) + '\n';
-	str = str + "Posortowane materialy: " + std::to_string(Container.Get_Buildings()[i]->Get_Sorted_Materials_Storage_Used()) + " / " + std::to_string(Container.Get_Buildings()[i]->Get_Sorted_Materials_Storage()) + '\n';
-	str = str + "Gotowe produkty: " + std::to_string(Container.Get_Buildings()[i]->Get_Ready_Products_Storage_Used()) + " / " + std::to_string(Container.Get_Buildings()[i]->Get_Ready_Products_Storage()) + '\n';
-	str = str + "Zapakowane produkty: " + std::to_string(Container.Get_Buildings()[i]->Get_Packed_Products_Storage_Used()) + " / " + std::to_string(Container.Get_Buildings()[i]->Get_Packed_Products_Storage()) + '\n';
+	str = str + "Lvl: " + std::to_string(Get_Lvl()) + '\n';
+	str = str + "Materialy: " + std::to_string(Get_Materials_Storage_Used()) + " / " + std::to_string(Get_Materials_Storage()) + '\n';
+	str = str + "Posortowane materialy: " + std::to_string(Get_Sorted_Materials_Storage_Used()) + " / " + std::to_string(Get_Sorted_Materials_Storage()) + '\n';
+	str = str + "Gotowe produkty: " + std::to_string(Get_Ready_Products_Storage_Used()) + " / " + std::to_string(Get_Ready_Products_Storage()) + '\n';
+	str = str + "Zapakowane produkty: " + std::to_string(Get_Packed_Products_Storage_Used()) + " / " + std::to_string(Get_Packed_Products_Storage()) + '\n';
 	str = str + '\n';
 
 	return str;
@@ -71,4 +65,9 @@ char Warehouse::Get_Icon()
 void Warehouse::Simulate()
 {
 
+}
+
+int Warehouse::Get_Cost()
+{
+	return Cost;
 }

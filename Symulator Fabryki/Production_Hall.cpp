@@ -3,7 +3,6 @@
 
 #include "Production_Hall.h"
 #include "Screen_Object.h"
-#include "Screen_Object_Container.h"
 
 int Production_Hall::Cost = 250;
 
@@ -19,11 +18,6 @@ Production_Hall::Production_Hall(int x, int y)
 Production_Hall::~Production_Hall()
 {
 
-}
-
-int Production_Hall::Get_Cost()
-{
-	return Cost;
 }
 
 void Production_Hall::Lvl_Up()
@@ -48,7 +42,7 @@ void Production_Hall::Calculate_Storage()
 	Packed_Products_Storage_Used = 0;
 }
 
-std::string Production_Hall::Stats_String(Screen_Object_Container& Container, int i)
+std::string Production_Hall::Stats_String(int i)
 {
 	std::string str = "";
 
@@ -67,4 +61,9 @@ char Production_Hall::Get_Icon()
 void Production_Hall::Simulate()
 {
 
+}
+
+int Production_Hall::Get_Cost()
+{
+	return Cost;
 }

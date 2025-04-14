@@ -3,7 +3,6 @@
 
 #include "Packaging_Area.h"
 #include "Building.h"
-#include "Screen_Object_Container.h"
 
 int Packaging_Area::Cost = 100;
 
@@ -19,11 +18,6 @@ Packaging_Area::Packaging_Area(int x, int y)
 Packaging_Area::~Packaging_Area()
 {
 
-}
-
-int Packaging_Area::Get_Cost()
-{
-	return Cost;
 }
 
 void Packaging_Area::Lvl_Up()
@@ -48,7 +42,7 @@ void Packaging_Area::Calculate_Storage()
 	Packed_Products_Storage_Used = 0;
 }
 
-std::string Packaging_Area::Stats_String(Screen_Object_Container& Container, int i)
+std::string Packaging_Area::Stats_String(int i)
 {
 	std::string str = "";
 
@@ -67,4 +61,9 @@ char Packaging_Area::Get_Icon()
 void Packaging_Area::Simulate()
 {
 
+}
+
+int Packaging_Area::Get_Cost()
+{
+	return Cost;
 }
