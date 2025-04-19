@@ -49,6 +49,12 @@
     <Filter Include="Pliki nagłówkowe\UI">
       <UniqueIdentifier>{bfaec1b6-8655-4362-a803-af785e8ed4be}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki źródłowe\Data Structures">
+      <UniqueIdentifier>{fa797c2a-6de8-47a6-b8e2-e9de1e9f30f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\Data Structures">
+      <UniqueIdentifier>{cef8a5ec-05a3-47e5-b963-bf550da863af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -156,6 +162,12 @@
     <ClCompile Include="lvl_Up.cpp">
       <Filter>Pliki źródłowe\Functions</Filter>
     </ClCompile>
+    <ClCompile Include="List_Element.cpp">
+      <Filter>Pliki źródłowe\Data Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="Own_List.cpp">
+      <Filter>Pliki źródłowe\Data Structures</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -259,6 +271,12 @@
     </ClInclude>
     <ClInclude Include="lvl_Up.h">
       <Filter>Pliki nagłówkowe\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="List_Element.h">
+      <Filter>Pliki nagłówkowe\Data Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Own_List.h">
+      <Filter>Pliki nagłówkowe\Data Structures</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

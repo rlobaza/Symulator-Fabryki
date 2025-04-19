@@ -137,10 +137,12 @@
     <ClCompile Include="Frame.cpp" />
     <ClCompile Include="framerate.cpp" />
     <ClCompile Include="initial_Buffer.cpp" />
+    <ClCompile Include="List_Element.cpp" />
     <ClCompile Include="Loading_Ramp.cpp" />
     <ClCompile Include="load_To_Screen.cpp" />
     <ClCompile Include="lvl_Up.cpp" />
     <ClCompile Include="next_Frame.cpp" />
+    <ClCompile Include="Own_List.cpp" />
     <ClCompile Include="Packaging_Area.cpp" />
     <ClCompile Include="print_All_Objects.cpp" />
     <ClCompile Include="print_Time.cpp" />
@@ -174,10 +176,12 @@
     <ClInclude Include="Frame.h" />
     <ClInclude Include="framerate.h" />
     <ClInclude Include="initial_Buffer.h" />
+    <ClInclude Include="List_Element.h" />
     <ClInclude Include="Loading_Ramp.h" />
     <ClInclude Include="load_To_Screen.h" />
     <ClInclude Include="lvl_Up.h" />
     <ClInclude Include="next_Frame.h" />
+    <ClInclude Include="Own_List.h" />
     <ClInclude Include="Packaging_Area.h" />
     <ClInclude Include="print_All_Objects.h" />
     <ClInclude Include="print_Time.h" />
