@@ -1,17 +1,17 @@
 #pragma once
 
-#include <vector>
-
 
 #include "Building.h"
-
+#include "Own_List.h"
 
 class Screen_Object_Container
 {
 
 private:
 
-	std::vector<Building*> Buildings;
+	Own_List<Building*> Buildings;
+
+	std::recursive_mutex mtx;
 
 public:
 
@@ -20,5 +20,7 @@ public:
 
 	void Add_Buildings(Building*);
 	void Remove_Buildings();
-	std::vector<Building*>& Get_Buildings();
+	Own_List<Building*>& Get_Buildings();
+	std::recursive_mutex& Get_Mutex();
+	
 };

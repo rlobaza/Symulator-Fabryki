@@ -1,6 +1,5 @@
 #include <iostream>
 #include <thread>
-#include <vector>
 #include <semaphore>
 
 #include "User_Input_Keys.h"

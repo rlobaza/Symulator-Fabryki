@@ -28,7 +28,7 @@ void simulation(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1,
 {
 	while (Gameover == false)
 	{
-		for (int i = 0; i < Container.Get_Buildings().size(); i++) //Rampy 2s
+		for (int i = 0; i < Container.Get_Buildings().Get_Size(); i++) //Rampy 2s
 		{
 			Container.Get_Buildings()[i]->Simulate();
 		}

@@ -5,7 +5,6 @@
 #include <chrono>
 #include <cstdlib>
 #include <ctime>
-#include <vector>
 #include <semaphore>
 
 //threads
@@ -64,6 +63,7 @@ int main()
 	Frame frm;
 
 
+
 	p1.Change_Money(10000);
 
 	std::thread Input_Thread(user_Input, std::ref(Input), std::ref(Gameover), std::ref(clk));
@@ -71,6 +71,8 @@ int main()
 	std::thread Input_Keys_Thread(user_Input_Keys, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Container), std::ref(clk));
 
 	std::thread Simulation_Thread(simulation, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Container), std::ref(clk));
+
+	
 
 	initial_Buffer();
 
