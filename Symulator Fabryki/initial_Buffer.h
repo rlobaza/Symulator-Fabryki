@@ -1,3 +1,3 @@
 #pragma once
 
-void initial_Buffer();
+void initial_Buffer(int);

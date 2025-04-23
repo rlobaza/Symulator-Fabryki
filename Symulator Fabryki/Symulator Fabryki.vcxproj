@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Building.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="check_If_Busy.cpp" />
     <ClCompile Include="Clock.cpp" />
     <ClCompile Include="Control_Laboratory.cpp" />
@@ -136,11 +137,15 @@
     <ClCompile Include="Cursor.cpp" />
     <ClCompile Include="Frame.cpp" />
     <ClCompile Include="framerate.cpp" />
+    <ClCompile Include="generate_Empty_Lines.cpp" />
     <ClCompile Include="initial_Buffer.cpp" />
     <ClCompile Include="List_Element.cpp" />
     <ClCompile Include="Loading_Ramp.cpp" />
+    <ClCompile Include="Load_Game.cpp" />
     <ClCompile Include="load_To_Screen.cpp" />
     <ClCompile Include="lvl_Up.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="New_Game.cpp" />
     <ClCompile Include="next_Frame.cpp" />
     <ClCompile Include="Own_List.cpp" />
     <ClCompile Include="Packaging_Area.cpp" />
@@ -150,6 +155,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="print_Player_Stats.cpp" />
+    <ClCompile Include="Quit.cpp" />
     <ClCompile Include="Road.cpp" />
     <ClCompile Include="Screen.cpp" />
     <ClCompile Include="Screen_Object.cpp" />
@@ -164,6 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Building.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="check_If_Busy.h" />
     <ClInclude Include="Clock.h" />
     <ClInclude Include="Control_Laboratory.h" />
@@ -171,11 +178,15 @@
     <ClInclude Include="Cursor.h" />
     <ClInclude Include="Frame.h" />
     <ClInclude Include="framerate.h" />
+    <ClInclude Include="generate_Empty_Lines.h" />
     <ClInclude Include="initial_Buffer.h" />
     <ClInclude Include="List_Element.h" />
     <ClInclude Include="Loading_Ramp.h" />
+    <ClInclude Include="Load_Game.h" />
     <ClInclude Include="load_To_Screen.h" />
     <ClInclude Include="lvl_Up.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="New_Game.h" />
     <ClInclude Include="next_Frame.h" />
     <ClInclude Include="Own_List.h" />
     <ClInclude Include="Packaging_Area.h" />
@@ -184,6 +195,7 @@
     <ClInclude Include="Production_Hall.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="print_Player_Stats.h" />
+    <ClInclude Include="Quit.h" />
     <ClInclude Include="Road.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="Screen_Object.h" />

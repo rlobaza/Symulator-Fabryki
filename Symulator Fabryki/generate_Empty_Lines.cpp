@@ -1,12 +1,11 @@
 
-
 #include <string>
-#include <iostream>
 
-#include "initial_Buffer.h"
+#include "generate_Empty_Lines.h"
 
 
-void initial_Buffer(int param)
+
+std::string generate_Empty_Lines(int param)
 {
 	std::string str;
 
@@ -15,5 +14,5 @@ void initial_Buffer(int param)
 		str = str + '\n';
 	}
 
-	std::cout << str;
+	return str;
 }

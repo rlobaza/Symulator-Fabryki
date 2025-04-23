@@ -9,4 +9,6 @@
 #include "Screen_Object_Container.h"
 #include "Clock.h"
 
-void user_Input_Keys(Screen&, Cursor&, char&, bool&, Player&, Screen_Object_Container&);
+#include "Menu.h"
+
+void user_Input_Keys(Screen&, Cursor&, char&, bool&, Player&, Screen_Object_Container&, bool&, Menu&);

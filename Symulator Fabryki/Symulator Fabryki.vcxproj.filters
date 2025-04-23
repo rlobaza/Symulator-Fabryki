@@ -55,6 +55,18 @@
     <Filter Include="Pliki nagłówkowe\Data Structures">
       <UniqueIdentifier>{cef8a5ec-05a3-47e5-b963-bf550da863af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki źródłowe\UI\Menu">
+      <UniqueIdentifier>{66084c2e-9d54-4d0b-a2e3-7000a2da0fe0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\UI\Menu">
+      <UniqueIdentifier>{88346899-efa2-48df-a52f-4c518a838728}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\UI\Menu\Buttons">
+      <UniqueIdentifier>{cac37246-cd1d-4e7a-88c4-3fed3d47894a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\UI\Menu\Buttons">
+      <UniqueIdentifier>{c5e3e9c3-1ebd-4bcf-8bc5-59df0d15588a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -156,6 +168,24 @@
     <ClCompile Include="Screen_Object_Container.cpp">
       <Filter>Pliki źródłowe\Data Structures</Filter>
     </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Pliki źródłowe\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Pliki źródłowe\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="New_Game.cpp">
+      <Filter>Pliki źródłowe\UI\Menu\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="Load_Game.cpp">
+      <Filter>Pliki źródłowe\UI\Menu\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="Quit.cpp">
+      <Filter>Pliki źródłowe\UI\Menu\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="generate_Empty_Lines.cpp">
+      <Filter>Pliki źródłowe\Functions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -253,6 +283,24 @@
     </ClInclude>
     <ClInclude Include="Screen_Object_Container.h">
       <Filter>Pliki nagłówkowe\Data Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Pliki nagłówkowe\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Pliki nagłówkowe\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="New_Game.h">
+      <Filter>Pliki nagłówkowe\UI\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Load_Game.h">
+      <Filter>Pliki nagłówkowe\UI\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Quit.h">
+      <Filter>Pliki nagłówkowe\UI\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="generate_Empty_Lines.h">
+      <Filter>Pliki nagłówkowe\Functions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

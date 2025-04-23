@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <semaphore>
+#include "windows.h"
 
 //threads
 #include "user_Input.h"
@@ -41,14 +42,23 @@
 #include "print_Player_Stats.h"
 #include "initial_Buffer.h"
 #include "next_Frame.h"
+#include "generate_Empty_Lines.h"
+
+//UI
+#include "Menu.h"
+#include "Button.h"
+#include "New_Game.h"
+#include "Load_Game.h"
+#include "Quit.h"
 
 
 int main()
 {
 
-
+	SetConsoleOutputCP(1250);
 
 	bool Gameover = false;
+	bool In_Menu = true;
 	char Input = ' ';
 
 	Screen s1;
@@ -60,17 +70,21 @@ int main()
 
 
 
+	Menu menu_1;
+
+
+
 	p1.Change_Money(10000);
 
 	std::thread Input_Thread(user_Input, std::ref(Input), std::ref(Gameover));
 
-	std::thread Input_Keys_Thread(user_Input_Keys, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Container));
+	std::thread Input_Keys_Thread(user_Input_Keys, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Container), std::ref(In_Menu), std::ref(menu_1));
 
 	std::thread Simulation_Thread(simulation, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Container));
 
 	
 
-	initial_Buffer();
+	initial_Buffer(10000);
 
 
 	while (Gameover == false)
@@ -78,48 +92,71 @@ int main()
 
 		clk.Set_Start_Time();
 
+		if (In_Menu == true)
+		{
 
-		//////////////////////////////////////////////
-
-		s1.Clear();
-
-		load_To_Screen(s1, Container);
-
-		s1.Input(c1.Get_PosX(), c1.Get_PosY(), c1.Get_Icon());
-
-
-		/////////////////////////////////////////////
-
-		frm.Clear_Frame();
+			frm.Clear_Frame();
 
 
 
-		frm.Add_To_Frame(next_Frame());
+			frm.Add_To_Frame(next_Frame());
 
-		frm.Add_To_Frame(print_Time());
+			frm.Add_To_Frame(menu_1.Print_Menu());
 
-		frm.Add_To_Frame(s1.Output());
+			frm.Add_To_Frame(generate_Empty_Lines(15));
 
-		frm.Add_To_Frame(print_Player_Stats(p1));
-
-		frm.Add_To_Frame(print_All_Objects(Container));
-
-		frm.Add_To_Frame(clk.Print_FPS());
+			frm.Add_To_Frame(clk.Print_FPS());
 
 
 
-		frm.Print_Frame();
+			frm.Print_Frame();
+		}
+
+		if (In_Menu == false)
+		{
+
+			//////////////////////////////////////////////
+
+			s1.Clear();
+
+			load_To_Screen(s1, Container);
+
+			s1.Input(c1.Get_PosX(), c1.Get_PosY(), c1.Get_Icon());
+
+
+			/////////////////////////////////////////////
+
+			frm.Clear_Frame();
+
+
+
+			frm.Add_To_Frame(next_Frame());
+
+			frm.Add_To_Frame(print_Time());
+
+			frm.Add_To_Frame(s1.Output());
+
+			frm.Add_To_Frame(print_Player_Stats(p1));
+
+			frm.Add_To_Frame(print_All_Objects(Container));
+
+			frm.Add_To_Frame(clk.Print_FPS());
+
+
+
+			frm.Print_Frame();
+
+		}
+
+
 
 		///////////////////////////////////////////////
-
-
-
-		
 
 		clk.Set_End_Time();
 		clk.Add_Durations();
 		clk.Set_FPS();
 		clk.Sleep();
+
 	}
 
 	system("cls");

@@ -20,168 +20,190 @@
 #include "Clock.h"
 #include "framerate.h"
 
+#include "Menu.h"
 
 
-void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Screen_Object_Container& Container)
+
+void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Screen_Object_Container& Container, bool& In_Menu, Menu& menu_1)
 {
 
 	Clock clk(framerate());
 
-	while (true)
+	while (Gameover == false)
 	{
 
 		clk.Set_Start_Time();
 
-		if (Gameover == true)
+		//////////////////////////////////////////////////////////////////////////////////////
+
+		if (In_Menu == true)
 		{
-			break;
-		}
 
-
-
-
-		if (Input == 'q')
-		{
-			Gameover = true;
-		}
-
-		if (Input == 'w')
-		{
-			c1.CursorMoveUp();
-		}
-
-		if (Input == 's')
-		{
-			c1.CursorMoveDown();
-		}
-
-		if (Input == 'a')
-		{
-			c1.CursorMoveLeft();
-		}
-
-		if (Input == 'd')
-		{
-			c1.CursorMoveRight();
-		}
-
-		if (Input == 'e')
-		{
-			if (c1.Get_Is_Locked() == false)
+			if (Input == 'w')
 			{
-				c1.Select();
+				menu_1.Selected_Button_Up();
 			}
-			else
+
+			if (Input == 's')
 			{
-				c1.Unselect();
+				menu_1.Selected_Button_Down();
 			}
-			
-		}
 
-		if (Input == '1' && c1.Get_Is_Locked() == true)
-		{
-
-		}
-
-		if (Input == '2' && c1.Get_Is_Locked() == true)
-		{
-			if (check_If_Busy(c1, Container) == false)
+			if (Input == 'e')
 			{
-				Loading_Ramp* building = new Loading_Ramp(c1.Get_SelX(), c1.Get_SelY());
-				if (p1.Get_Money() >= building->Get_Cost())
+				menu_1.Get_Selected_Button()->Do(Gameover, In_Menu);
+				Input = ' ';
+			}
+		}
+
+		//////////////////////////////////////////////////////////////////////////////////////
+
+		if (In_Menu == false)
+		{
+
+			if (Input == 'q')
+			{
+				In_Menu = true;
+			}
+
+			if (Input == 'w')
+			{
+				c1.CursorMoveUp();
+			}
+
+			if (Input == 's')
+			{
+				c1.CursorMoveDown();
+			}
+
+			if (Input == 'a')
+			{
+				c1.CursorMoveLeft();
+			}
+
+			if (Input == 'd')
+			{
+				c1.CursorMoveRight();
+			}
+
+			if (Input == 'e')
+			{
+				if (c1.Get_Is_Locked() == false)
 				{
-					p1.Change_Money(-building->Get_Cost());
-					Container.Add_Buildings(building);
+					c1.Select();
+				}
+				else
+				{
+					c1.Unselect();
+				}
+
+			}
+
+			if (Input == '1' && c1.Get_Is_Locked() == true)
+			{
+
+			}
+
+			if (Input == '2' && c1.Get_Is_Locked() == true)
+			{
+				if (check_If_Busy(c1, Container) == false)
+				{
+					Loading_Ramp* building = new Loading_Ramp(c1.Get_SelX(), c1.Get_SelY());
+					if (p1.Get_Money() >= building->Get_Cost())
+					{
+						p1.Change_Money(-building->Get_Cost());
+						Container.Add_Buildings(building);
+						c1.Unselect();
+					}
+				}
+			}
+
+			if (Input == '3' && c1.Get_Is_Locked() == true)
+			{
+
+			}
+
+			if (Input == '4' && c1.Get_Is_Locked() == true) //Production Hall
+			{
+				if (check_If_Busy(c1, Container) == false)
+				{
+					Production_Hall* building = new Production_Hall(c1.Get_SelX(), c1.Get_SelY());
+					if (p1.Get_Money() >= building->Get_Cost())
+					{
+						p1.Change_Money(-building->Get_Cost());
+						Container.Add_Buildings(building);
+						c1.Unselect();
+					}
+				}
+			}
+
+			if (Input == '5' && c1.Get_Is_Locked() == true) //Road
+			{
+				if (check_If_Busy(c1, Container) == false)
+				{
+					Road* building = new Road(c1.Get_SelX(), c1.Get_SelY());
+					if (p1.Get_Money() >= building->Get_Cost())
+					{
+						p1.Change_Money(-building->Get_Cost());
+						Container.Add_Buildings(building);
+						c1.Unselect();
+					}
+				}
+			}
+
+			if (Input == '6' && c1.Get_Is_Locked() == true) //Sorting_Area
+			{
+				if (check_If_Busy(c1, Container) == false)
+				{
+					Packaging_Area* building = new Packaging_Area(c1.Get_SelX(), c1.Get_SelY());
+					if (p1.Get_Money() >= building->Get_Cost())
+					{
+						p1.Change_Money(-building->Get_Cost());
+						Container.Add_Buildings(building);
+						c1.Unselect();
+					}
+				}
+			}
+
+			if (Input == '7' && c1.Get_Is_Locked() == true)
+			{
+
+			}
+
+			if (Input == '8' && c1.Get_Is_Locked() == true) //Warehouse
+			{
+				if (check_If_Busy(c1, Container) == false)
+				{
+					Warehouse* building = new Warehouse(c1.Get_SelX(), c1.Get_SelY());
+					if (p1.Get_Money() >= building->Get_Cost())
+					{
+						p1.Change_Money(-building->Get_Cost());
+						Container.Add_Buildings(building);
+						c1.Unselect();
+					}
+				}
+			}
+
+			if (Input == 'x' && c1.Get_Is_Locked() == true)
+			{
+				if (check_If_Busy(c1, Container) == true)
+				{
+					sell_Building(c1, Container, p1);
+					c1.Unselect();
+				}
+			}
+
+			if (Input == 'u' && c1.Get_Is_Locked() == true)
+			{
+				if (check_If_Busy(c1, Container) == true)
+				{
+					lvl_Up(c1, Container, p1);
 					c1.Unselect();
 				}
 			}
 		}
 
-		if (Input == '3' && c1.Get_Is_Locked() == true)
-		{
-
-		}
-
-		if (Input == '4' && c1.Get_Is_Locked() == true) //Production Hall
-		{
-			if (check_If_Busy(c1, Container) == false)
-			{
-				Production_Hall* building = new Production_Hall(c1.Get_SelX(), c1.Get_SelY());
-				if (p1.Get_Money() >= building->Get_Cost())
-				{
-					p1.Change_Money(-building->Get_Cost());
-					Container.Add_Buildings(building);
-					c1.Unselect();
-				}
-			}
-		}
-
-		if (Input == '5' && c1.Get_Is_Locked() == true) //Road
-		{
-			if (check_If_Busy(c1, Container) == false)
-			{
-				Road* building = new Road(c1.Get_SelX(), c1.Get_SelY());
-				if (p1.Get_Money() >= building->Get_Cost())
-				{
-					p1.Change_Money(-building->Get_Cost());
-					Container.Add_Buildings(building);
-					c1.Unselect();
-				}
-			}
-		}
-
-		if (Input == '6' && c1.Get_Is_Locked() == true) //Sorting_Area
-		{
-			if (check_If_Busy(c1, Container) == false)
-			{
-				Packaging_Area* building = new Packaging_Area(c1.Get_SelX(), c1.Get_SelY());
-				if (p1.Get_Money() >= building->Get_Cost())
-				{
-					p1.Change_Money(-building->Get_Cost());
-					Container.Add_Buildings(building);
-					c1.Unselect();
-				}
-			}
-		}
-
-		if (Input == '7' && c1.Get_Is_Locked() == true)
-		{
-
-		}
-
-		if (Input == '8' && c1.Get_Is_Locked() == true) //Warehouse
-		{
-			if (check_If_Busy(c1, Container) == false)
-			{
-				Warehouse* building = new Warehouse(c1.Get_SelX(), c1.Get_SelY());
-				if (p1.Get_Money() >= building->Get_Cost())
-				{
-					p1.Change_Money(-building->Get_Cost());
-					Container.Add_Buildings(building);
-					c1.Unselect();
-				}
-			}
-		}
-
-		if (Input == 'x' && c1.Get_Is_Locked() == true)
-		{
-			if (check_If_Busy(c1, Container) == true)
-			{
-				sell_Building(c1, Container, p1);
-				c1.Unselect();
-			}
-		}
-
-		if (Input == 'u' && c1.Get_Is_Locked() == true)
-		{
-			if (check_If_Busy(c1, Container) == true)
-			{
-				lvl_Up(c1, Container, p1);
-				c1.Unselect();
-			}
-		}
-
-
+		///////////////////////////////////////////////////////////////////////////////////////
 
 		Input = ' ';
 
