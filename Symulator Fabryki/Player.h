@@ -9,14 +9,14 @@ class Player
 {
 private:
 
-	int Money;
+int Money;
 
 public:
 
-	Player();
-	~Player();
+Player();
+~Player();
 
-	void Set_Money(int);
-	void Change_Money(int);
-	int Get_Money();
+void Set_Money(int);
+void Change_Money(int);
+int Get_Money();
 };

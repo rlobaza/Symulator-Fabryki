@@ -3,4 +3,4 @@
 #include "Screen.h"
 #include "Clock.h"
 
-void user_Input(char&, bool&, Clock&);
+void user_Input(char&, bool&);

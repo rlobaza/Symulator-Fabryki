@@ -16,24 +16,21 @@
 #include "sell_Building.h"
 #include "Building.h"
 
-#include "Semaphore_1.h"
-#include "Semaphore_2.h"
-#include "Semaphore_3.h"
-#include "Semaphore_4.h"
-#include "Clock.h"
-
 #include "simulation.h"
 
-void simulation(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Screen_Object_Container& Container, Clock& clk)
+void simulation(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Screen_Object_Container& Container)
 {
+
 	while (Gameover == false)
 	{
-		for (int i = 0; i < Container.Get_Buildings().Get_Size(); i++) //Rampy 2s
+
+		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+
+		std::lock_guard<std::recursive_mutex> lock(Container.Get_Mutex());
+		for (int i = 0; i < Container.Get_Buildings().Get_Size(); i++)
 		{
 			Container.Get_Buildings()[i]->Simulate();
 		}
-		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
-		//clk.Set_End_Time();
 	}
 }

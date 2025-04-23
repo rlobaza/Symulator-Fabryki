@@ -9,4 +9,4 @@
 #include "Screen_Object_Container.h"
 #include "Clock.h"
 
-void simulation(Screen&, Cursor&, char&, bool&, Player&, Screen_Object_Container&, Clock&);
+void simulation(Screen&, Cursor&, char&, bool&, Player&, Screen_Object_Container&);

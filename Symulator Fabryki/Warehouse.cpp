@@ -52,6 +52,7 @@ std::string Warehouse::Stats_String(int i)
 	str = str + "Posortowane materialy: " + std::to_string(Get_Sorted_Materials_Storage_Used()) + " / " + std::to_string(Get_Sorted_Materials_Storage()) + '\n';
 	str = str + "Gotowe produkty: " + std::to_string(Get_Ready_Products_Storage_Used()) + " / " + std::to_string(Get_Ready_Products_Storage()) + '\n';
 	str = str + "Zapakowane produkty: " + std::to_string(Get_Packed_Products_Storage_Used()) + " / " + std::to_string(Get_Packed_Products_Storage()) + '\n';
+
 	str = str + '\n';
 
 	return str;

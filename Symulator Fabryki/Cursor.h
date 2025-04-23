@@ -35,12 +35,12 @@ public:
 	void Set_SelY(int);
 	void Set_Is_Locked(bool);
 
-	void CursorMoveUp();
-	void CursorMoveDown();
-	void CursorMoveLeft();
-	void CursorMoveRight();
-	void Select();
+	void CursorMoveUp(); //kursor w górê
+	void CursorMoveDown(); //kursor w dó³
+	void CursorMoveLeft(); //kursor w lewo
+	void CursorMoveRight(); //kursor w prawo
+	void Select(); //zmienia wygl¹d kursoru na oznaczaj¹cy wybranie danego pola na ekranie
 	void Unselect();
-	void Lock();
-	void Unlock();
+	void Lock(); //blokuje kursor przed zmian¹ pozycji
+	void Unlock(); //odblokowuje kursor
 };

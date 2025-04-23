@@ -155,10 +155,6 @@
     <ClCompile Include="Screen_Object.cpp" />
     <ClCompile Include="Screen_Object_Container.cpp" />
     <ClCompile Include="sell_Building.cpp" />
-    <ClCompile Include="Semaphore_1.cpp" />
-    <ClCompile Include="Semaphore_2.cpp" />
-    <ClCompile Include="Semaphore_3.cpp" />
-    <ClCompile Include="Semaphore_4.cpp" />
     <ClCompile Include="simulation.cpp" />
     <ClCompile Include="Sorting_Area.cpp" />
     <ClCompile Include="Staff_Welfare_Area.cpp" />
@@ -193,10 +189,6 @@
     <ClInclude Include="Screen_Object.h" />
     <ClInclude Include="Screen_Object_Container.h" />
     <ClInclude Include="sell_Building.h" />
-    <ClInclude Include="Semaphore_1.h" />
-    <ClInclude Include="Semaphore_2.h" />
-    <ClInclude Include="Semaphore_3.h" />
-    <ClInclude Include="Semaphore_4.h" />
     <ClInclude Include="simulation.h" />
     <ClInclude Include="Sorting_Area.h" />
     <ClInclude Include="Staff_Welfare_Area.h" />

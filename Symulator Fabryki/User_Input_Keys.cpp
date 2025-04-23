@@ -10,24 +10,28 @@
 #include "Production_Hall.h"
 #include "Loading_Ramp.h"
 #include "Road.h"
+#include "Packaging_Area.h"
 #include "Warehouse.h"
 #include "Player.h"
 #include "check_If_Busy.h"
 #include "sell_Building.h"
 #include "lvl_Up.h"
 
-#include "Semaphore_1.h"
-#include "Semaphore_2.h"
-#include "Semaphore_3.h"
-#include "Semaphore_4.h"
 #include "Clock.h"
+#include "framerate.h"
 
 
 
-void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Screen_Object_Container& Container, Clock& clk)
+void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Screen_Object_Container& Container)
 {
+
+	Clock clk(framerate());
+
 	while (true)
 	{
+
+		clk.Set_Start_Time();
+
 		if (Gameover == true)
 		{
 			break;
@@ -126,9 +130,18 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 			}
 		}
 
-		if (Input == '6' && c1.Get_Is_Locked() == true)
+		if (Input == '6' && c1.Get_Is_Locked() == true) //Sorting_Area
 		{
-
+			if (check_If_Busy(c1, Container) == false)
+			{
+				Packaging_Area* building = new Packaging_Area(c1.Get_SelX(), c1.Get_SelY());
+				if (p1.Get_Money() >= building->Get_Cost())
+				{
+					p1.Change_Money(-building->Get_Cost());
+					Container.Add_Buildings(building);
+					c1.Unselect();
+				}
+			}
 		}
 
 		if (Input == '7' && c1.Get_Is_Locked() == true)
@@ -163,7 +176,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 		{
 			if (check_If_Busy(c1, Container) == true)
 			{
-				lvl_Up(c1, Container);
+				lvl_Up(c1, Container, p1);
 				c1.Unselect();
 			}
 		}
@@ -172,10 +185,9 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 
 		Input = ' ';
 
+		clk.Set_End_Time();
+		clk.Add_Durations();
+		clk.Sleep();
 
-
-		std::this_thread::sleep_for(std::chrono::milliseconds(16));
-
-		//clk.Set_End_Time();
 	}
 }

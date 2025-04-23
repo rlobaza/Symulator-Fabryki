@@ -1,7 +1,7 @@
 
 
 
-
+#include <string>
 
 #include "Building.h"
 
