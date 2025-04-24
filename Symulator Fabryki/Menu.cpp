@@ -4,6 +4,7 @@
 #include "New_Game.h"
 #include "Load_Game.h"
 #include "Quit.h"
+#include "single_Sound.h"
 
 
 
@@ -64,6 +65,8 @@ void Menu::Selected_Button_Up()
 	if (Selected_Button_Number - 1 >= 0)
 	{
 		Selected_Button_Number--;
+
+		single_Sound("Sounds/UPDOWN");
 	}
 }
 
@@ -72,6 +75,8 @@ void Menu::Selected_Button_Down()
 	if (Selected_Button_Number + 1 < Size)
 	{
 		Selected_Button_Number++;
+
+		single_Sound("Sounds/UPDOWN");
 	}
 }
 

@@ -186,6 +186,9 @@
     <ClCompile Include="generate_Empty_Lines.cpp">
       <Filter>Pliki źródłowe\Functions</Filter>
     </ClCompile>
+    <ClCompile Include="single_Sound.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -301,6 +304,9 @@
     </ClInclude>
     <ClInclude Include="generate_Empty_Lines.h">
       <Filter>Pliki nagłówkowe\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="single_Sound.h">
+      <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

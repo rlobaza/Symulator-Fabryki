@@ -162,6 +162,7 @@
     <ClCompile Include="Screen_Object_Container.cpp" />
     <ClCompile Include="sell_Building.cpp" />
     <ClCompile Include="simulation.cpp" />
+    <ClCompile Include="single_Sound.cpp" />
     <ClCompile Include="Sorting_Area.cpp" />
     <ClCompile Include="Staff_Welfare_Area.cpp" />
     <ClCompile Include="user_Input.cpp" />
@@ -202,6 +203,7 @@
     <ClInclude Include="Screen_Object_Container.h" />
     <ClInclude Include="sell_Building.h" />
     <ClInclude Include="simulation.h" />
+    <ClInclude Include="single_Sound.h" />
     <ClInclude Include="Sorting_Area.h" />
     <ClInclude Include="Staff_Welfare_Area.h" />
     <ClInclude Include="user_Input.h" />

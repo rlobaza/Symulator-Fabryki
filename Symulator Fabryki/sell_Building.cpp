@@ -5,6 +5,7 @@
 #include "Cursor.h"
 #include "Player.h"
 #include "sell_Building.h"
+#include "single_Sound.h"
 
 void sell_Building(Cursor& c1, Screen_Object_Container& Container, Player& p1)
 {
@@ -18,6 +19,7 @@ void sell_Building(Cursor& c1, Screen_Object_Container& Container, Player& p1)
 			delete Container.Get_Buildings()[i];
 			Container.Get_Buildings().Erase(i);
 			i--;
+			single_Sound("Sounds/COINS");
 		}
 	}
 }

@@ -5,7 +5,7 @@
 #include "lvl_Up.h"
 #include "Cursor.h"
 #include "Player.h"
-
+#include "single_Sound.h"
 
 
 void lvl_Up(Cursor c1, Screen_Object_Container& Container, Player& p1)
@@ -20,6 +20,7 @@ void lvl_Up(Cursor c1, Screen_Object_Container& Container, Player& p1)
 			{
 				p1.Change_Money(-Container.Get_Buildings()[i]->Get_Cost() * (Container.Get_Buildings()[i]->Get_Lvl() + 1));
 				Container.Get_Buildings()[i]->Lvl_Up();
+				single_Sound("Sounds/BUILD");
 			}
 		}
 	}

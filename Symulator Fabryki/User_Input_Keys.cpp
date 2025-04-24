@@ -21,7 +21,7 @@
 #include "framerate.h"
 
 #include "Menu.h"
-
+#include "single_Sound.h"
 
 
 void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Screen_Object_Container& Container, bool& In_Menu, Menu& menu_1)
@@ -64,6 +64,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 			if (Input == 'q')
 			{
 				In_Menu = true;
+				single_Sound("Sounds/MENU");
 			}
 
 			if (Input == 'w')
@@ -91,10 +92,14 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 				if (c1.Get_Is_Locked() == false)
 				{
 					c1.Select();
+
+					single_Sound("Sounds/ON");
 				}
 				else
 				{
 					c1.Unselect();
+
+					single_Sound("Sounds/OFF");
 				}
 
 			}
@@ -114,6 +119,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 						p1.Change_Money(-building->Get_Cost());
 						Container.Add_Buildings(building);
 						c1.Unselect();
+						single_Sound("Sounds/COLLAPSE");
 					}
 				}
 			}
@@ -133,6 +139,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 						p1.Change_Money(-building->Get_Cost());
 						Container.Add_Buildings(building);
 						c1.Unselect();
+						single_Sound("Sounds/COLLAPSE");
 					}
 				}
 			}
@@ -147,6 +154,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 						p1.Change_Money(-building->Get_Cost());
 						Container.Add_Buildings(building);
 						c1.Unselect();
+						single_Sound("Sounds/COLLAPSE");
 					}
 				}
 			}
@@ -161,6 +169,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 						p1.Change_Money(-building->Get_Cost());
 						Container.Add_Buildings(building);
 						c1.Unselect();
+						single_Sound("Sounds/COLLAPSE");
 					}
 				}
 			}
@@ -180,6 +189,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 						p1.Change_Money(-building->Get_Cost());
 						Container.Add_Buildings(building);
 						c1.Unselect();
+						single_Sound("Sounds/COLLAPSE");
 					}
 				}
 			}
