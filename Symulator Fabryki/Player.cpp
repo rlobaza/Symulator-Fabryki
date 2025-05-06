@@ -3,7 +3,9 @@
 
 #include "Player.h"
 #include "Screen_Object.h"
-#include "Screen_Object_Container.h"
+#include "Building_Container.h"
+#include "Road_Container.h"
+#include "Worker_Container.h"
 
 #include "Control_Laboratory.h"
 #include "Loading_Ramp.h"

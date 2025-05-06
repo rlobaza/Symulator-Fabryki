@@ -135,6 +135,7 @@
     <ClCompile Include="Control_Laboratory.cpp" />
     <ClCompile Include="create_ID.cpp" />
     <ClCompile Include="Cursor.cpp" />
+    <ClCompile Include="find_Route.cpp" />
     <ClCompile Include="Frame.cpp" />
     <ClCompile Include="framerate.cpp" />
     <ClCompile Include="generate_Empty_Lines.cpp" />
@@ -157,9 +158,10 @@
     <ClCompile Include="print_Player_Stats.cpp" />
     <ClCompile Include="Quit.cpp" />
     <ClCompile Include="Road.cpp" />
+    <ClCompile Include="Road_Container.cpp" />
     <ClCompile Include="Screen.cpp" />
     <ClCompile Include="Screen_Object.cpp" />
-    <ClCompile Include="Screen_Object_Container.cpp" />
+    <ClCompile Include="Building_Container.cpp" />
     <ClCompile Include="sell_Building.cpp" />
     <ClCompile Include="simulation.cpp" />
     <ClCompile Include="single_Sound.cpp" />
@@ -168,6 +170,8 @@
     <ClCompile Include="user_Input.cpp" />
     <ClCompile Include="User_Input_Keys.cpp" />
     <ClCompile Include="Warehouse.cpp" />
+    <ClCompile Include="Worker.cpp" />
+    <ClCompile Include="Worker_Container.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Building.h" />
@@ -177,6 +181,7 @@
     <ClInclude Include="Control_Laboratory.h" />
     <ClInclude Include="create_ID.h" />
     <ClInclude Include="Cursor.h" />
+    <ClInclude Include="find_Route.h" />
     <ClInclude Include="Frame.h" />
     <ClInclude Include="framerate.h" />
     <ClInclude Include="generate_Empty_Lines.h" />
@@ -198,9 +203,10 @@
     <ClInclude Include="print_Player_Stats.h" />
     <ClInclude Include="Quit.h" />
     <ClInclude Include="Road.h" />
+    <ClInclude Include="Road_Container.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="Screen_Object.h" />
-    <ClInclude Include="Screen_Object_Container.h" />
+    <ClInclude Include="Building_Container.h" />
     <ClInclude Include="sell_Building.h" />
     <ClInclude Include="simulation.h" />
     <ClInclude Include="single_Sound.h" />
@@ -209,6 +215,8 @@
     <ClInclude Include="user_Input.h" />
     <ClInclude Include="User_Input_Keys.h" />
     <ClInclude Include="Warehouse.h" />
+    <ClInclude Include="Worker.h" />
+    <ClInclude Include="Worker_Container.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

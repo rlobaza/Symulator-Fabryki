@@ -165,7 +165,7 @@
     <ClCompile Include="Own_List.cpp">
       <Filter>Pliki źródłowe\Data Structures</Filter>
     </ClCompile>
-    <ClCompile Include="Screen_Object_Container.cpp">
+    <ClCompile Include="Building_Container.cpp">
       <Filter>Pliki źródłowe\Data Structures</Filter>
     </ClCompile>
     <ClCompile Include="Menu.cpp">
@@ -188,6 +188,18 @@
     </ClCompile>
     <ClCompile Include="single_Sound.cpp">
       <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Worker.cpp">
+      <Filter>Pliki źródłowe\Screen Objects\Workers</Filter>
+    </ClCompile>
+    <ClCompile Include="Worker_Container.cpp">
+      <Filter>Pliki źródłowe\Data Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="Road_Container.cpp">
+      <Filter>Pliki źródłowe\Data Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="find_Route.cpp">
+      <Filter>Pliki źródłowe\Screen Objects\Workers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -284,7 +296,7 @@
     <ClInclude Include="Own_List.h">
       <Filter>Pliki nagłówkowe\Data Structures</Filter>
     </ClInclude>
-    <ClInclude Include="Screen_Object_Container.h">
+    <ClInclude Include="Building_Container.h">
       <Filter>Pliki nagłówkowe\Data Structures</Filter>
     </ClInclude>
     <ClInclude Include="Button.h">
@@ -307,6 +319,18 @@
     </ClInclude>
     <ClInclude Include="single_Sound.h">
       <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Worker.h">
+      <Filter>Pliki nagłówkowe\Screen Objects\Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="Worker_Container.h">
+      <Filter>Pliki nagłówkowe\Data Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Road_Container.h">
+      <Filter>Pliki nagłówkowe\Data Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="find_Route.h">
+      <Filter>Pliki nagłówkowe\Screen Objects\Workers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

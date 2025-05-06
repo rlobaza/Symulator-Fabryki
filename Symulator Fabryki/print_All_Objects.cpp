@@ -4,19 +4,21 @@
 #include <iomanip>
 
 #include "print_All_Objects.h"
-#include "Screen_Object_Container.h"
+#include "Building_Container.h"
+#include "Road_Container.h"
+#include "Worker_Container.h"
 
 
 
-std::string print_All_Objects(Screen_Object_Container& Container)
+std::string print_All_Objects(Building_Container& Buildings)
 {
-	std::lock_guard<std::recursive_mutex> lock(Container.Get_Mutex());
+	std::lock_guard<std::recursive_mutex> lock(Buildings.Get_Mutex());
 
 	std::string str;
 
-	for (int i = 0; i < Container.Get_Buildings().Get_Size(); i++)
+	for (int i = 0; i < Buildings.Get_Buildings().Get_Size(); i++)
 	{
-		str = str + Container.Get_Buildings()[i]->Stats_String(i);
+		str = str + Buildings.Get_Buildings()[i]->Stats_String(i);
 	}
 
 	return str;

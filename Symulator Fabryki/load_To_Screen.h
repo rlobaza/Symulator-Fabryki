@@ -12,7 +12,8 @@
 #include "Staff_Welfare_Area.h"
 #include "Warehouse.h"
 
-#include "Screen_Object_Container.h"
+#include "Building_Container.h"
+#include "Worker_Container.h"
 
 
-void load_To_Screen(Screen&, Screen_Object_Container&);
+void load_To_Screen(Screen&, Building_Container&, Worker_Container&);

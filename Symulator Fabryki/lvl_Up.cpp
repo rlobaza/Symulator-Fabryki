@@ -7,19 +7,23 @@
 #include "Player.h"
 #include "single_Sound.h"
 
+#include "Building_Container.h"
+#include "Road_Container.h"
+#include "Worker_Container.h"
 
-void lvl_Up(Cursor c1, Screen_Object_Container& Container, Player& p1)
+
+void lvl_Up(Cursor c1, Building_Container& Buildings, Player& p1)
 {
-	std::lock_guard<std::recursive_mutex> lock(Container.Get_Mutex());
+	std::lock_guard<std::recursive_mutex> lock(Buildings.Get_Mutex());
 
-	for (int i = 0; i < Container.Get_Buildings().Get_Size(); i++)
+	for (int i = 0; i < Buildings.Get_Buildings().Get_Size(); i++)
 	{
-		if (Container.Get_Buildings()[i]->Get_PosX() == c1.Get_PosX() && Container.Get_Buildings()[i]->Get_PosY() == c1.Get_PosY())
+		if (Buildings.Get_Buildings()[i]->Get_PosX() == c1.Get_PosX() && Buildings.Get_Buildings()[i]->Get_PosY() == c1.Get_PosY())
 		{
-			if (Container.Get_Buildings()[i]->Get_Cost() * (Container.Get_Buildings()[i]->Get_Lvl() + 1) <= p1.Get_Money())
+			if (Buildings.Get_Buildings()[i]->Get_Cost() * (Buildings.Get_Buildings()[i]->Get_Lvl() + 1) <= p1.Get_Money())
 			{
-				p1.Change_Money(-Container.Get_Buildings()[i]->Get_Cost() * (Container.Get_Buildings()[i]->Get_Lvl() + 1));
-				Container.Get_Buildings()[i]->Lvl_Up();
+				p1.Change_Money(-Buildings.Get_Buildings()[i]->Get_Cost() * (Buildings.Get_Buildings()[i]->Get_Lvl() + 1));
+				Buildings.Get_Buildings()[i]->Lvl_Up();
 				single_Sound("Sounds/BUILD");
 			}
 		}

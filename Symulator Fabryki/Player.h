@@ -3,7 +3,6 @@
 #include <vector>
 
 #include "Screen_Object.h"
-#include "Screen_Object_Container.h"
 
 class Player
 {

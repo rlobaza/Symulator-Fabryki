@@ -1,15 +1,17 @@
 #include <vector>
 
 #include "Cursor.h"
-#include "Screen_Object_Container.h"
+#include "Building_Container.h"
+#include "Road_Container.h"
+#include "Worker_Container.h"
 
-bool check_If_Busy(Cursor& c1, Screen_Object_Container& Container)
+bool check_If_Busy(Cursor& c1, Building_Container& Buildings)
 {
-	for (int i = 0; i < Container.Get_Buildings().Get_Size(); i++)
+	for (int i = 0; i < Buildings.Get_Buildings().Get_Size(); i++)
 	{
-		std::lock_guard<std::recursive_mutex> lock(Container.Get_Mutex());
+		std::lock_guard<std::recursive_mutex> lock(Buildings.Get_Mutex());
 
-		if (Container.Get_Buildings()[i]->Get_PosX() == c1.Get_SelX() && Container.Get_Buildings()[i]->Get_PosY() == c1.Get_SelY())
+		if (Buildings.Get_Buildings()[i]->Get_PosX() == c1.Get_SelX() && Buildings.Get_Buildings()[i]->Get_PosY() == c1.Get_SelY())
 		{
 			return true;
 		}

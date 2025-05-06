@@ -1,10 +1,11 @@
 #pragma once
 
+#include <mutex>
 
 #include "Building.h"
 #include "Own_List.h"
 
-class Screen_Object_Container
+class Building_Container
 {
 
 private:
@@ -15,8 +16,8 @@ private:
 
 public:
 
-	Screen_Object_Container();
-	~Screen_Object_Container();
+	Building_Container();
+	~Building_Container();
 
 	void Add_Buildings(Building*);
 	void Remove_Buildings();

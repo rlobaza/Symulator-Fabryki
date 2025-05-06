@@ -4,11 +4,13 @@
 
 
 #include "Cursor.h"
-#include "Screen_Object_Container.h"
+#include "Building_Container.h"
+#include "Road_Container.h"
+#include "Worker_Container.h"
 #include "Player.h"
 
 
 
 
 
-void lvl_Up(Cursor, Screen_Object_Container&, Player&);
+void lvl_Up(Cursor, Building_Container&, Player&);

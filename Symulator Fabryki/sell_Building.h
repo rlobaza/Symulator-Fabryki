@@ -1,8 +1,10 @@
 #pragma once
 
-#include "Screen_Object_Container.h"
+#include "Building_Container.h"
+#include "Road_Container.h"
+#include "Worker_Container.h"
 #include "Cursor.h"
 #include "Player.h"
 
 
-void sell_Building(Cursor&, Screen_Object_Container&, Player&);
+void sell_Building(Cursor&, Building_Container&, Road_Container&, Player&);

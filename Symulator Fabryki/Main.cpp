@@ -7,6 +7,7 @@
 #include <ctime>
 #include <semaphore>
 #include "windows.h"
+#include <fstream>
 
 //threads
 #include "user_Input.h"
@@ -25,7 +26,9 @@
 
 //screen objects
 #include "Screen_Object.h"
-#include "Screen_Object_Container.h"
+#include "Building_Container.h"
+#include "Road_Container.h"
+#include "Worker_Container.h"
 #include "Control_Laboratory.h"
 #include "Loading_Ramp.h"
 #include "Packaging_Area.h"
@@ -65,7 +68,11 @@ int main()
 	Cursor c1;
 	Player p1;
 	Clock clk(framerate());
-	Screen_Object_Container Container;
+
+	Building_Container Buildings;
+	Road_Container Roads;
+	Worker_Container Workers;
+
 	Frame frm;
 
 
@@ -78,9 +85,9 @@ int main()
 
 	std::thread Input_Thread(user_Input, std::ref(Input), std::ref(Gameover));
 
-	std::thread Input_Keys_Thread(user_Input_Keys, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Container), std::ref(In_Menu), std::ref(menu_1));
+	std::thread Input_Keys_Thread(user_Input_Keys, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Buildings), std::ref(Workers), std::ref(Roads), std::ref(In_Menu), std::ref(menu_1));
 
-	std::thread Simulation_Thread(simulation, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Container));
+	std::thread Simulation_Thread(simulation, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Buildings), std::ref(Workers));
 
 	
 
@@ -119,7 +126,7 @@ int main()
 
 			s1.Clear();
 
-			load_To_Screen(s1, Container);
+			load_To_Screen(s1, Buildings, Workers);
 
 			s1.Input(c1.Get_PosX(), c1.Get_PosY(), c1.Get_Icon());
 
@@ -138,7 +145,7 @@ int main()
 
 			frm.Add_To_Frame(print_Player_Stats(p1));
 
-			frm.Add_To_Frame(print_All_Objects(Container));
+			frm.Add_To_Frame(print_All_Objects(Buildings));
 
 			frm.Add_To_Frame(clk.Print_FPS());
 
