@@ -94,7 +94,7 @@ void Own_List<T>::Push_Back(T param)
 
 	if (Head == nullptr)
 	{
-		std::cout << "dodano element na: " << smrt_ptr.get() << " " << param << std::endl;
+		//std::cout << "dodano element na: " << smrt_ptr.get() << " " << param << std::endl;
 		Head = std::move(smrt_ptr);
 		Tail = Head.get();
 		Size++;
@@ -110,7 +110,7 @@ void Own_List<T>::Push_Back(T param)
 		current = current->Get_Next();
 	}
 
-	std::cout << "dodano element na: " << smrt_ptr.get() << " " << param << std::endl;
+	//std::cout << "dodano element na: " << smrt_ptr.get() << " " << param << std::endl;
 
 	current->Set_Next(std::move(smrt_ptr));
 

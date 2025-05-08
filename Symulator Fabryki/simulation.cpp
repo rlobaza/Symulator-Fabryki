@@ -32,6 +32,13 @@ void simulation(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1,
 		for (int i = 0; i < Buildings.Get_Buildings().Get_Size(); i++)
 		{
 			Buildings.Get_Buildings()[i]->Simulate();
+			Buildings.Get_Buildings()[i]->Check_If_Ready();
+		}
+
+		std::lock_guard<std::recursive_mutex> lock2(Workers.Get_Mutex());
+		for (int i = 0; i < Workers.Get_Workers().Get_Size(); i++)
+		{
+			Workers.Get_Workers()[i]->Simulate();
 		}
 
 	}

@@ -72,3 +72,8 @@ int Warehouse::Get_Cost()
 {
 	return Cost;
 }
+
+void Warehouse::Check_If_Ready()
+{
+	Is_Ready = false;
+}

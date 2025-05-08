@@ -46,6 +46,7 @@
 #include "initial_Buffer.h"
 #include "next_Frame.h"
 #include "generate_Empty_Lines.h"
+#include "find_Target.h"
 
 //UI
 #include "Menu.h"
@@ -112,11 +113,10 @@ int main()
 
 			frm.Add_To_Frame(generate_Empty_Lines(15));
 
-			frm.Add_To_Frame(clk.Print_FPS());
-
 
 
 			frm.Print_Frame();
+
 		}
 
 		if (In_Menu == false)
@@ -148,6 +148,14 @@ int main()
 			frm.Add_To_Frame(print_All_Objects(Buildings));
 
 			frm.Add_To_Frame(clk.Print_FPS());
+
+			if (Workers.Get_Workers().Get_Size() != 0)
+			{
+				frm.Add_To_Frame(std::to_string(Workers.Get_Workers()[0]->Get_Route().size()));
+			}
+
+			if(find_Target(Buildings) != nullptr)
+			frm.Add_To_Frame("TRUE");
 
 
 

@@ -8,7 +8,7 @@ int Road::Cost = 10;
 
 char Road::Icon = '°';
 
-Road::Road(int x, int y) : Is_Visited(false)
+Road::Road(int x, int y) : Is_Visited(false), Distance(9999), Previous(nullptr)
 {
 	this->Calculate_Storage();
 	this->Set_PosX(x);
@@ -25,6 +25,21 @@ void Road::Set_Is_Visited(bool param)
 	Is_Visited = param;
 }
 
+void Road::Set_Distance(int param)
+{
+	Distance = param;
+}
+
+void Road::Set_Previous(Road* param)
+{
+	Previous = param;
+}
+
+void Road::Set_Is_Added(bool param)
+{
+	Is_Added = param;
+}
+
 bool Road::Get_Is_Visited()
 {
 	return Is_Visited;
@@ -33,6 +48,21 @@ bool Road::Get_Is_Visited()
 Own_List<Road*>& Road::Get_Connected()
 {
 	return Connected;
+}
+
+int Road::Get_Distance()
+{
+	return Distance;
+}
+
+Road* Road::Get_Previous()
+{
+	return Previous;
+}
+
+bool Road::Get_Is_Added()
+{
+	return Is_Added;
 }
 
 void Road::Lvl_Up()
@@ -89,4 +119,9 @@ void Road::Simulate()
 int Road::Get_Cost()
 {
 	return Cost;
+}
+
+void Road::Check_If_Ready()
+{
+	Is_Ready = false;
 }

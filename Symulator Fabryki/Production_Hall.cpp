@@ -67,3 +67,8 @@ int Production_Hall::Get_Cost()
 {
 	return Cost;
 }
+
+void Production_Hall::Check_If_Ready()
+{
+	Is_Ready = false;
+}

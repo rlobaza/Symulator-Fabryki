@@ -26,4 +26,5 @@ public:
 	virtual char Get_Icon();
 	virtual void Simulate();
 	virtual int Get_Cost();
+	virtual void Check_If_Ready();
 };

@@ -7,4 +7,4 @@
 #include "Own_List.h"
 #include "Road_Container.h"
 
-void find_Route(Worker*, Building*, Road_Container&, std::queue<char>&);
+void find_Route(Worker*, Building*, Road_Container&, std::queue<Road*>&);

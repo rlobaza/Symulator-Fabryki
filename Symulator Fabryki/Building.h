@@ -22,6 +22,8 @@ protected:
 	int Ready_Products_Storage_Used;
 	int Packed_Products_Storage_Used;
 
+	bool Is_Ready;
+
 
 
 public:
@@ -40,6 +42,7 @@ public:
 	virtual int Get_Sorted_Materials_Storage_Used();
 	virtual int Get_Ready_Products_Storage_Used();
 	virtual int Get_Packed_Products_Storage_Used();
+	bool Get_Is_Ready();
 
 	virtual void Set_Lvl(int);
 
@@ -52,9 +55,11 @@ public:
 	virtual void Set_Sorted_Materials_Storage_Used(int);
 	virtual void Set_Ready_Products_Storage_Used(int);
 	virtual void Set_Packed_Products_Storage_Used(int);
+	void Set_Is_Ready(bool);
 
 	virtual void Lvl_Up() = 0;
 	virtual void Calculate_Storage() = 0;
 	virtual std::string Stats_String(int) = 0;
 	virtual int Get_Cost() = 0;
+	virtual void Check_If_Ready() = 0;
 };

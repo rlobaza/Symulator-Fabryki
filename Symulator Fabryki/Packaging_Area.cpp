@@ -74,3 +74,8 @@ int Packaging_Area::Get_Cost()
 {
 	return Cost;
 }
+
+void Packaging_Area::Check_If_Ready()
+{
+	Is_Ready = false;
+}

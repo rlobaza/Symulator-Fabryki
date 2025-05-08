@@ -20,6 +20,8 @@ void load_To_Screen(Screen& s1, Building_Container& Buildings, Worker_Container&
 		s1.Input(Buildings.Get_Buildings()[i]->Get_PosX(), Buildings.Get_Buildings()[i]->Get_PosY(), Buildings.Get_Buildings()[i]->Get_Icon());
 	}
 
+	std::lock_guard<std::recursive_mutex> lock2(Workers.Get_Mutex());
+
 	for (int i = 0; i < Workers.Get_Workers().Get_Size(); i++)
 	{
 		s1.Input(Workers.Get_Workers()[i]->Get_PosX(), Workers.Get_Workers()[i]->Get_PosY(), Workers.Get_Workers()[i]->Get_Icon());

@@ -67,3 +67,8 @@ int Sorting_Area::Get_Cost()
 {
 	return Cost;
 }
+
+void Sorting_Area::Check_If_Ready()
+{
+	Is_Ready = false;
+}

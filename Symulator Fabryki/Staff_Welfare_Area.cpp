@@ -67,3 +67,8 @@ int Staff_Welfare_Area::Get_Cost()
 {
 	return Cost;
 }
+
+void Staff_Welfare_Area::Check_If_Ready()
+{
+	Is_Ready = false;
+}

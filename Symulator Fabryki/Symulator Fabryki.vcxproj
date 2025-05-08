@@ -131,11 +131,13 @@
     <ClCompile Include="Building.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="check_If_Busy.cpp" />
+    <ClCompile Include="check_If_Road.cpp" />
     <ClCompile Include="Clock.cpp" />
     <ClCompile Include="Control_Laboratory.cpp" />
     <ClCompile Include="create_ID.cpp" />
     <ClCompile Include="Cursor.cpp" />
     <ClCompile Include="find_Route.cpp" />
+    <ClCompile Include="find_Target.cpp" />
     <ClCompile Include="Frame.cpp" />
     <ClCompile Include="framerate.cpp" />
     <ClCompile Include="generate_Empty_Lines.cpp" />
@@ -177,11 +179,13 @@
     <ClInclude Include="Building.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="check_If_Busy.h" />
+    <ClInclude Include="check_If_Road.h" />
     <ClInclude Include="Clock.h" />
     <ClInclude Include="Control_Laboratory.h" />
     <ClInclude Include="create_ID.h" />
     <ClInclude Include="Cursor.h" />
     <ClInclude Include="find_Route.h" />
+    <ClInclude Include="find_Target.h" />
     <ClInclude Include="Frame.h" />
     <ClInclude Include="framerate.h" />
     <ClInclude Include="generate_Empty_Lines.h" />

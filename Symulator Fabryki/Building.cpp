@@ -20,6 +20,8 @@ Building::Building()
 	Sorted_Materials_Storage_Used = 0;
 	Ready_Products_Storage_Used = 0;
 	Packed_Products_Storage_Used = 0;
+
+	Is_Ready = false;
 }
 
 Building::~Building()
@@ -77,6 +79,11 @@ int Building::Get_Packed_Products_Storage_Used()
 	return Packed_Products_Storage_Used;
 }
 
+bool Building::Get_Is_Ready()
+{
+	return Is_Ready;
+}
+
 void Building::Set_Lvl(int param)
 {
 	Lvl = param;
@@ -125,4 +132,9 @@ void Building::Set_Ready_Products_Storage_Used(int param)
 void Building::Set_Packed_Products_Storage_Used(int param)
 {
 	Packed_Products_Storage_Used = param;
+}
+
+void Building::Set_Is_Ready(bool param)
+{
+	Is_Ready = param;
 }

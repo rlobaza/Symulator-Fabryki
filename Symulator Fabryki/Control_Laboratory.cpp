@@ -65,3 +65,8 @@ int Control_Laboratory::Get_Cost()
 {
 	return Cost;
 }
+
+void Control_Laboratory::Check_If_Ready()
+{
+	Is_Ready = false;
+}

@@ -204,9 +204,9 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 			{
 				Workers.Get_Mutex().lock();
 
-				if (check_If_Busy(c1, Buildings) == false)
+				if (true)
 				{
-					Worker* worker = new Worker(c1.Get_SelX(), c1.Get_SelY());
+					Worker* worker = new Worker(c1.Get_SelX(), c1.Get_SelY(), Roads, Buildings);
 					Workers.Add_Workers(worker);
 					c1.Unselect();
 				}
@@ -216,14 +216,12 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 
 			if (Input == '-') //Worker -
 			{
-				Workers.Get_Mutex().lock();
+				std::lock_guard<std::recursive_mutex> lock(Workers.Get_Mutex());
 
 				if (Workers.Get_Workers().Get_Size() > 0)
 				{
 					Workers.Get_Workers().Erase(Workers.Get_Workers().Get_Size() - 1);
 				}
-
-				Workers.Get_Mutex().unlock();
 			}
 
 			if (Input == 'x' && c1.Get_Is_Locked() == true) //sell building

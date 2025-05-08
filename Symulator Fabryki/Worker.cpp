@@ -1,13 +1,16 @@
 
 #include <queue>
-
+#include <iostream>
 
 
 #include "Worker.h"
 #include "Screen_Object.h"
 #include "Building.h"
+#include "find_Route.h"
+#include "Road_Container.h"
+#include "find_Target.h"
 
-Worker::Worker(int x, int y) : Is_Working(false), Target(nullptr), Is_On_Road(false), Cost(1), Icon('~')
+Worker::Worker(int x, int y, Road_Container& roads, Building_Container& buildings) : Is_Working(false), Target(nullptr), Is_On_Road(false), Cost(1), Icon('~'), Roads(roads), Buildings(buildings)
 {
 	this->Set_PosX(x);
 	this->Set_PosY(y);
@@ -38,7 +41,7 @@ void Worker::Set_Is_On_Road(bool param)
 	Is_On_Road = param;
 }
 
-void Worker::Set_Route(std::queue<char> param)
+void Worker::Set_Route(std::queue<Road*> param)
 {
 	Route = param;
 }
@@ -68,7 +71,7 @@ bool& Worker::Get_Is_On_Road()
 	return Is_On_Road;
 }
 
-std::queue<char>& Worker::Get_Route()
+std::queue<Road*>& Worker::Get_Route()
 {
 	return Route;
 }
@@ -78,24 +81,37 @@ Building* Worker::Get_Target()
 	return Target;
 }
 
-Building* Worker::Find_Target()
-{
-	return nullptr;
-}
-
 void Worker::Simulate()
 {
 
 	if (Is_Working == false)
 	{
-		Find_Target();
+		Target = find_Target(Buildings);
 
-		if (Target != nullptr)
+		if (Target != nullptr && Is_Working == false)
 		{
+			find_Route(this, Target, Roads, Route);
+			Set_Is_Working(true);
 		}
-		
-		Set_Is_Working(true);
+
+	}
+
+	if (Route.empty() == false)
+	{
+		Go();
+	}
+
+	if (Route.empty() == true)
+	{
+		Set_Is_Working(false);
 	}
 
 
+}
+
+void Worker::Go()
+{
+	Set_PosX(Route.front()->Get_PosX());
+	Set_PosY(Route.front()->Get_PosY());
+	Route.pop();
 }
