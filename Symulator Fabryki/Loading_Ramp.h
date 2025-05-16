@@ -11,6 +11,7 @@ protected:
 
 	static int Cost;
 	static char Icon;
+	static std::string Name;
 
 public:
 
@@ -21,6 +22,7 @@ public:
 	virtual void Lvl_Up();
 	virtual void Calculate_Storage();
 	virtual std::string Stats_String(int);
+	virtual std::string Get_Name();
 
 	//Screen_Object:
 	virtual char Get_Icon();

@@ -20,6 +20,7 @@ Building_Container::~Building_Container()
 
 void Building_Container::Add_Buildings(Building* ptr)
 {
+	std::lock_guard<std::recursive_mutex> lock(mtx);
 	Buildings.Push_Back(ptr);
 }
 

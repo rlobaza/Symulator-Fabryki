@@ -8,6 +8,8 @@ int Staff_Welfare_Area::Cost = 100;
 
 char Staff_Welfare_Area::Icon = 'Z';
 
+std::string Staff_Welfare_Area::Name = "Staff_Welfare_Area";
+
 Staff_Welfare_Area::Staff_Welfare_Area(int x, int y)
 {
 	this->Calculate_Storage();
@@ -18,6 +20,11 @@ Staff_Welfare_Area::Staff_Welfare_Area(int x, int y)
 Staff_Welfare_Area::~Staff_Welfare_Area()
 {
 
+}
+
+std::string Staff_Welfare_Area::Get_Name()
+{
+	return Name;
 }
 
 void Staff_Welfare_Area::Lvl_Up()

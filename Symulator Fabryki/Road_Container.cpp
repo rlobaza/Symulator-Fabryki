@@ -19,6 +19,7 @@ Road_Container::~Road_Container()
 
 void Road_Container::Add_Roads(Road* ptr)
 {
+	std::lock_guard<std::recursive_mutex> lock(mtx);
 	Roads.Push_Back(ptr);
 	Find_Connected();
 }

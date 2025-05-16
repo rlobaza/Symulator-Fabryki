@@ -8,6 +8,8 @@ int Packaging_Area::Cost = 100;
 
 char Packaging_Area::Icon = 'P';
 
+std::string Packaging_Area::Name = "Packaging_Area";
+
 Packaging_Area::Packaging_Area(int x, int y)
 {
 	this->Calculate_Storage();
@@ -23,6 +25,11 @@ Packaging_Area::Packaging_Area(int x, int y)
 Packaging_Area::~Packaging_Area()
 {
 
+}
+
+std::string Packaging_Area::Get_Name()
+{
+	return Name;
 }
 
 void Packaging_Area::Lvl_Up()

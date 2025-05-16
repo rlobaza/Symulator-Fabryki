@@ -13,4 +13,4 @@
 
 
 
-void lvl_Up(Cursor, Building_Container&, Player&);
+bool lvl_Up(Cursor, Building_Container&, Player&);

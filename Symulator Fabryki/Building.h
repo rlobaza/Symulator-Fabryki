@@ -62,4 +62,5 @@ public:
 	virtual std::string Stats_String(int) = 0;
 	virtual int Get_Cost() = 0;
 	virtual void Check_If_Ready() = 0;
+	virtual std::string Get_Name() = 0;
 };

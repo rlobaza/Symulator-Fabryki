@@ -149,14 +149,6 @@ int main()
 
 			frm.Add_To_Frame(clk.Print_FPS());
 
-			if (Workers.Get_Workers().Get_Size() != 0)
-			{
-				frm.Add_To_Frame(std::to_string(Workers.Get_Workers()[0]->Get_Route().size()));
-			}
-
-			if(find_Target(Buildings) != nullptr)
-			frm.Add_To_Frame("TRUE");
-
 
 
 			frm.Print_Frame();

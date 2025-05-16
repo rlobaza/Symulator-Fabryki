@@ -8,6 +8,8 @@ int Warehouse::Cost = 100;
 
 char Warehouse::Icon = 'M';
 
+std::string Warehouse::Name = "Warehouse";
+
 Warehouse::Warehouse(int x, int y)
 {
 	this->Calculate_Storage();
@@ -23,6 +25,11 @@ Warehouse::Warehouse(int x, int y)
 Warehouse::~Warehouse()
 {
 
+}
+
+std::string Warehouse::Get_Name()
+{
+	return Name;
 }
 
 void Warehouse::Lvl_Up()

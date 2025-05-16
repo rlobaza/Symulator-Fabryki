@@ -26,7 +26,6 @@ void find_Route(Worker* worker, Building* building, Road_Container& Roads, std::
 	{
 		if (Roads.Get_Roads()[i]->Get_PosX() == worker->Get_PosX() && Roads.Get_Roads()[i]->Get_PosY() == worker->Get_PosY())
 		{
-			std::cout << "START" << std::endl;
 			start = Roads.Get_Roads()[i];
 		}
 	}

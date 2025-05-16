@@ -17,6 +17,7 @@ Worker_Container::~Worker_Container()
 
 void Worker_Container::Add_Workers(Worker* ptr)
 {
+	std::lock_guard<std::recursive_mutex> lock(mtx);
 	Workers.Push_Back(ptr);
 }
 

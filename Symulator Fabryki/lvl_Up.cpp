@@ -12,7 +12,7 @@
 #include "Worker_Container.h"
 
 
-void lvl_Up(Cursor c1, Building_Container& Buildings, Player& p1)
+bool lvl_Up(Cursor c1, Building_Container& Buildings, Player& p1)
 {
 	std::lock_guard<std::recursive_mutex> lock(Buildings.Get_Mutex());
 
@@ -25,6 +25,12 @@ void lvl_Up(Cursor c1, Building_Container& Buildings, Player& p1)
 				p1.Change_Money(-Buildings.Get_Buildings()[i]->Get_Cost() * (Buildings.Get_Buildings()[i]->Get_Lvl() + 1));
 				Buildings.Get_Buildings()[i]->Lvl_Up();
 				single_Sound("Sounds/BUILD");
+				return true;
+			}
+			else
+			{
+				single_Sound("Sounds/OFF");
+				return false;
 			}
 		}
 	}

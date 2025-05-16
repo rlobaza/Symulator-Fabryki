@@ -28,16 +28,16 @@ void simulation(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1,
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
-		std::lock_guard<std::recursive_mutex> lock(Buildings.Get_Mutex());
 		for (int i = 0; i < Buildings.Get_Buildings().Get_Size(); i++)
 		{
+			std::lock_guard<std::recursive_mutex> lock1(Buildings.Get_Mutex());
 			Buildings.Get_Buildings()[i]->Simulate();
 			Buildings.Get_Buildings()[i]->Check_If_Ready();
 		}
 
-		std::lock_guard<std::recursive_mutex> lock2(Workers.Get_Mutex());
 		for (int i = 0; i < Workers.Get_Workers().Get_Size(); i++)
 		{
+			std::lock_guard<std::recursive_mutex> lock2(Workers.Get_Mutex());
 			Workers.Get_Workers()[i]->Simulate();
 		}
 

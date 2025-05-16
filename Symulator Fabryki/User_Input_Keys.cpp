@@ -16,6 +16,7 @@
 #include "Warehouse.h"
 #include "Player.h"
 #include "check_If_Busy.h"
+#include "check_If_Road.h"
 #include "sell_Building.h"
 #include "lvl_Up.h"
 
@@ -121,11 +122,19 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 					Loading_Ramp* building = new Loading_Ramp(c1.Get_SelX(), c1.Get_SelY());
 					if (p1.Get_Money() >= building->Get_Cost())
 					{
-						p1.Change_Money(-building->Get_Cost());
+						p1.Change_Money(-building->Get_Cost()); 
 						Buildings.Add_Buildings(building);
 						c1.Unselect();
 						single_Sound("Sounds/COLLAPSE");
 					}
+					else
+					{
+						single_Sound("Sounds/OFF");
+					}
+				}
+				else
+				{
+					single_Sound("Sounds/OFF");
 				}
 			}
 
@@ -146,6 +155,14 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 						c1.Unselect();
 						single_Sound("Sounds/COLLAPSE");
 					}
+					else
+					{
+						single_Sound("Sounds/OFF");
+					}
+				}
+				else
+				{
+					single_Sound("Sounds/OFF");
 				}
 			}
 
@@ -162,6 +179,14 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 						c1.Unselect();
 						single_Sound("Sounds/COLLAPSE");
 					}
+					else
+					{
+						single_Sound("Sounds/OFF");
+					}
+				}
+				else
+				{
+					single_Sound("Sounds/OFF");
 				}
 			}
 
@@ -177,6 +202,14 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 						c1.Unselect();
 						single_Sound("Sounds/COLLAPSE");
 					}
+					else
+					{
+						single_Sound("Sounds/OFF");
+					}
+				}
+				else
+				{
+					single_Sound("Sounds/OFF");
 				}
 			}
 
@@ -197,21 +230,31 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 						c1.Unselect();
 						single_Sound("Sounds/COLLAPSE");
 					}
+					else
+					{
+						single_Sound("Sounds/OFF");
+					}
+				}
+				else
+				{
+					single_Sound("Sounds/OFF");
 				}
 			}
 
 			if (Input == '+' && c1.Get_Is_Locked() == true) //Worker +
 			{
-				Workers.Get_Mutex().lock();
+				std::lock_guard<std::recursive_mutex> lock(Workers.Get_Mutex());
 
-				if (true)
+				if (check_If_Road(c1.Get_SelX(), c1.Get_SelY(), Buildings) == true)
 				{
 					Worker* worker = new Worker(c1.Get_SelX(), c1.Get_SelY(), Roads, Buildings);
 					Workers.Add_Workers(worker);
 					c1.Unselect();
 				}
-
-				Workers.Get_Mutex().unlock();
+				else
+				{
+					single_Sound("Sounds/OFF");
+				}
 			}
 
 			if (Input == '-') //Worker -
@@ -237,8 +280,10 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 			{
 				if (check_If_Busy(c1, Buildings) == true)
 				{
-					lvl_Up(c1, Buildings, p1);
-					c1.Unselect();
+					if (lvl_Up(c1, Buildings, p1) == true)
+					{
+						c1.Unselect();
+					}
 				}
 			}
 		}

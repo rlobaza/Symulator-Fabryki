@@ -8,6 +8,8 @@ int Loading_Ramp::Cost = 100;
 
 char Loading_Ramp::Icon = 'R';
 
+std::string Loading_Ramp::Name = "Loading_Ramp";
+
 Loading_Ramp::Loading_Ramp(int x, int y)
 {
 	this->Calculate_Storage();
@@ -21,6 +23,11 @@ Loading_Ramp::Loading_Ramp(int x, int y)
 Loading_Ramp::~Loading_Ramp()
 {
 
+}
+
+std::string Loading_Ramp::Get_Name()
+{
+	return Name;
 }
 
 void Loading_Ramp::Lvl_Up()

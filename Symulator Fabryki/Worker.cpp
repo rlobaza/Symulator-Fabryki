@@ -10,7 +10,7 @@
 #include "Road_Container.h"
 #include "find_Target.h"
 
-Worker::Worker(int x, int y, Road_Container& roads, Building_Container& buildings) : Is_Working(false), Target(nullptr), Is_On_Road(false), Cost(1), Icon('~'), Roads(roads), Buildings(buildings)
+Worker::Worker(int x, int y, Road_Container& roads, Building_Container& buildings) : Is_Working(false), Target(nullptr), Is_On_Road(false), Cost(1), Icon('?'), Roads(roads), Buildings(buildings)
 {
 	this->Set_PosX(x);
 	this->Set_PosY(y);
@@ -91,7 +91,12 @@ void Worker::Simulate()
 		if (Target != nullptr && Is_Working == false)
 		{
 			find_Route(this, Target, Roads, Route);
-			Set_Is_Working(true);
+			if (Route.size() != 0)
+			{
+				Set_Is_Working(true);
+				Set_Icon('!');
+			}
+			
 		}
 
 	}

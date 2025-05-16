@@ -8,6 +8,8 @@ int Control_Laboratory::Cost = 100;
 
 char Control_Laboratory::Icon = 'L';
 
+std::string Control_Laboratory::Name = "Control_Laboratory";
+
 Control_Laboratory::Control_Laboratory(int x, int y)
 {
 	this->Calculate_Storage();
@@ -18,6 +20,11 @@ Control_Laboratory::Control_Laboratory(int x, int y)
 Control_Laboratory::~Control_Laboratory()
 {
 
+}
+
+std::string Control_Laboratory::Get_Name()
+{
+	return Name;
 }
 
 void Control_Laboratory::Lvl_Up()

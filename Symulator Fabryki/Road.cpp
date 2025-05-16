@@ -6,7 +6,9 @@
 
 int Road::Cost = 10;
 
-char Road::Icon = '°';
+char Road::Icon = '_';
+
+std::string Road::Name = "Road";
 
 Road::Road(int x, int y) : Is_Visited(false), Distance(9999), Previous(nullptr)
 {
@@ -18,6 +20,11 @@ Road::Road(int x, int y) : Is_Visited(false), Distance(9999), Previous(nullptr)
 Road::~Road()
 {
 
+}
+
+std::string Road::Get_Name()
+{
+	return Name;
 }
 
 void Road::Set_Is_Visited(bool param)
@@ -91,7 +98,7 @@ std::string Road::Stats_String(int i)
 {
 	std::string str = "";
 
-	str = str + "Droga " + std::to_string(i + 1) + '\n';
+	/*str = str + "Droga " + std::to_string(i + 1) + '\n';
 	str = str + "ID: " + std::to_string(ID) + '\n';
 
 	str = str + "Polaczenia: " + std::to_string(Connected.Get_Size()) + '\n';
@@ -101,7 +108,7 @@ std::string Road::Stats_String(int i)
 		str = str + std::to_string(Connected[i]->ID) + " ";
 	}
 	str = str + '\n';
-	str = str + '\n';
+	str = str + '\n';*/
 
 	return str;
 }

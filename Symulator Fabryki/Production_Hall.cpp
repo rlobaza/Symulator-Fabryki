@@ -8,6 +8,8 @@ int Production_Hall::Cost = 250;
 
 char Production_Hall::Icon = 'H';
 
+std::string Production_Hall::Name = "Production_Hall";
+
 Production_Hall::Production_Hall(int x, int y)
 {
 	this->Calculate_Storage();
@@ -18,6 +20,11 @@ Production_Hall::Production_Hall(int x, int y)
 Production_Hall::~Production_Hall()
 {
 
+}
+
+std::string Production_Hall::Get_Name()
+{
+	return Name;
 }
 
 void Production_Hall::Lvl_Up()

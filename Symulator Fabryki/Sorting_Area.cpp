@@ -8,6 +8,8 @@ int Sorting_Area::Cost = 100;
 
 char Sorting_Area::Icon = 'S';
 
+std::string Sorting_Area::Name = "Sorting_Area";
+
 Sorting_Area::Sorting_Area(int x, int y)
 {
 	this->Calculate_Storage();
@@ -18,6 +20,11 @@ Sorting_Area::Sorting_Area(int x, int y)
 Sorting_Area::~Sorting_Area()
 {
 
+}
+
+std::string Sorting_Area::Get_Name()
+{
+	return Name;
 }
 
 void Sorting_Area::Lvl_Up()
