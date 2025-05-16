@@ -11,7 +11,7 @@
 
 void sell_Building(Cursor& c1, Building_Container& Buildings, Road_Container& Roads, Player& p1)
 {
-	std::lock_guard<std::recursive_mutex> lock(Buildings.Get_Mutex());
+	std::lock_guard<std::recursive_mutex> lock1(Buildings.Get_Mutex());
 
 	for (int i = 0; i < Buildings.Get_Buildings().Get_Size(); i++)
 	{
@@ -25,13 +25,15 @@ void sell_Building(Cursor& c1, Building_Container& Buildings, Road_Container& Ro
 
 	}
 
+	std::lock_guard<std::recursive_mutex> lock2(Roads.Get_Mutex());
+
 	for (int i = 0; i < Roads.Get_Roads().Get_Size(); i++)
 	{
 
 		if (Roads.Get_Roads()[i]->Get_PosX() == c1.Get_SelX() && Roads.Get_Roads()[i]->Get_PosY() == c1.Get_SelY())
 		{
 			delete Roads.Get_Roads()[i];
-			Roads.Remove_Roads(i);
+			Roads.Get_Roads().Erase(i);
 			i--;
 		}
 
