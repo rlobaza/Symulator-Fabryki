@@ -169,6 +169,9 @@
     <ClCompile Include="single_Sound.cpp" />
     <ClCompile Include="Sorting_Area.cpp" />
     <ClCompile Include="Staff_Welfare_Area.cpp" />
+    <ClCompile Include="Task.cpp" />
+    <ClCompile Include="Task_Container.cpp" />
+    <ClCompile Include="update_Tasks.cpp" />
     <ClCompile Include="user_Input.cpp" />
     <ClCompile Include="User_Input_Keys.cpp" />
     <ClCompile Include="Warehouse.cpp" />
@@ -216,6 +219,9 @@
     <ClInclude Include="single_Sound.h" />
     <ClInclude Include="Sorting_Area.h" />
     <ClInclude Include="Staff_Welfare_Area.h" />
+    <ClInclude Include="Task.h" />
+    <ClInclude Include="Task_Container.h" />
+    <ClInclude Include="update_Tasks.h" />
     <ClInclude Include="user_Input.h" />
     <ClInclude Include="User_Input_Keys.h" />
     <ClInclude Include="Warehouse.h" />

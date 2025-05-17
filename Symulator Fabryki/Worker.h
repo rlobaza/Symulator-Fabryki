@@ -10,10 +10,10 @@
 #include "Road.h"
 #include "Road_Container.h"
 #include "find_Target.h"
+#include "Task.h"
 
 
-
-
+class Task;
 
 class Worker : public Screen_Object
 {
@@ -25,8 +25,10 @@ private:
 
 	bool Is_Working;
 	bool Is_On_Road;
+
+	Task* Current_Task;
+
 	std::queue<Road*> Route;
-	Building* Target;
 	Road_Container& Roads;
 	Building_Container& Buildings;
 
@@ -40,15 +42,15 @@ public:
 	void Set_Icon(char);
 	void Set_Is_Working(bool);
 	void Set_Is_On_Road(bool);
+	void Set_Current_Task(Task*);
 	void Set_Route(std::queue<Road*>);
-	void Set_Target(Building*);
 
 	int Get_Cost();
 	char Get_Icon();
 	bool& Get_Is_Working();
 	bool& Get_Is_On_Road();
+	Task* Get_Current_Task();
 	std::queue<Road*>& Get_Route();
-	Building* Get_Target();
 
 	virtual void Simulate();
 	void Go();

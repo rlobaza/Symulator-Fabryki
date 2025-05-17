@@ -207,6 +207,15 @@
     <ClCompile Include="check_If_Road.cpp">
       <Filter>Pliki źródłowe\Screen Objects\Workers</Filter>
     </ClCompile>
+    <ClCompile Include="Task.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Task_Container.cpp">
+      <Filter>Pliki źródłowe\Data Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="update_Tasks.cpp">
+      <Filter>Pliki źródłowe\Functions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -343,6 +352,15 @@
     </ClInclude>
     <ClInclude Include="check_If_Road.h">
       <Filter>Pliki nagłówkowe\Screen Objects\Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="Task.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Task_Container.h">
+      <Filter>Pliki nagłówkowe\Data Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="update_Tasks.h">
+      <Filter>Pliki nagłówkowe\Functions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

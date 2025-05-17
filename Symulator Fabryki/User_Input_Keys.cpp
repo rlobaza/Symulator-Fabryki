@@ -29,6 +29,9 @@
 #include "Worker.h"
 #include "find_Route.h"
 
+#include "Task.h"
+#include "Task_Container.h"
+
 
 void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Building_Container& Buildings, Worker_Container& Workers, Road_Container& Roads, bool& In_Menu, Menu& menu_1)
 {

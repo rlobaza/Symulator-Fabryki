@@ -8,6 +8,7 @@
 Building* find_Target(Building_Container& Buildings)
 {
 	std::lock_guard<std::recursive_mutex> lock(Buildings.Get_Mutex());
+
 	for (int i = 0; i < Buildings.Get_Buildings().Get_Size(); i++)
 	{
 		if (Buildings.Get_Buildings()[i]->Get_Is_Ready() == true)

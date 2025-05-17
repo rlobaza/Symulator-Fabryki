@@ -55,6 +55,11 @@
 #include "Load_Game.h"
 #include "Quit.h"
 
+//tasks
+#include "Task.h"
+#include "Task_Container.h"
+#include "update_Tasks.h"
+
 
 int main()
 {
@@ -73,6 +78,7 @@ int main()
 	Building_Container Buildings;
 	Road_Container Roads;
 	Worker_Container Workers;
+	Task_Container Tasks;
 
 	Frame frm;
 
@@ -148,6 +154,10 @@ int main()
 			frm.Add_To_Frame(print_All_Objects(Buildings));
 
 			frm.Add_To_Frame(clk.Print_FPS());
+
+			////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!WYWALIC POTEM
+			update_Tasks(Buildings, Tasks, Workers);
+			frm.Add_To_Frame(std::to_string(Tasks.Get_Tasks().Get_Size()));
 
 
 

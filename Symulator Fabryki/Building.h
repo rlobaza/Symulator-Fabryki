@@ -23,7 +23,7 @@ protected:
 	int Packed_Products_Storage_Used;
 
 	bool Is_Ready;
-
+ 
 
 
 public:

@@ -5,6 +5,7 @@
 #include "Worker.h"
 #include "Own_List.h"
 
+class Worker;
 
 class Worker_Container
 {

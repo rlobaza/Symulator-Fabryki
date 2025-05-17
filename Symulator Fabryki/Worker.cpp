@@ -10,7 +10,7 @@
 #include "Road_Container.h"
 #include "find_Target.h"
 
-Worker::Worker(int x, int y, Road_Container& roads, Building_Container& buildings) : Is_Working(false), Target(nullptr), Is_On_Road(false), Cost(1), Icon('?'), Roads(roads), Buildings(buildings)
+Worker::Worker(int x, int y, Road_Container& roads, Building_Container& buildings) : Is_Working(false), Is_On_Road(false), Current_Task(nullptr), Cost(1), Icon('?'), Roads(roads), Buildings(buildings)
 {
 	this->Set_PosX(x);
 	this->Set_PosY(y);
@@ -41,14 +41,14 @@ void Worker::Set_Is_On_Road(bool param)
 	Is_On_Road = param;
 }
 
+void Worker::Set_Current_Task(Task* param)
+{
+	Current_Task = param;
+}
+
 void Worker::Set_Route(std::queue<Road*> param)
 {
 	Route = param;
-}
-
-void Worker::Set_Target(Building* ptr)
-{
-	Target = ptr;
 }
 
 int Worker::Get_Cost()
@@ -71,46 +71,18 @@ bool& Worker::Get_Is_On_Road()
 	return Is_On_Road;
 }
 
+Task* Worker::Get_Current_Task()
+{
+	return Current_Task;
+}
+
 std::queue<Road*>& Worker::Get_Route()
 {
 	return Route;
 }
 
-Building* Worker::Get_Target()
-{
-	return Target;
-}
-
 void Worker::Simulate()
 {
-
-	if (Is_Working == false)
-	{
-		Target = find_Target(Buildings);
-
-		if (Target != nullptr && Is_Working == false)
-		{
-			find_Route(this, Target, Roads, Route);
-			if (Route.size() != 0)
-			{
-				Set_Is_Working(true);
-				Set_Icon('!');
-			}
-			
-		}
-
-	}
-
-	if (Route.empty() == false)
-	{
-		Go();
-	}
-
-	if (Route.empty() == true)
-	{
-		Set_Is_Working(false);
-	}
-
 
 }
 

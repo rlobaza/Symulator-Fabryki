@@ -12,6 +12,7 @@
 
 void find_Route(Worker* worker, Building* building, Road_Container& Roads, std::queue<Road*>& Route)
 {
+	std::lock_guard<std::recursive_mutex> lock(Roads.Get_Mutex());
 
 	for (int i = 0; i < Route.size(); i++)
 	{
