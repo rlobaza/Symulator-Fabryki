@@ -41,7 +41,7 @@ void Warehouse::Lvl_Up()
 
 void Warehouse::Calculate_Storage()
 {
-	All_Storage = Lvl * 1000;
+	All_Storage = Lvl * 100;
 
 	Materials_Storage = 35 * All_Storage / 100;
 	Sorted_Materials_Storage = 35 * All_Storage / 100;
@@ -56,6 +56,7 @@ std::string Warehouse::Stats_String(int i)
 	str = str + "Magazyn " + std::to_string(i + 1) + '\n';
 	str = str + "Lvl: " + std::to_string(Get_Lvl()) + '\n';
 	str = str + "Materialy: " + std::to_string(Get_Materials_Storage_Used()) + " / " + std::to_string(Get_Materials_Storage()) + '\n';
+	str = str + "Zarezerwowane miejsce na Materialy: " + std::to_string(Get_Materials_Storage_Reserved()) + '\n';
 	str = str + "Posortowane materialy: " + std::to_string(Get_Sorted_Materials_Storage_Used()) + " / " + std::to_string(Get_Sorted_Materials_Storage()) + '\n';
 	str = str + "Gotowe produkty: " + std::to_string(Get_Ready_Products_Storage_Used()) + " / " + std::to_string(Get_Ready_Products_Storage()) + '\n';
 	str = str + "Zapakowane produkty: " + std::to_string(Get_Packed_Products_Storage_Used()) + " / " + std::to_string(Get_Packed_Products_Storage()) + '\n';

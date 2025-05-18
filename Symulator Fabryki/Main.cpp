@@ -155,6 +155,7 @@ int main()
 
 			////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!WYWALIC POTEM
 			frm.Add_To_Frame("Ilosc Taskow: " + std::to_string(Tasks.Get_Tasks().Get_Size()));
+			frm.Add_To_Frame("Ilosc Roboli: " + std::to_string(Workers.Get_Workers().Get_Size()));
 
 
 

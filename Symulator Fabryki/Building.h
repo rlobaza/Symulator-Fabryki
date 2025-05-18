@@ -22,6 +22,11 @@ protected:
 	int Ready_Products_Storage_Used;
 	int Packed_Products_Storage_Used;
 
+	int Materials_Reserved;
+	int Sorted_Materials_Reserved;
+	int Ready_Products_Reserved;
+	int Packed_Products_Reserved;
+
 	int Materials_Storage_Reserved;
 	int Sorted_Materials_Storage_Reserved;
 	int Ready_Products_Storage_Reserved;
@@ -49,6 +54,11 @@ public:
 	virtual int Get_Ready_Products_Storage_Used();
 	virtual int Get_Packed_Products_Storage_Used();
 
+	virtual int Get_Materials_Reserved();
+	virtual int Get_Sorted_Materials_Reserved();
+	virtual int Get_Ready_Products_Reserved();
+	virtual int Get_Packed_Products_Reserved();
+
 	virtual int Get_Materials_Storage_Reserved();
 	virtual int Get_Sorted_Materials_Storage_Reserved();
 	virtual int Get_Ready_Products_Storage_Reserved();
@@ -67,6 +77,11 @@ public:
 	virtual void Set_Sorted_Materials_Storage_Used(int);
 	virtual void Set_Ready_Products_Storage_Used(int);
 	virtual void Set_Packed_Products_Storage_Used(int);
+
+	virtual void Set_Materials_Reserved(int);
+	virtual void Set_Sorted_Materials_Reserved(int);
+	virtual void Set_Ready_Products_Reserved(int);
+	virtual void Set_Packed_Products_Reserved(int);
 
 	virtual void Set_Materials_Storage_Reserved(int);
 	virtual void Set_Sorted_Materials_Storage_Reserved(int);
