@@ -23,9 +23,9 @@ void Task_Container::Add_Tasks(Task* ptr)
 	Tasks.Push_Back(ptr);
 }
 
-void Task_Container::Remove_Tasks()
+void Task_Container::Remove_Tasks(int param)
 {
-
+	Tasks.Erase(param);
 }
 
 Own_List<Task*>& Task_Container::Get_Tasks()

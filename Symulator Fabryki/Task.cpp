@@ -10,7 +10,7 @@
 
 
 
-Task::Task(std::string what, Building* from, Building* to) : What(what), From(from), To(to), Who(nullptr)
+Task::Task(std::string what, Building* from, Building* to, Worker* who) : What(what), From(from), To(to), Who(who)
 {
 
 }

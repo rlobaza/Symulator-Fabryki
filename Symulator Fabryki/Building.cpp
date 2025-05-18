@@ -21,6 +21,11 @@ Building::Building()
 	Ready_Products_Storage_Used = 0;
 	Packed_Products_Storage_Used = 0;
 
+	Materials_Storage_Reserved = 0;
+	Sorted_Materials_Storage_Reserved = 0;
+	Ready_Products_Storage_Reserved = 0;
+	Packed_Products_Storage_Reserved = 0;
+
 	Is_Ready = false;
 }
 
@@ -79,6 +84,26 @@ int Building::Get_Packed_Products_Storage_Used()
 	return Packed_Products_Storage_Used;
 }
 
+int Building::Get_Materials_Storage_Reserved()
+{
+	return Materials_Storage_Reserved;
+}
+
+int Building::Get_Sorted_Materials_Storage_Reserved()
+{
+	return Sorted_Materials_Storage_Reserved;
+}
+
+int Building::Get_Ready_Products_Storage_Reserved()
+{
+	return Ready_Products_Storage_Reserved;
+}
+
+int Building::Get_Packed_Products_Storage_Reserved()
+{
+	return Packed_Products_Storage_Reserved;
+}
+
 bool Building::Get_Is_Ready()
 {
 	return Is_Ready;
@@ -132,6 +157,26 @@ void Building::Set_Ready_Products_Storage_Used(int param)
 void Building::Set_Packed_Products_Storage_Used(int param)
 {
 	Packed_Products_Storage_Used = param;
+}
+
+void Building::Set_Materials_Storage_Reserved(int param)
+{
+	Materials_Storage_Reserved = param;
+}
+
+void Building::Set_Sorted_Materials_Storage_Reserved(int param)
+{
+	Sorted_Materials_Storage_Reserved = param;
+}
+
+void Building::Set_Ready_Products_Storage_Reserved(int param)
+{
+	Ready_Products_Storage_Reserved = param;
+}
+
+void Building::Set_Packed_Products_Storage_Reserved(int param)
+{
+	Packed_Products_Storage_Reserved = param;
 }
 
 void Building::Set_Is_Ready(bool param)

@@ -22,6 +22,11 @@ protected:
 	int Ready_Products_Storage_Used;
 	int Packed_Products_Storage_Used;
 
+	int Materials_Storage_Reserved;
+	int Sorted_Materials_Storage_Reserved;
+	int Ready_Products_Storage_Reserved;
+	int Packed_Products_Storage_Reserved;
+
 	bool Is_Ready;
  
 
@@ -38,10 +43,16 @@ public:
 	virtual int Get_Sorted_Materials_Storage();
 	virtual int Get_Ready_Products_Storage();
 	virtual int Get_Packed_Products_Storage();
+
 	virtual int Get_Materials_Storage_Used();
 	virtual int Get_Sorted_Materials_Storage_Used();
 	virtual int Get_Ready_Products_Storage_Used();
 	virtual int Get_Packed_Products_Storage_Used();
+
+	virtual int Get_Materials_Storage_Reserved();
+	virtual int Get_Sorted_Materials_Storage_Reserved();
+	virtual int Get_Ready_Products_Storage_Reserved();
+	virtual int Get_Packed_Products_Storage_Reserved();
 	bool Get_Is_Ready();
 
 	virtual void Set_Lvl(int);
@@ -51,10 +62,16 @@ public:
 	virtual void Set_Sorted_Materials_Storage(int);
 	virtual void Set_Ready_Products_Storage(int);
 	virtual void Set_Packed_Products_Storage(int);
+
 	virtual void Set_Materials_Storage_Used(int);
 	virtual void Set_Sorted_Materials_Storage_Used(int);
 	virtual void Set_Ready_Products_Storage_Used(int);
 	virtual void Set_Packed_Products_Storage_Used(int);
+
+	virtual void Set_Materials_Storage_Reserved(int);
+	virtual void Set_Sorted_Materials_Storage_Reserved(int);
+	virtual void Set_Ready_Products_Storage_Reserved(int);
+	virtual void Set_Packed_Products_Storage_Reserved(int);
 	void Set_Is_Ready(bool);
 
 	virtual void Lvl_Up() = 0;

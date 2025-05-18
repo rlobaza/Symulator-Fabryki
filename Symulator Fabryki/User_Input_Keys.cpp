@@ -8,6 +8,7 @@
 #include "Screen_Object.h"
 #include "Building_Container.h"
 #include "Road_Container.h"
+#include "Task_Container.h"
 #include "Worker_Container.h"
 #include "Production_Hall.h"
 #include "Loading_Ramp.h"
@@ -33,7 +34,7 @@
 #include "Task_Container.h"
 
 
-void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Building_Container& Buildings, Worker_Container& Workers, Road_Container& Roads, bool& In_Menu, Menu& menu_1)
+void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Building_Container& Buildings, Worker_Container& Workers, Road_Container& Roads, Task_Container& Tasks, bool& In_Menu, Menu& menu_1)
 {
 
 	Clock clk(framerate());
@@ -250,7 +251,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 
 				if (check_If_Road(c1.Get_SelX(), c1.Get_SelY(), Buildings) == true)
 				{
-					Worker* worker = new Worker(c1.Get_SelX(), c1.Get_SelY(), Roads, Buildings);
+					Worker* worker = new Worker(c1.Get_SelX(), c1.Get_SelY(), Roads, Buildings, Tasks);
 					Workers.Add_Workers(worker);
 					c1.Unselect();
 				}

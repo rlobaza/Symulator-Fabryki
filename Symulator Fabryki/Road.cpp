@@ -6,11 +6,9 @@
 
 int Road::Cost = 10;
 
-char Road::Icon = '_';
-
 std::string Road::Name = "Road";
 
-Road::Road(int x, int y) : Is_Visited(false), Distance(9999), Previous(nullptr)
+Road::Road(int x, int y) : Is_Visited(false), Distance(9999), Previous(nullptr), Icon('°')
 {
 	this->Calculate_Storage();
 	this->Set_PosX(x);
@@ -45,6 +43,11 @@ void Road::Set_Previous(Road* param)
 void Road::Set_Is_Added(bool param)
 {
 	Is_Added = param;
+}
+
+void Road::Set_Icon(char param)
+{
+	Icon = param;
 }
 
 bool Road::Get_Is_Visited()
@@ -120,6 +123,53 @@ char Road::Get_Icon()
 
 void Road::Simulate()
 {
+	/*bool up = false;
+	bool down = false;
+	bool left = false;
+	bool right = false;
+
+	for (int i = 0; i < Connected.Get_Size(); i++)
+	{
+		if (Connected[i]->Get_PosX() + 1 == PosX)
+		{
+			left = true;
+		}
+
+		if (Connected[i]->Get_PosX() - 1 == PosX)
+		{
+			right = true;
+		}
+
+		if (Connected[i]->Get_PosY() + 1 == PosY)
+		{
+			down = true;
+		}
+
+		if (Connected[i]->Get_PosY() - 1 == PosY)
+		{
+			up = true;
+		}
+	}
+
+	if ((up && down && !left && !right) || (up && !down && !left && !right) || (!up && down && !left && !right))
+	{
+		Icon = '|';
+	}
+
+	if ((left && right && !up && !down) || (left && !right && !up && !down) || (!left && right && !up && !down))
+	{
+		Icon = '-';
+	}
+
+	if ((up && down && left && right) || (up && !down && left && !right) || (up && !down && !left && right) || (!up && down && left && !right) || (!up && down && !left && right))
+	{
+		Icon = '+';
+	}
+
+	if (!up && !down && !left && !right)
+	{
+		Icon = '°';
+	}*/
 
 }
 

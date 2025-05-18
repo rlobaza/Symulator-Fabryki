@@ -23,7 +23,7 @@ private:
 
 public:
 
-	Task(std::string, Building*, Building*);
+	Task(std::string, Building*, Building*, Worker*);
 	~Task();
 
 	void Set_What(std::string);

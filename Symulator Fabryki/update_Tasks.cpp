@@ -36,14 +36,20 @@ void update_Tasks(Building_Container& Buildings, Task_Container& Tasks, Worker_C
 					{
 						if (Buildings.Get_Buildings()[j]->Get_Materials_Storage_Used() < Buildings.Get_Buildings()[j]->Get_Materials_Storage())
 						{
-							Building* Target = Buildings.Get_Buildings()[j];
-							Tasks.Get_Tasks().Push_Back(new Task("Materials", Buildings.Get_Buildings()[i], Target));
-
-							if (Tasks.Get_Tasks().Get_Size() >= Workers.Get_Workers().Get_Size())
+							for (int k = 0; k < Workers.Get_Workers().Get_Size(); k++)
 							{
-								return;
-							}
+								if (Workers.Get_Workers()[k]->Get_Current_Task() == nullptr)
+								{
+									Building* Target = Buildings.Get_Buildings()[j];
+									Tasks.Get_Tasks().Push_Back(new Task("Materials", Buildings.Get_Buildings()[i], Target, Workers.Get_Workers()[k]));
+									Workers.Get_Workers()[k]->Set_Current_Task(Tasks.Get_Tasks()[Tasks.Get_Tasks().Get_Size() - 1]);
 
+									if (Tasks.Get_Tasks().Get_Size() >= Workers.Get_Workers().Get_Size())
+									{
+										return;
+									}
+								}
+							}
 						}
 					}
 				}

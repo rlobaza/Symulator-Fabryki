@@ -8,9 +8,10 @@
 #include "Building.h"
 #include "find_Route.h"
 #include "Road_Container.h"
+#include "Task_Container.h"
 #include "find_Target.h"
 
-Worker::Worker(int x, int y, Road_Container& roads, Building_Container& buildings) : Is_Working(false), Is_On_Road(false), Current_Task(nullptr), Cost(1), Icon('?'), Roads(roads), Buildings(buildings)
+Worker::Worker(int x, int y, Road_Container& roads, Building_Container& buildings, Task_Container& tasks) : Was_Route_Found(false),  After_First_Target(false), Current_Task(nullptr), Cost(1), Icon('?'), Roads(roads), Buildings(buildings), Tasks(tasks)
 {
 	this->Set_PosX(x);
 	this->Set_PosY(y);
@@ -29,16 +30,6 @@ void Worker::Set_Cost(int param)
 void Worker::Set_Icon(char param)
 {
 	Icon = param;
-}
-
-void Worker::Set_Is_Working(bool param)
-{
-	Is_Working = param;
-}
-
-void Worker::Set_Is_On_Road(bool param)
-{
-	Is_On_Road = param;
 }
 
 void Worker::Set_Current_Task(Task* param)
@@ -61,16 +52,6 @@ char Worker::Get_Icon()
 	return Icon;
 }
 
-bool& Worker::Get_Is_Working()
-{
-	return Is_Working;
-}
-
-bool& Worker::Get_Is_On_Road()
-{
-	return Is_On_Road;
-}
-
 Task* Worker::Get_Current_Task()
 {
 	return Current_Task;
@@ -83,7 +64,70 @@ std::queue<Road*>& Worker::Get_Route()
 
 void Worker::Simulate()
 {
+	if (Current_Task != nullptr)
+	{
+		Icon = 'O';
 
+		if (After_First_Target == false)
+		{
+			if (Route.size() == 0 && Was_Route_Found == false)
+			{
+				find_Route(this, Current_Task->Get_From(), Roads, Route);
+				Was_Route_Found = true;
+			}
+
+			if (Route.size() != 0)
+			{
+				Go();
+			}
+
+			if (Route.size() == 0 && Was_Route_Found == true)
+			{
+				After_First_Target = true;
+				Was_Route_Found = false;
+			}
+		}
+		else
+		{
+			Icon = '@';
+
+			if (Route.size() == 0 && Was_Route_Found == false)
+			{
+				find_Route(this, Current_Task->Get_To(), Roads, Route);
+				Was_Route_Found = true;
+			}
+
+			if (Route.size() != 0)
+			{
+				Go();
+			}
+
+			if (Route.size() == 0 && Was_Route_Found == true)
+			{
+				std::lock_guard<std::recursive_mutex> lock(Tasks.Get_Mutex());
+
+				After_First_Target = false;
+				Was_Route_Found = false;
+
+				for (int i = 0; i < Tasks.Get_Tasks().Get_Size(); i++)
+				{
+					if (Tasks.Get_Tasks()[i] == Current_Task)
+					{
+						Tasks.Remove_Tasks(i);
+						i--;
+					}
+				}
+
+				delete Current_Task;
+				Current_Task = nullptr;
+			}
+		}
+
+	}
+	else
+	{
+		Icon = '?';
+	}
 }
 
 void Worker::Go()

@@ -11,7 +11,7 @@ class Road : public Building
 protected:
 
 	static int Cost;
-	static char Icon;
+	char Icon;
 	static std::string Name;
 
 	bool Is_Visited;
@@ -29,6 +29,7 @@ public:
 	void Set_Distance(int);
 	void Set_Previous(Road*);
 	void Set_Is_Added(bool);
+	void Set_Icon(char);
 
 	bool Get_Is_Visited();
 	Own_List<Road*>& Get_Connected();

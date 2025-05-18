@@ -60,10 +60,10 @@
 #include "Task_Container.h"
 #include "update_Tasks.h"
 
+//sound
 
 int main()
 {
-
 	SetConsoleOutputCP(1250);
 
 	bool Gameover = false;
@@ -82,8 +82,6 @@ int main()
 
 	Frame frm;
 
-
-
 	Menu menu_1;
 
 
@@ -92,9 +90,9 @@ int main()
 
 	std::thread Input_Thread(user_Input, std::ref(Input), std::ref(Gameover));
 
-	std::thread Input_Keys_Thread(user_Input_Keys, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Buildings), std::ref(Workers), std::ref(Roads), std::ref(In_Menu), std::ref(menu_1));
+	std::thread Input_Keys_Thread(user_Input_Keys, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Buildings), std::ref(Workers), std::ref(Roads), std::ref(Tasks), std::ref(In_Menu), std::ref(menu_1));
 
-	std::thread Simulation_Thread(simulation, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Buildings), std::ref(Workers));
+	std::thread Simulation_Thread(simulation, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Buildings), std::ref(Workers), std::ref(Tasks));
 
 	
 
@@ -156,8 +154,7 @@ int main()
 			frm.Add_To_Frame(clk.Print_FPS());
 
 			////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!WYWALIC POTEM
-			update_Tasks(Buildings, Tasks, Workers);
-			frm.Add_To_Frame(std::to_string(Tasks.Get_Tasks().Get_Size()));
+			frm.Add_To_Frame("Ilosc Taskow: " + std::to_string(Tasks.Get_Tasks().Get_Size()));
 
 
 
