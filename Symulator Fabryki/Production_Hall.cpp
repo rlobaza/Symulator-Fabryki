@@ -36,11 +36,11 @@ void Production_Hall::Lvl_Up()
 
 void Production_Hall::Calculate_Storage()
 {
-	All_Storage = 0;
+	All_Storage = 2 * Lvl;
 
 	Materials_Storage = 0;
-	Sorted_Materials_Storage = 0;
-	Ready_Products_Storage = 0;
+	Sorted_Materials_Storage = All_Storage / 2;
+	Ready_Products_Storage = All_Storage / 2;
 	Packed_Products_Storage = 0;
 
 	Materials_Storage_Used = 0;
@@ -54,7 +54,11 @@ std::string Production_Hall::Stats_String(int i)
 	std::string str = "";
 
 	str = str + "Hala Produkcyjna " + std::to_string(i + 1) + '\n';
-
+	str = str + "Lvl: " + std::to_string(Get_Lvl()) + '\n';
+	str = str + "Posortowane Materialy: " + std::to_string(Get_Sorted_Materials_Storage_Used()) + " / " + std::to_string(Get_Sorted_Materials_Storage()) + '\n';
+	//str = str + "Zarezerwowane miejsce na Posortowane Materialy: " + std::to_string(Get_Sorted_Materials_Storage_Reserved()) + '\n';
+	str = str + "Gotowe Produkty: " + std::to_string(Get_Ready_Products_Storage_Used()) + " / " + std::to_string(Get_Ready_Products_Storage()) + '\n';
+	//str = str + "Zarezerwowane miejsce na Gotowe Produkty: " + std::to_string(Get_Ready_Products_Storage_Reserved()) + '\n';
 	str = str + '\n';
 
 	return str;
@@ -67,7 +71,17 @@ char Production_Hall::Get_Icon()
 
 void Production_Hall::Simulate()
 {
-
+	for (int i = 0; i < Lvl; i++)
+	{
+		if (Sorted_Materials_Storage_Used - 1 >= 0)
+		{
+			if (Ready_Products_Storage >= Ready_Products_Storage_Used + 1)
+			{
+				Sorted_Materials_Storage_Used = Sorted_Materials_Storage_Used - 1;
+				Ready_Products_Storage_Used = Ready_Products_Storage_Used + 1;
+			}
+		}
+	}
 }
 
 int Production_Hall::Get_Cost()

@@ -14,6 +14,7 @@
 #include "Loading_Ramp.h"
 #include "Road.h"
 #include "Packaging_Area.h"
+#include "Sorting_Area.h"
 #include "Warehouse.h"
 #include "Player.h"
 #include "check_If_Busy.h"
@@ -142,9 +143,27 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 				}
 			}
 
-			if (Input == '3' && c1.Get_Is_Locked() == true)
+			if (Input == '3' && c1.Get_Is_Locked() == true) //Packaging_Area
 			{
-
+				if (check_If_Busy(c1, Buildings) == false)
+				{
+					Packaging_Area* building = new Packaging_Area(c1.Get_SelX(), c1.Get_SelY());
+					if (p1.Get_Money() >= building->Get_Cost())
+					{
+						p1.Change_Money(-building->Get_Cost());
+						Buildings.Add_Buildings(building);
+						c1.Unselect();
+						single_Sound("Sounds/COLLAPSE");
+					}
+					else
+					{
+						single_Sound("Sounds/OFF");
+					}
+				}
+				else
+				{
+					single_Sound("Sounds/OFF");
+				}
 			}
 
 			if (Input == '4' && c1.Get_Is_Locked() == true) //Production Hall
@@ -198,7 +217,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 			{
 				if (check_If_Busy(c1, Buildings) == false)
 				{
-					Packaging_Area* building = new Packaging_Area(c1.Get_SelX(), c1.Get_SelY());
+					Sorting_Area* building = new Sorting_Area(c1.Get_SelX(), c1.Get_SelY());
 					if (p1.Get_Money() >= building->Get_Cost())
 					{
 						p1.Change_Money(-building->Get_Cost());

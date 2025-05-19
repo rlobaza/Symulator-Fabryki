@@ -67,7 +67,35 @@ void update_Tasks(Building_Container& Buildings, Task_Container& Tasks, Worker_C
 
 			if (Buildings.Get_Buildings()[i]->Get_Name() == "Sorting_Area")
 			{
+				if (Buildings.Get_Buildings()[i]->Get_Sorted_Materials_Storage_Used() > Buildings.Get_Buildings()[i]->Get_Sorted_Materials_Reserved())
+				{
+					for (int j = 0; j < Buildings.Get_Buildings().Get_Size(); j++)
+					{
+						if (Buildings.Get_Buildings()[j]->Get_Name() == "Production_Hall" || Buildings.Get_Buildings()[j]->Get_Name() == "Warehouse")
+						{
+							if (Buildings.Get_Buildings()[j]->Get_Sorted_Materials_Storage() > (Buildings.Get_Buildings()[j]->Get_Sorted_Materials_Storage_Reserved() + Buildings.Get_Buildings()[j]->Get_Sorted_Materials_Storage_Used()))
+							{
+								for (int k = 0; k < Workers.Get_Workers().Get_Size(); k++)
+								{
+									if (Workers.Get_Workers()[k]->Get_Current_Task() == nullptr)
+									{
 
+										Building* from = Buildings.Get_Buildings()[i];
+										Building* to = Buildings.Get_Buildings()[j];
+
+										from->Set_Sorted_Materials_Reserved(from->Get_Sorted_Materials_Reserved() + 1);
+										to->Set_Sorted_Materials_Storage_Reserved(to->Get_Sorted_Materials_Storage_Reserved() + 1);
+
+										Tasks.Get_Tasks().Push_Back(new Task("Sorted_Materials", from, to, Workers.Get_Workers()[k]));
+										Workers.Get_Workers()[k]->Set_Current_Task(Tasks.Get_Tasks()[Tasks.Get_Tasks().Get_Size() - 1]);
+
+										goto production_hall;
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 
 			//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -75,15 +103,71 @@ void update_Tasks(Building_Container& Buildings, Task_Container& Tasks, Worker_C
 
 			if (Buildings.Get_Buildings()[i]->Get_Name() == "Production_Hall")
 			{
+				if (Buildings.Get_Buildings()[i]->Get_Ready_Products_Storage_Used() > Buildings.Get_Buildings()[i]->Get_Ready_Products_Reserved())
+				{
+					for (int j = 0; j < Buildings.Get_Buildings().Get_Size(); j++)
+					{
+						if (Buildings.Get_Buildings()[j]->Get_Name() == "Packaging_Area" || Buildings.Get_Buildings()[j]->Get_Name() == "Warehouse")
+						{
+							if (Buildings.Get_Buildings()[j]->Get_Ready_Products_Storage() > (Buildings.Get_Buildings()[j]->Get_Ready_Products_Storage_Reserved() + Buildings.Get_Buildings()[j]->Get_Ready_Products_Storage_Used()))
+							{
+								for (int k = 0; k < Workers.Get_Workers().Get_Size(); k++)
+								{
+									if (Workers.Get_Workers()[k]->Get_Current_Task() == nullptr)
+									{
 
+										Building* from = Buildings.Get_Buildings()[i];
+										Building* to = Buildings.Get_Buildings()[j];
+
+										from->Set_Ready_Products_Reserved(from->Get_Ready_Products_Reserved() + 1);
+										to->Set_Ready_Products_Storage_Reserved(to->Get_Ready_Products_Storage_Reserved() + 1);
+
+										Tasks.Get_Tasks().Push_Back(new Task("Ready_Products", from, to, Workers.Get_Workers()[k]));
+										Workers.Get_Workers()[k]->Set_Current_Task(Tasks.Get_Tasks()[Tasks.Get_Tasks().Get_Size() - 1]);
+
+										goto packaging_area;
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 
 			//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-			packagin_area:
+			packaging_area:
 
-			if (Buildings.Get_Buildings()[i]->Get_Name() == "Packagin_Area")
+			if (Buildings.Get_Buildings()[i]->Get_Name() == "Packaging_Area")
 			{
+				if (Buildings.Get_Buildings()[i]->Get_Packed_Products_Storage_Used() > Buildings.Get_Buildings()[i]->Get_Packed_Products_Reserved())
+				{
+					for (int j = 0; j < Buildings.Get_Buildings().Get_Size(); j++)
+					{
+						if (Buildings.Get_Buildings()[j]->Get_Name() == "Loading_Ramp" || Buildings.Get_Buildings()[j]->Get_Name() == "Warehouse")
+						{
+							if (Buildings.Get_Buildings()[j]->Get_Packed_Products_Storage() > (Buildings.Get_Buildings()[j]->Get_Packed_Products_Storage_Reserved() + Buildings.Get_Buildings()[j]->Get_Packed_Products_Storage_Used()))
+							{
+								for (int k = 0; k < Workers.Get_Workers().Get_Size(); k++)
+								{
+									if (Workers.Get_Workers()[k]->Get_Current_Task() == nullptr)
+									{
 
+										Building* from = Buildings.Get_Buildings()[i];
+										Building* to = Buildings.Get_Buildings()[j];
+
+										from->Set_Packed_Products_Reserved(from->Get_Packed_Products_Reserved() + 1);
+										to->Set_Packed_Products_Storage_Reserved(to->Get_Packed_Products_Storage_Reserved() + 1);
+
+										Tasks.Get_Tasks().Push_Back(new Task("Packed_Products", from, to, Workers.Get_Workers()[k]));
+										Workers.Get_Workers()[k]->Set_Current_Task(Tasks.Get_Tasks()[Tasks.Get_Tasks().Get_Size() - 1]);
+
+										goto warehouse;
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 
 			//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

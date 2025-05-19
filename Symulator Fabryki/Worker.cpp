@@ -91,14 +91,17 @@ void Worker::Simulate()
 				if (Current_Task->Get_What() == "Sorted_Materials")
 				{
 					Current_Task->Get_From()->Set_Sorted_Materials_Storage_Used(Current_Task->Get_From()->Get_Sorted_Materials_Storage_Used() - 1);
+					Current_Task->Get_From()->Set_Sorted_Materials_Reserved(Current_Task->Get_From()->Get_Sorted_Materials_Reserved() - 1);
 				}
 				if (Current_Task->Get_What() == "Ready_Products")
 				{
 					Current_Task->Get_From()->Set_Ready_Products_Storage_Used(Current_Task->Get_From()->Get_Ready_Products_Storage_Used() - 1);
+					Current_Task->Get_From()->Set_Ready_Products_Reserved(Current_Task->Get_From()->Get_Ready_Products_Reserved() - 1);
 				}
 				if (Current_Task->Get_What() == "Packed_Products")
 				{
 					Current_Task->Get_From()->Set_Packed_Products_Storage_Used(Current_Task->Get_From()->Get_Packed_Products_Storage_Used() - 1);
+					Current_Task->Get_From()->Set_Packed_Products_Reserved(Current_Task->Get_From()->Get_Packed_Products_Reserved() - 1);
 				}
 
 				After_First_Target = true;
@@ -132,14 +135,17 @@ void Worker::Simulate()
 				if (Current_Task->Get_What() == "Sorted_Materials")
 				{
 					Current_Task->Get_To()->Set_Sorted_Materials_Storage_Used(Current_Task->Get_To()->Get_Sorted_Materials_Storage_Used() + 1);
+					Current_Task->Get_To()->Set_Sorted_Materials_Storage_Reserved(Current_Task->Get_To()->Get_Sorted_Materials_Storage_Reserved() - 1);
 				}
 				if (Current_Task->Get_What() == "Ready_Products")
 				{
 					Current_Task->Get_To()->Set_Ready_Products_Storage_Used(Current_Task->Get_To()->Get_Ready_Products_Storage_Used() + 1);
+					Current_Task->Get_To()->Set_Ready_Products_Storage_Reserved(Current_Task->Get_To()->Get_Ready_Products_Storage_Reserved() - 1);
 				}
 				if (Current_Task->Get_What() == "Packed_Products")
 				{
 					Current_Task->Get_To()->Set_Packed_Products_Storage_Used(Current_Task->Get_To()->Get_Packed_Products_Storage_Used() + 1);
+					Current_Task->Get_To()->Set_Packed_Products_Storage_Reserved(Current_Task->Get_To()->Get_Packed_Products_Storage_Reserved() - 1);
 				}
 
 				After_First_Target = false;

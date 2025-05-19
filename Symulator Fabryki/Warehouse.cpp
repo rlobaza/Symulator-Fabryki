@@ -56,10 +56,13 @@ std::string Warehouse::Stats_String(int i)
 	str = str + "Magazyn " + std::to_string(i + 1) + '\n';
 	str = str + "Lvl: " + std::to_string(Get_Lvl()) + '\n';
 	str = str + "Materialy: " + std::to_string(Get_Materials_Storage_Used()) + " / " + std::to_string(Get_Materials_Storage()) + '\n';
-	str = str + "Zarezerwowane miejsce na Materialy: " + std::to_string(Get_Materials_Storage_Reserved()) + '\n';
+	//str = str + "Zarezerwowane miejsce na Materialy: " + std::to_string(Get_Materials_Storage_Reserved()) + '\n';
 	str = str + "Posortowane materialy: " + std::to_string(Get_Sorted_Materials_Storage_Used()) + " / " + std::to_string(Get_Sorted_Materials_Storage()) + '\n';
+	//str = str + "Zarezerwowane miejsce na Posortowane Materialy: " + std::to_string(Get_Sorted_Materials_Storage_Reserved()) + '\n';
 	str = str + "Gotowe produkty: " + std::to_string(Get_Ready_Products_Storage_Used()) + " / " + std::to_string(Get_Ready_Products_Storage()) + '\n';
+	//str = str + "Zarezerwowane miejsce na Gotowe Produkty: " + std::to_string(Get_Ready_Products_Storage_Reserved()) + '\n';
 	str = str + "Zapakowane produkty: " + std::to_string(Get_Packed_Products_Storage_Used()) + " / " + std::to_string(Get_Packed_Products_Storage()) + '\n';
+	//str = str + "Zarezerwowane miejsce na Zapakowane Produkty: " + std::to_string(Get_Packed_Products_Storage_Reserved()) + '\n';
 
 	str = str + '\n';
 

@@ -56,7 +56,9 @@ std::string Packaging_Area::Stats_String(int i)
 	str = str + "Strefa Pakowania " + std::to_string(i + 1) + '\n';
 	str = str + "Lvl: " + std::to_string(Get_Lvl()) + '\n';
 	str = str + "Gotowe produkty: " + std::to_string(Get_Ready_Products_Storage_Used()) + " / " + std::to_string(Get_Ready_Products_Storage()) + '\n';
+	//str = str + "Zarezerwowane miejsce na Gotowe Produkty: " + std::to_string(Get_Ready_Products_Storage_Reserved()) + '\n';
 	str = str + "Zapakowane produkty: " + std::to_string(Get_Packed_Products_Storage_Used()) + " / " + std::to_string(Get_Packed_Products_Storage()) + '\n';
+	//str = str + "Zarezerwowane miejsce na Zapakowane Produkty: " + std::to_string(Get_Packed_Products_Storage_Reserved()) + '\n';
 
 	str = str + '\n';
 
@@ -70,11 +72,19 @@ char Packaging_Area::Get_Icon()
 
 void Packaging_Area::Simulate()
 {
-	if (Ready_Products_Storage_Used >= 1)
+
+	for (int i = 0; i < Lvl; i++)
 	{
-		Ready_Products_Storage_Used = Ready_Products_Storage_Used - 1 * Lvl;
-		Packed_Products_Storage_Used = Packed_Products_Storage_Used - 1 * Lvl;
+		if (Ready_Products_Storage_Used > 0)
+		{
+			if (Packed_Products_Storage_Used < Packed_Products_Storage)
+			{
+				Ready_Products_Storage_Used = Ready_Products_Storage_Used - 1;
+				Packed_Products_Storage_Used = Packed_Products_Storage_Used + 1;
+			}
+		}
 	}
+	
 }
 
 int Packaging_Area::Get_Cost()

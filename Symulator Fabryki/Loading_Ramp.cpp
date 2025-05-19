@@ -51,7 +51,6 @@ std::string Loading_Ramp::Stats_String(int i)
 	str = str + "Rampa Zaladunkowa " + std::to_string(i + 1) + '\n';
 	str = str + "Lvl: " + std::to_string(Get_Lvl()) + '\n';
 	str = str + "Materialy: " + std::to_string(Get_Materials_Storage_Used()) + " / " + std::to_string(Get_Materials_Storage()) + '\n';
-	str = str + "Zarezerwowane Materialy: " + std::to_string(Get_Materials_Reserved()) + '\n';
 	str = str + "Zapakowane produkty: " + std::to_string(Get_Packed_Products_Storage_Used()) + " / " + std::to_string(Get_Packed_Products_Storage()) + '\n';
 	str = str + '\n';
 
@@ -65,12 +64,15 @@ char Loading_Ramp::Get_Icon()
 
 void Loading_Ramp::Simulate()
 {
-	int Delivery = Lvl;
 
-	if (Materials_Storage - Materials_Storage_Used >= Delivery)
+	for (int i = 0; i < Lvl; i++)
 	{
-		Materials_Storage_Used += Delivery;
+		if (Materials_Storage - Materials_Storage_Used >= 1)
+		{
+			Materials_Storage_Used += 1;
+		}
 	}
+
 }
 
 int Loading_Ramp::Get_Cost()
