@@ -22,7 +22,7 @@
 
 #include "simulation.h"
 
-void simulation(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Building_Container& Buildings, Worker_Container& Workers, Task_Container& Tasks)
+void simulation(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Building_Container& Buildings, Worker_Container& Workers, Task_Container& Tasks, Road_Container& Roads)
 {
 
 	while (Gameover == false)
@@ -38,7 +38,7 @@ void simulation(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1,
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
-		update_Tasks(Buildings, Tasks, Workers);
+		update_Tasks(Buildings, Tasks, Workers, Roads);
 
 		for (int i = 0; i < Buildings.Get_Buildings().Get_Size(); i++)
 		{

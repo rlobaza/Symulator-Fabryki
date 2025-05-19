@@ -4,17 +4,18 @@
 #include "Building_Container.h"
 #include "Task_Container.h"
 #include "Worker_Container.h"
+#include "Road_Container.h"
 #include "Task.h"
-#include "find_Route.h"
+#include "check_Route.h"
+#include "update_Tasks.h"
 
 
 
 
-
-void update_Tasks(Building_Container& Buildings, Task_Container& Tasks, Worker_Container& Workers)
+void update_Tasks(Building_Container& Buildings, Task_Container& Tasks, Worker_Container& Workers, Road_Container& Roads)
 {
 
-	std::scoped_lock lock(Buildings.Get_Mutex(), Tasks.Get_Mutex(), Workers.Get_Mutex());
+	std::scoped_lock lock(Buildings.Get_Mutex(), Tasks.Get_Mutex(), Workers.Get_Mutex(), Roads.Get_Mutex());
 
 	while (Tasks.Get_Tasks().Get_Size() < Workers.Get_Workers().Get_Size())
 	{
@@ -47,13 +48,17 @@ void update_Tasks(Building_Container& Buildings, Task_Container& Tasks, Worker_C
 										Building* from = Buildings.Get_Buildings()[i];
 										Building* to = Buildings.Get_Buildings()[j];
 
-										from->Set_Materials_Reserved(from->Get_Materials_Reserved() + 1);
-										to->Set_Materials_Storage_Reserved(to->Get_Materials_Storage_Reserved() + 1);
+										if (check_Route(Workers.Get_Workers()[k], from, Roads) && check_Route(Workers.Get_Workers()[k], to, Roads))
+										{
+											from->Set_Materials_Reserved(from->Get_Materials_Reserved() + 1);
+											to->Set_Materials_Storage_Reserved(to->Get_Materials_Storage_Reserved() + 1);
 
-										Tasks.Get_Tasks().Push_Back(new Task("Materials", from, to, Workers.Get_Workers()[k]));
-										Workers.Get_Workers()[k]->Set_Current_Task(Tasks.Get_Tasks()[Tasks.Get_Tasks().Get_Size() - 1]);
+											Tasks.Get_Tasks().Push_Back(new Task("Materials", from, to, Workers.Get_Workers()[k]));
+											Workers.Get_Workers()[k]->Set_Current_Task(Tasks.Get_Tasks()[Tasks.Get_Tasks().Get_Size() - 1]);
 
-										goto sorting_area;
+											goto sorting_area;
+										}
+										
 									}
 								}
 							}
@@ -79,17 +84,19 @@ void update_Tasks(Building_Container& Buildings, Task_Container& Tasks, Worker_C
 								{
 									if (Workers.Get_Workers()[k]->Get_Current_Task() == nullptr)
 									{
-
 										Building* from = Buildings.Get_Buildings()[i];
 										Building* to = Buildings.Get_Buildings()[j];
 
-										from->Set_Sorted_Materials_Reserved(from->Get_Sorted_Materials_Reserved() + 1);
-										to->Set_Sorted_Materials_Storage_Reserved(to->Get_Sorted_Materials_Storage_Reserved() + 1);
+										if (check_Route(Workers.Get_Workers()[k], from, Roads) && check_Route(Workers.Get_Workers()[k], to, Roads))
+										{
+											from->Set_Sorted_Materials_Reserved(from->Get_Sorted_Materials_Reserved() + 1);
+											to->Set_Sorted_Materials_Storage_Reserved(to->Get_Sorted_Materials_Storage_Reserved() + 1);
 
-										Tasks.Get_Tasks().Push_Back(new Task("Sorted_Materials", from, to, Workers.Get_Workers()[k]));
-										Workers.Get_Workers()[k]->Set_Current_Task(Tasks.Get_Tasks()[Tasks.Get_Tasks().Get_Size() - 1]);
+											Tasks.Get_Tasks().Push_Back(new Task("Sorted_Materials", from, to, Workers.Get_Workers()[k]));
+											Workers.Get_Workers()[k]->Set_Current_Task(Tasks.Get_Tasks()[Tasks.Get_Tasks().Get_Size() - 1]);
 
-										goto production_hall;
+											goto production_hall;
+										}
 									}
 								}
 							}
@@ -119,13 +126,16 @@ void update_Tasks(Building_Container& Buildings, Task_Container& Tasks, Worker_C
 										Building* from = Buildings.Get_Buildings()[i];
 										Building* to = Buildings.Get_Buildings()[j];
 
-										from->Set_Ready_Products_Reserved(from->Get_Ready_Products_Reserved() + 1);
-										to->Set_Ready_Products_Storage_Reserved(to->Get_Ready_Products_Storage_Reserved() + 1);
+										if (check_Route(Workers.Get_Workers()[k], from, Roads) && check_Route(Workers.Get_Workers()[k], to, Roads))
+										{
+											from->Set_Ready_Products_Reserved(from->Get_Ready_Products_Reserved() + 1);
+											to->Set_Ready_Products_Storage_Reserved(to->Get_Ready_Products_Storage_Reserved() + 1);
 
-										Tasks.Get_Tasks().Push_Back(new Task("Ready_Products", from, to, Workers.Get_Workers()[k]));
-										Workers.Get_Workers()[k]->Set_Current_Task(Tasks.Get_Tasks()[Tasks.Get_Tasks().Get_Size() - 1]);
+											Tasks.Get_Tasks().Push_Back(new Task("Ready_Products", from, to, Workers.Get_Workers()[k]));
+											Workers.Get_Workers()[k]->Set_Current_Task(Tasks.Get_Tasks()[Tasks.Get_Tasks().Get_Size() - 1]);
 
-										goto packaging_area;
+											goto packaging_area;
+										}
 									}
 								}
 							}
@@ -155,13 +165,16 @@ void update_Tasks(Building_Container& Buildings, Task_Container& Tasks, Worker_C
 										Building* from = Buildings.Get_Buildings()[i];
 										Building* to = Buildings.Get_Buildings()[j];
 
-										from->Set_Packed_Products_Reserved(from->Get_Packed_Products_Reserved() + 1);
-										to->Set_Packed_Products_Storage_Reserved(to->Get_Packed_Products_Storage_Reserved() + 1);
+										if (check_Route(Workers.Get_Workers()[k], from, Roads) && check_Route(Workers.Get_Workers()[k], to, Roads))
+										{
+											from->Set_Packed_Products_Reserved(from->Get_Packed_Products_Reserved() + 1);
+											to->Set_Packed_Products_Storage_Reserved(to->Get_Packed_Products_Storage_Reserved() + 1);
 
-										Tasks.Get_Tasks().Push_Back(new Task("Packed_Products", from, to, Workers.Get_Workers()[k]));
-										Workers.Get_Workers()[k]->Set_Current_Task(Tasks.Get_Tasks()[Tasks.Get_Tasks().Get_Size() - 1]);
+											Tasks.Get_Tasks().Push_Back(new Task("Packed_Products", from, to, Workers.Get_Workers()[k]));
+											Workers.Get_Workers()[k]->Set_Current_Task(Tasks.Get_Tasks()[Tasks.Get_Tasks().Get_Size() - 1]);
 
-										goto warehouse;
+											goto warehouse;
+										}
 									}
 								}
 							}

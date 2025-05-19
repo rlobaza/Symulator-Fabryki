@@ -44,6 +44,10 @@ public:
 
 	void Set_Cost(int);
 	void Set_Icon(char);
+	
+	void Set_Was_Route_Found(bool);
+	void Set_After_First_Target(bool);
+
 	void Set_Current_Task(Task*);
 	void Set_Route(std::queue<Road*>);
 

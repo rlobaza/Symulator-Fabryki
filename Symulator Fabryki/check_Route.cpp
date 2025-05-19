@@ -10,9 +10,11 @@
 #include "Own_List.h"
 #include "Road_Container.h"
 
-void find_Route(Worker* worker, Building* building, Road_Container& Roads, std::queue<Road*>& Route)
+bool check_Route(Worker* worker, Building* building, Road_Container& Roads)
 {
 	std::lock_guard<std::recursive_mutex> lock(Roads.Get_Mutex());
+
+	std::queue<Road*> Route;
 
 	for (int i = 0; i < Route.size(); i++)
 	{
@@ -81,7 +83,7 @@ void find_Route(Worker* worker, Building* building, Road_Container& Roads, std::
 			}
 
 
-			return;
+			return true;
 		}
 
 		for (int i = 0; i < Actuall->Get_Connected().Get_Size(); i++)
@@ -109,5 +111,5 @@ void find_Route(Worker* worker, Building* building, Road_Container& Roads, std::
 		Roads.Get_Roads()[i]->Set_Previous(nullptr);
 	}
 
-	return;
+	return false;
 }

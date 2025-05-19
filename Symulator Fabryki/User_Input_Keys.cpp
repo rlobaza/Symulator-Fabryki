@@ -19,6 +19,7 @@
 #include "Player.h"
 #include "check_If_Busy.h"
 #include "check_If_Road.h"
+#include "check_If_Worker.h"
 #include "sell_Building.h"
 #include "lvl_Up.h"
 
@@ -294,8 +295,19 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 			{
 				if (check_If_Busy(c1, Buildings) == true)
 				{
-					sell_Building(c1, Buildings, Roads, p1);
-					c1.Unselect();
+					if (check_If_Worker(c1.Get_SelX(), c1.Get_SelY(), Workers) == false)
+					{
+						sell_Building(c1, Buildings, Roads, Tasks, p1);
+						c1.Unselect();
+					}
+					else
+					{
+						single_Sound("Sounds/OFF");
+					}
+				}
+				else
+				{
+					single_Sound("Sounds/OFF");
 				}
 			}
 

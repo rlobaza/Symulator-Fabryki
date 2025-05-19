@@ -32,6 +32,16 @@ void Worker::Set_Icon(char param)
 	Icon = param;
 }
 
+void Worker::Set_Was_Route_Found(bool param)
+{
+	Was_Route_Found = param;
+}
+
+void Worker::Set_After_First_Target(bool param)
+{
+	After_First_Target = param;
+}
+
 void Worker::Set_Current_Task(Task* param)
 {
 	Current_Task = param;

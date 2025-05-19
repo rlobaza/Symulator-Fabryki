@@ -34,4 +34,6 @@ bool lvl_Up(Cursor c1, Building_Container& Buildings, Player& p1)
 			}
 		}
 	}
+
+	return false;
 }

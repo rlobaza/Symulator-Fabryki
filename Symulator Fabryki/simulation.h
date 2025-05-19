@@ -12,4 +12,4 @@
 #include "Task_Container.h"
 #include "Clock.h"
 
-void simulation(Screen&, Cursor&, char&, bool&, Player&, Building_Container&, Worker_Container&, Task_Container&);
+void simulation(Screen&, Cursor&, char&, bool&, Player&, Building_Container&, Worker_Container&, Task_Container&, Road_Container&);
