@@ -53,6 +53,10 @@ public:
 
 	int Get_Cost();
 	char Get_Icon();
+
+	bool Get_Was_Route_Found();
+	bool Get_After_First_Target();
+
 	Task* Get_Current_Task();
 	std::queue<Road*>& Get_Route();
 

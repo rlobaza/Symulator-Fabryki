@@ -62,6 +62,16 @@ char Worker::Get_Icon()
 	return Icon;
 }
 
+bool Worker::Get_Was_Route_Found()
+{
+	return Was_Route_Found;
+}
+
+bool Worker::Get_After_First_Target()
+{
+	return After_First_Target;
+}
+
 Task* Worker::Get_Current_Task()
 {
 	return Current_Task;
