@@ -155,6 +155,7 @@
     <ClCompile Include="Own_List.cpp" />
     <ClCompile Include="Packaging_Area.cpp" />
     <ClCompile Include="print_All_Objects.cpp" />
+    <ClCompile Include="print_Selected.cpp" />
     <ClCompile Include="print_Time.cpp" />
     <ClCompile Include="Production_Hall.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -208,6 +209,7 @@
     <ClInclude Include="Own_List.h" />
     <ClInclude Include="Packaging_Area.h" />
     <ClInclude Include="print_All_Objects.h" />
+    <ClInclude Include="print_Selected.h" />
     <ClInclude Include="print_Time.h" />
     <ClInclude Include="Production_Hall.h" />
     <ClInclude Include="Player.h" />

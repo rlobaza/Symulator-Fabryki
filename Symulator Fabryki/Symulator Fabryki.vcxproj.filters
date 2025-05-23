@@ -222,6 +222,9 @@
     <ClCompile Include="check_If_Worker.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="print_Selected.cpp">
+      <Filter>Pliki źródłowe\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -373,6 +376,9 @@
     </ClInclude>
     <ClInclude Include="check_If_Worker.h">
       <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="print_Selected.h">
+      <Filter>Pliki nagłówkowe\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

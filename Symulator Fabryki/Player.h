@@ -11,6 +11,7 @@ private:
 
 int Money;
 int Packed_Products_Price;
+int Max_Workers;
 
 Building_Container& Buildings;
 
@@ -21,8 +22,11 @@ Player(Building_Container&);
 
 void Set_Money(int);
 void Set_Packed_Products_Price(int);
+void Set_Max_Workers(int);
 void Change_Money(int);
 int Get_Money();
 int Get_Packed_Products_Price();
+int Get_Max_Workers();
 void Calculate_Packed_Products_Price();
+void Calculate_Max_Workers();
 };

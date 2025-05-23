@@ -10,6 +10,7 @@
 #include "Road_Container.h"
 #include "Task_Container.h"
 #include "Worker_Container.h"
+#include "Staff_Welfare_Area.h"
 #include "Production_Hall.h"
 #include "Loading_Ramp.h"
 #include "Road.h"
@@ -257,9 +258,28 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 				}
 			}
 
-			if (Input == '7' && c1.Get_Is_Locked() == true)
+			if (Input == '7' && c1.Get_Is_Locked() == true) //Staff_Welfare_Area
 			{
-
+				if (check_If_Busy(c1, Buildings) == false)
+				{
+					Staff_Welfare_Area* building = new Staff_Welfare_Area(c1.Get_SelX(), c1.Get_SelY());
+					if (p1.Get_Money() >= building->Get_Cost())
+					{
+						p1.Change_Money(-building->Get_Cost());
+						Buildings.Add_Buildings(building);
+						p1.Calculate_Max_Workers();
+						c1.Unselect();
+						single_Sound("Sounds/COLLAPSE");
+					}
+					else
+					{
+						single_Sound("Sounds/OFF");
+					}
+				}
+				else
+				{
+					single_Sound("Sounds/OFF");
+				}
 			}
 
 			if (Input == '8' && c1.Get_Is_Locked() == true) //Warehouse
@@ -289,7 +309,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 			{
 				std::lock_guard<std::recursive_mutex> lock(Workers.Get_Mutex());
 
-				if (check_If_Road(c1.Get_SelX(), c1.Get_SelY(), Buildings) == true)
+				if (check_If_Road(c1.Get_SelX(), c1.Get_SelY(), Buildings) == true && p1.Get_Max_Workers() > Workers.Get_Workers().Get_Size())
 				{
 					Worker* worker = new Worker(c1.Get_SelX(), c1.Get_SelY(), Roads, Buildings, Tasks);
 					Workers.Add_Workers(worker);
@@ -318,6 +338,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 					if (check_If_Worker(c1.Get_SelX(), c1.Get_SelY(), Workers) == false)
 					{
 						sell_Building(c1, Buildings, Roads, Tasks, p1);
+						p1.Calculate_Max_Workers();
 						p1.Calculate_Packed_Products_Price();
 						c1.Unselect();
 					}
@@ -338,6 +359,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 				{
 					if (lvl_Up(c1, Buildings, p1) == true)
 					{
+						p1.Calculate_Max_Workers();
 						p1.Calculate_Packed_Products_Price();
 						c1.Unselect();
 					}

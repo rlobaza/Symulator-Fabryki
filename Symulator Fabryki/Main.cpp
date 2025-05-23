@@ -47,6 +47,7 @@
 #include "next_Frame.h"
 #include "generate_Empty_Lines.h"
 #include "find_Target.h"
+#include "print_Selected.h"
 
 //UI
 #include "Menu.h"
@@ -143,20 +144,17 @@ int main()
 
 			frm.Add_To_Frame(next_Frame());
 
+			frm.Add_To_Frame(clk.Print_FPS());
+
 			frm.Add_To_Frame(print_Time());
 
 			frm.Add_To_Frame(s1.Output());
 
-			frm.Add_To_Frame(print_Player_Stats(p1));
+			frm.Add_To_Frame(print_Player_Stats(p1, Workers));
 
-			frm.Add_To_Frame(print_All_Objects(Buildings));
+			//frm.Add_To_Frame(print_All_Objects(Buildings));
 
-			frm.Add_To_Frame(clk.Print_FPS());
-
-			////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!WYWALIC POTEM
-			frm.Add_To_Frame("Ilosc Taskow: " + std::to_string(Tasks.Get_Tasks().Get_Size()));
-			frm.Add_To_Frame("Ilosc Roboli: " + std::to_string(Workers.Get_Workers().Get_Size()));
-			frm.Add_To_Frame("Cena Zapakowanego Produktu: " + std::to_string(p1.Get_Packed_Products_Price()));
+			frm.Add_To_Frame(print_Selected(Buildings, c1));
 
 
 

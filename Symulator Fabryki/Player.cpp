@@ -19,6 +19,8 @@
 Player::Player(Building_Container& buildings) : Packed_Products_Price(10), Buildings(buildings)
 {
 	Money = 0;
+	Packed_Products_Price = 10;
+	Max_Workers = 1;
 }
 
 Player::~Player()
@@ -36,6 +38,11 @@ void Player::Set_Packed_Products_Price(int param)
 	Packed_Products_Price = param;
 }
 
+void Player::Set_Max_Workers(int param)
+{
+	Max_Workers = param;
+}
+
 void Player::Change_Money(int param)
 {
 	Money += param;
@@ -51,9 +58,16 @@ int Player::Get_Packed_Products_Price()
 	return Packed_Products_Price;
 }
 
+int Player::Get_Max_Workers()
+{
+	return Max_Workers;
+}
+
 void Player::Calculate_Packed_Products_Price()
 {
 	Packed_Products_Price = 10;
+
+	std::lock_guard<std::recursive_mutex> lock(Buildings.Get_Mutex());
 
 	for (int i = 0; i < Buildings.Get_Buildings().Get_Size(); i++)
 	{
@@ -63,4 +77,19 @@ void Player::Calculate_Packed_Products_Price()
 		}
 	}
 
+}
+
+void Player::Calculate_Max_Workers()
+{
+	Max_Workers = 1;
+
+	std::lock_guard<std::recursive_mutex> lock(Buildings.Get_Mutex());
+
+	for (int i = 0; i < Buildings.Get_Buildings().Get_Size(); i++)
+	{
+		if (Buildings.Get_Buildings()[i]->Get_Name() == "Staff_Welfare_Area")
+		{
+			Max_Workers = Max_Workers + (5 * Buildings.Get_Buildings()[i]->Get_Lvl()) - 1;
+		}
+	}
 }

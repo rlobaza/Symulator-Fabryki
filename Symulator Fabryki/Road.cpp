@@ -101,17 +101,21 @@ std::string Road::Stats_String(int i)
 {
 	std::string str = "";
 
-	/*str = str + "Droga " + std::to_string(i + 1) + '\n';
+	str = str + "Droga " + '\n';
 	str = str + "ID: " + std::to_string(ID) + '\n';
 
-	str = str + "Polaczenia: " + std::to_string(Connected.Get_Size()) + '\n';
+	str = str + "Po³¹czenia: " + std::to_string(Connected.Get_Size()) + '\n';
 
 	for (int i = 0; i < Connected.Get_Size(); i++)
 	{
-		str = str + std::to_string(Connected[i]->ID) + " ";
+		str = str + std::to_string(Connected[i]->ID) + ", ";
 	}
+
 	str = str + '\n';
-	str = str + '\n';*/
+
+	str = str + "x -> Sprzedaj: +" + std::to_string(2 * Get_Cost() * Get_Lvl() / 3) + " PLN" + '\n';
+
+	str = str + "\n\n\n\n\n";
 
 	return str;
 }
@@ -123,53 +127,6 @@ char Road::Get_Icon()
 
 void Road::Simulate()
 {
-	/*bool up = false;
-	bool down = false;
-	bool left = false;
-	bool right = false;
-
-	for (int i = 0; i < Connected.Get_Size(); i++)
-	{
-		if (Connected[i]->Get_PosX() + 1 == PosX)
-		{
-			left = true;
-		}
-
-		if (Connected[i]->Get_PosX() - 1 == PosX)
-		{
-			right = true;
-		}
-
-		if (Connected[i]->Get_PosY() + 1 == PosY)
-		{
-			down = true;
-		}
-
-		if (Connected[i]->Get_PosY() - 1 == PosY)
-		{
-			up = true;
-		}
-	}
-
-	if ((up && down && !left && !right) || (up && !down && !left && !right) || (!up && down && !left && !right))
-	{
-		Icon = '|';
-	}
-
-	if ((left && right && !up && !down) || (left && !right && !up && !down) || (!left && right && !up && !down))
-	{
-		Icon = '-';
-	}
-
-	if ((up && down && left && right) || (up && !down && left && !right) || (up && !down && !left && right) || (!up && down && left && !right) || (!up && down && !left && right))
-	{
-		Icon = '+';
-	}
-
-	if (!up && !down && !left && !right)
-	{
-		Icon = '°';
-	}*/
 
 }
 
