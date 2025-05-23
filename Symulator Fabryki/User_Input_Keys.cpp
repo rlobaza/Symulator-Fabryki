@@ -34,6 +34,7 @@
 
 #include "Task.h"
 #include "Task_Container.h"
+#include "Control_Laboratory.h"
 
 
 void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Building_Container& Buildings, Worker_Container& Workers, Road_Container& Roads, Task_Container& Tasks, bool& In_Menu, Menu& menu_1)
@@ -116,16 +117,35 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 
 			}
 
-			if (Input == '1' && c1.Get_Is_Locked() == true)
+			if (Input == '1' && c1.Get_Is_Locked() == true) //Control_Laboratory
 			{
-
+				if (check_If_Busy(c1, Buildings) == false)
+				{
+					Control_Laboratory* building = new Control_Laboratory(c1.Get_SelX(), c1.Get_SelY());
+					if (p1.Get_Money() >= building->Get_Cost())
+					{
+						p1.Change_Money(-building->Get_Cost());
+						Buildings.Add_Buildings(building);
+						p1.Calculate_Packed_Products_Price();
+						c1.Unselect();
+						single_Sound("Sounds/COLLAPSE");
+					}
+					else
+					{
+						single_Sound("Sounds/OFF");
+					}
+				}
+				else
+				{
+					single_Sound("Sounds/OFF");
+				}
 			}
 
 			if (Input == '2' && c1.Get_Is_Locked() == true)
 			{
 				if (check_If_Busy(c1, Buildings) == false)
 				{
-					Loading_Ramp* building = new Loading_Ramp(c1.Get_SelX(), c1.Get_SelY());
+					Loading_Ramp* building = new Loading_Ramp(c1.Get_SelX(), c1.Get_SelY(), p1);
 					if (p1.Get_Money() >= building->Get_Cost())
 					{
 						p1.Change_Money(-building->Get_Cost()); 
@@ -298,6 +318,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 					if (check_If_Worker(c1.Get_SelX(), c1.Get_SelY(), Workers) == false)
 					{
 						sell_Building(c1, Buildings, Roads, Tasks, p1);
+						p1.Calculate_Packed_Products_Price();
 						c1.Unselect();
 					}
 					else
@@ -317,6 +338,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 				{
 					if (lvl_Up(c1, Buildings, p1) == true)
 					{
+						p1.Calculate_Packed_Products_Price();
 						c1.Unselect();
 					}
 				}

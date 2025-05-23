@@ -10,7 +10,7 @@ char Loading_Ramp::Icon = 'R';
 
 std::string Loading_Ramp::Name = "Loading_Ramp";
 
-Loading_Ramp::Loading_Ramp(int x, int y)
+Loading_Ramp::Loading_Ramp(int x, int y, Player& p) : p1(p)
 {
 	this->Calculate_Storage();
 	this->Set_PosX(x);
@@ -70,6 +70,12 @@ void Loading_Ramp::Simulate()
 		if (Materials_Storage - Materials_Storage_Used >= 1)
 		{
 			Materials_Storage_Used += 1;
+		}
+
+		if (Packed_Products_Storage_Used > 0)
+		{
+			Packed_Products_Storage_Used = Packed_Products_Storage_Used - 1;
+			p1.Change_Money(p1.Get_Packed_Products_Price());
 		}
 	}
 

@@ -70,15 +70,15 @@ int main()
 	bool In_Menu = true;
 	char Input = ' ';
 
-	Screen s1;
-	Cursor c1;
-	Player p1;
-	Clock clk(framerate());
-
 	Building_Container Buildings;
 	Road_Container Roads;
 	Worker_Container Workers;
 	Task_Container Tasks;
+
+	Screen s1;
+	Cursor c1;
+	Player p1(Buildings);
+	Clock clk(framerate());
 
 	Frame frm;
 
@@ -156,6 +156,7 @@ int main()
 			////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!WYWALIC POTEM
 			frm.Add_To_Frame("Ilosc Taskow: " + std::to_string(Tasks.Get_Tasks().Get_Size()));
 			frm.Add_To_Frame("Ilosc Roboli: " + std::to_string(Workers.Get_Workers().Get_Size()));
+			frm.Add_To_Frame("Cena Zapakowanego Produktu: " + std::to_string(p1.Get_Packed_Products_Price()));
 
 
 

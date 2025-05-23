@@ -3,6 +3,7 @@
 #include <string>
 
 #include "Building.h"
+#include "Player.h"
 
 class Loading_Ramp : public Building
 {
@@ -13,9 +14,11 @@ protected:
 	static char Icon;
 	static std::string Name;
 
+	Player& p1;
+
 public:
 
-	Loading_Ramp(int, int);
+	Loading_Ramp(int, int, Player&);
 	~Loading_Ramp();
 
 	//Building:

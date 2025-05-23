@@ -29,7 +29,7 @@ std::string Control_Laboratory::Get_Name()
 
 void Control_Laboratory::Lvl_Up()
 {
-
+	Lvl++;
 }
 
 void Control_Laboratory::Calculate_Storage()
