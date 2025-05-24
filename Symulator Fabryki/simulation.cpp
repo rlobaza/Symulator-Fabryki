@@ -28,6 +28,8 @@ void simulation(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1,
 	while (Gameover == false)
 	{
 
+		std::this_thread::sleep_until(Gameover == true);
+
 		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
 		for (int i = 0; i < Workers.Get_Workers().Get_Size(); i++)
