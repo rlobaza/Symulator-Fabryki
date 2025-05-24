@@ -109,7 +109,7 @@ void sell_Building(Cursor& c1, Building_Container& Buildings, Road_Container& Ro
 
 					if (Roads.Get_Roads()[i]->Get_PosX() == c1.Get_SelX() && Roads.Get_Roads()[i]->Get_PosY() == c1.Get_SelY())
 					{
-						Roads.Get_Roads().Erase(i);
+						Roads.Remove_Roads(i);
 						i--;
 					}
 

@@ -104,6 +104,8 @@ std::string Road::Stats_String(int i)
 	str = str + "Droga " + '\n';
 	str = str + "ID: " + std::to_string(ID) + '\n';
 
+	str = str + '\n';
+
 	str = str + "Po³¹czenia: " + std::to_string(Connected.Get_Size()) + '\n';
 
 	for (int i = 0; i < Connected.Get_Size(); i++)
@@ -111,7 +113,7 @@ std::string Road::Stats_String(int i)
 		str = str + std::to_string(Connected[i]->ID) + ", ";
 	}
 
-	str = str + '\n';
+	str = str + "\n\n";
 
 	str = str + "x -> Sprzedaj: +" + std::to_string(2 * Get_Cost() * Get_Lvl() / 3) + " PLN" + '\n';
 

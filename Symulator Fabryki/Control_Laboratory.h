@@ -9,11 +9,12 @@ class Control_Laboratory : public Building
 
 protected:
 
-	static int Cost;
 	static char Icon;
 	static std::string Name;
 
 public:
+
+	static int Cost;
 
 	Control_Laboratory(int, int);
 	~Control_Laboratory();

@@ -9,11 +9,12 @@ class Staff_Welfare_Area : public Building
 
 protected:
 
-	static int Cost;
 	static char Icon;
 	static std::string Name;
 
 public:
+
+	static int Cost;
 
 	Staff_Welfare_Area(int, int);
 	~Staff_Welfare_Area();

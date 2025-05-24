@@ -10,13 +10,14 @@ class Loading_Ramp : public Building
 
 protected:
 
-	static int Cost;
 	static char Icon;
 	static std::string Name;
 
 	Player& p1;
 
 public:
+
+	static int Cost;
 
 	Loading_Ramp(int, int, Player&);
 	~Loading_Ramp();

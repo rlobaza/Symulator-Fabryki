@@ -56,6 +56,8 @@ std::string Sorting_Area::Stats_String(int i)
 	str = str + "Sortownia " + std::to_string(i + 1) + '\n';
 	str = str + "Lvl: " + std::to_string(Get_Lvl()) + '\n';
 
+	str = str + '\n';
+
 	str = str + "Materia³y: " + std::to_string(Get_Materials_Storage_Used()) + " / " + std::to_string(Get_Materials_Storage()) + '\n';
 	str = str + "Posortowane Materia³y: " + std::to_string(Get_Sorted_Materials_Storage_Used()) + " / " + std::to_string(Get_Sorted_Materials_Storage()) + '\n';
 
@@ -64,7 +66,7 @@ std::string Sorting_Area::Stats_String(int i)
 	str = str + "u -> Ulepsz: -" + std::to_string(Get_Cost() * (Get_Lvl() + 1)) + " PLN" + '\n';
 	str = str + "x -> Sprzedaj: +" + std::to_string(2 * Get_Cost() * Get_Lvl() / 3) + " PLN" + '\n';
 
-	str = str + "\n\n\n";
+	str = str + "\n\n\n\n";
 
 	return str;
 }

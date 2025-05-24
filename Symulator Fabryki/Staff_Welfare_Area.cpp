@@ -61,7 +61,7 @@ std::string Staff_Welfare_Area::Stats_String(int i)
 	str = str + "u -> Ulepsz: -" + std::to_string(Get_Cost() * (Get_Lvl() + 1)) + " PLN" + '\n';
 	str = str + "x -> Sprzedaj: +" + std::to_string(2 * Get_Cost() * Get_Lvl() / 3) + " PLN" + '\n';
 
-	str = str + "\n\n\n\n\n";
+	str = str + "\n\n\n\n\n\n\n";
 
 	return str;
 }

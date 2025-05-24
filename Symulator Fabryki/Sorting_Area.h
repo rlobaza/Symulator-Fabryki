@@ -9,11 +9,12 @@ class Sorting_Area : public Building
 
 protected:
 
-	static int Cost;
 	static char Icon;
 	static std::string Name;
 
 public:
+
+	static int Cost;
 
 	Sorting_Area(int, int);
 	~Sorting_Area();

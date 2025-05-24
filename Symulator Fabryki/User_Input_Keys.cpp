@@ -323,10 +323,21 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 
 			if (Input == '-') //Worker -
 			{
-				std::lock_guard<std::recursive_mutex> lock(Workers.Get_Mutex());
+				std::scoped_lock lock(Workers.Get_Mutex(), Tasks.Get_Mutex());
 
 				if (Workers.Get_Workers().Get_Size() > 0)
 				{
+					if (Workers.Get_Workers()[Workers.Get_Workers().Get_Size() - 1]->Get_Current_Task() != nullptr)
+					{
+						for (int i = 0; i < Tasks.Get_Tasks().Get_Size(); i++)
+						{
+							if (Workers.Get_Workers()[Workers.Get_Workers().Get_Size() - 1]->Get_Current_Task() == Tasks.Get_Tasks()[i])
+							{
+								delete Tasks.Get_Tasks()[i];
+								Tasks.Get_Tasks().Erase(i);
+							}
+						}
+					}
 					Workers.Get_Workers().Erase(Workers.Get_Workers().Get_Size() - 1);
 				}
 			}

@@ -10,7 +10,6 @@ class Road : public Building
 
 protected:
 
-	static int Cost;
 	char Icon;
 	static std::string Name;
 
@@ -21,6 +20,8 @@ protected:
 	bool Is_Added;
 
 public:
+
+	static int Cost;
 
 	Road(int, int);
 	~Road();

@@ -9,11 +9,12 @@ class Packaging_Area : public Building
 
 protected:
 
-	static int Cost;
 	static char Icon;
 	static std::string Name;
 
 public:
+
+	static int Cost;
 
 	Packaging_Area(int, int);
 	~Packaging_Area();

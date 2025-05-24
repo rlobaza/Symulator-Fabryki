@@ -122,6 +122,11 @@ void Road_Container::Find_Icon()
 			Roads[k]->Set_Icon('+');
 		}
 
+		if ((up && !down && left && right) || (up && down && !left && right) || (!up && down && left && right) || (up && down && left && !right))
+		{
+			Roads[k]->Set_Icon('+');
+		}
+
 		if (!up && !down && !left && !right)
 		{
 			Roads[k]->Set_Icon('°');

@@ -9,11 +9,12 @@ class Production_Hall : public Building
 
 protected:
 
-	static int Cost;
 	static char Icon;
 	static std::string Name;
 
 public:
+
+	static int Cost;
 
 	Production_Hall(int, int);
 	~Production_Hall();
