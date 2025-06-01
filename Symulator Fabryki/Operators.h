@@ -4,6 +4,7 @@
 
 #include "Player.h"
 #include "print_Time.h"
+#include "Score.h"
 
 
-std::ostream operator<<(std::ostream os, Player& p1);
+std::ofstream& operator<<(std::ofstream& ofs, Score* score);

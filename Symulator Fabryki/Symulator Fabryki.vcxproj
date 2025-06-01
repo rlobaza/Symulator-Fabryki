@@ -154,6 +154,7 @@
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="New_Game.cpp" />
     <ClCompile Include="next_Frame.cpp" />
+    <ClCompile Include="operators.cpp" />
     <ClCompile Include="Own_List.cpp" />
     <ClCompile Include="Packaging_Area.cpp" />
     <ClCompile Include="print_All_Objects.cpp" />
@@ -167,6 +168,7 @@
     <ClCompile Include="Quit.cpp" />
     <ClCompile Include="Road.cpp" />
     <ClCompile Include="Road_Container.cpp" />
+    <ClCompile Include="save_Leaderboard.cpp" />
     <ClCompile Include="Score.cpp" />
     <ClCompile Include="Screen.cpp" />
     <ClCompile Include="Screen_Object.cpp" />
@@ -213,7 +215,7 @@
     <ClInclude Include="Menu.h" />
     <ClInclude Include="New_Game.h" />
     <ClInclude Include="next_Frame.h" />
-    <ClInclude Include="Operators.h" />
+    <ClInclude Include="operators.h" />
     <ClInclude Include="Own_List.h" />
     <ClInclude Include="Packaging_Area.h" />
     <ClInclude Include="print_All_Objects.h" />
@@ -226,6 +228,7 @@
     <ClInclude Include="Quit.h" />
     <ClInclude Include="Road.h" />
     <ClInclude Include="Road_Container.h" />
+    <ClInclude Include="save_Leaderboard.h" />
     <ClInclude Include="Score.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="Screen_Object.h" />

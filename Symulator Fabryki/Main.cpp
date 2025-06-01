@@ -50,6 +50,7 @@
 #include "print_Selected.h"
 #include "ask_Nickname.h"
 #include "setConsoleSize.h"
+#include "save_Leaderboard.h"
 
 //UI
 #include "Menu.h"
@@ -226,6 +227,8 @@ int main()
 	}
 
 	system("cls");
+
+	save_Leaderboard(Leaderboard);
 
 	Input_Thread.join();
 	Input_Keys_Thread.join();

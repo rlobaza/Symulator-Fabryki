@@ -246,6 +246,12 @@
     <ClCompile Include="setConsoleSize.cpp">
       <Filter>Pliki źródłowe\Functions</Filter>
     </ClCompile>
+    <ClCompile Include="operators.cpp">
+      <Filter>Pliki źródłowe\Score</Filter>
+    </ClCompile>
+    <ClCompile Include="save_Leaderboard.cpp">
+      <Filter>Pliki źródłowe\Score</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -401,9 +407,6 @@
     <ClInclude Include="print_Selected.h">
       <Filter>Pliki nagłówkowe\UI</Filter>
     </ClInclude>
-    <ClInclude Include="Operators.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="Score.h">
       <Filter>Pliki nagłówkowe\Score</Filter>
     </ClInclude>
@@ -418,6 +421,12 @@
     </ClInclude>
     <ClInclude Include="setConsoleSize.h">
       <Filter>Pliki nagłówkowe\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="operators.h">
+      <Filter>Pliki nagłówkowe\Score</Filter>
+    </ClInclude>
+    <ClInclude Include="save_Leaderboard.h">
+      <Filter>Pliki nagłówkowe\Score</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
