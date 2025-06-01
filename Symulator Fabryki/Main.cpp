@@ -48,6 +48,8 @@
 #include "generate_Empty_Lines.h"
 #include "find_Target.h"
 #include "print_Selected.h"
+#include "ask_Nickname.h"
+#include "setConsoleSize.h"
 
 //UI
 #include "Menu.h"
@@ -63,12 +65,18 @@
 
 //sound
 
+//Score
+#include "Score.h"
+#include "print_Leaderboard.h"
+
 int main()
 {
 	SetConsoleOutputCP(1250);
+	setConsoleSize(110, 50);
 
 	bool Gameover = false;
 	bool In_Menu = true;
+	bool In_Leaderboard = false;
 	char Input = ' ';
 
 	Building_Container Buildings;
@@ -76,9 +84,31 @@ int main()
 	Worker_Container Workers;
 	Task_Container Tasks;
 
+	Own_List<Score*> Leaderboard;
+
+	/////////////////////////////////////////////////////////////////
+	Leaderboard.Push_Back(new Score("Rafal", print_Time(), 100000));
+	//std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+	Leaderboard.Push_Back(new Score("Rafal", print_Time(), 200000));
+	//std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+	Leaderboard.Push_Back(new Score("Slawek", print_Time(), 300000));
+	//std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+	Leaderboard.Push_Back(new Score("Renata", print_Time(), 400000));
+	//std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+	Leaderboard.Push_Back(new Score("Weronika", print_Time(), 500000));
+	//std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+	Leaderboard.Push_Back(new Score("Rafal", print_Time(), 600000));
+	//std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+	////////////////////////////////////////////////////////////////
+
 	Screen s1;
 	Cursor c1;
-	Player p1(Buildings);
+	Player p1(Buildings, ask_Nickname());
 	Clock clk(framerate());
 
 	Frame frm;
@@ -91,7 +121,7 @@ int main()
 
 	std::thread Input_Thread(user_Input, std::ref(Input), std::ref(Gameover));
 
-	std::thread Input_Keys_Thread(user_Input_Keys, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Buildings), std::ref(Workers), std::ref(Roads), std::ref(Tasks), std::ref(In_Menu), std::ref(menu_1));
+	std::thread Input_Keys_Thread(user_Input_Keys, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Buildings), std::ref(Workers), std::ref(Roads), std::ref(Tasks), std::ref(In_Menu), std::ref(menu_1), std::ref(In_Leaderboard));
 
 	std::thread Simulation_Thread(simulation, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Buildings), std::ref(Workers), std::ref(Tasks), std::ref(Roads));
 
@@ -105,7 +135,7 @@ int main()
 
 		clk.Set_Start_Time();
 
-		if (In_Menu == true)
+		if (In_Menu == true && In_Leaderboard == false)
 		{
 
 			frm.Clear_Frame();
@@ -116,12 +146,34 @@ int main()
 
 			frm.Add_To_Frame(menu_1.Print_Menu());
 
-			frm.Add_To_Frame(generate_Empty_Lines(15));
+			frm.Add_To_Frame(generate_Empty_Lines(18));
 
+			frm.Add_To_Frame("e -> Wybierz");
+			frm.Add_To_Frame("w, s -> Kursor");
 
 
 			frm.Print_Frame();
 
+		}
+
+		if (In_Menu == true && In_Leaderboard == true)
+		{
+
+			frm.Clear_Frame();
+
+
+
+			frm.Add_To_Frame(next_Frame());
+
+			frm.Add_To_Frame(print_Leaderboard(Leaderboard));
+
+			frm.Add_To_Frame(generate_Empty_Lines(18));
+
+			frm.Add_To_Frame("q -> Menu G³ówne");
+
+
+
+			frm.Print_Frame();
 		}
 
 		if (In_Menu == false)

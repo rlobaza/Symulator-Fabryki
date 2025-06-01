@@ -34,11 +34,10 @@
 #include "find_Route.h"
 
 #include "Task.h"
-#include "Task_Container.h"
 #include "Control_Laboratory.h"
 
 
-void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Building_Container& Buildings, Worker_Container& Workers, Road_Container& Roads, Task_Container& Tasks, bool& In_Menu, Menu& menu_1)
+void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Building_Container& Buildings, Worker_Container& Workers, Road_Container& Roads, Task_Container& Tasks, bool& In_Menu, Menu& menu_1, bool& In_Leaderboard)
 {
 
 	Clock clk(framerate());
@@ -50,7 +49,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 
 		//////////////////////////////////////////////////////////////////////////////////////
 
-		if (In_Menu == true)
+		if (In_Menu == true && In_Leaderboard == false)
 		{
 
 			if (Input == 'w')
@@ -65,9 +64,26 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 
 			if (Input == 'e')
 			{
-				menu_1.Get_Selected_Button()->Do(Gameover, In_Menu);
+				menu_1.Get_Selected_Button()->Do(Gameover, In_Menu, In_Leaderboard);
+				if (menu_1.Get_Selected_Button()->Get_Name() == "Nowa Gra")
+				{
+					menu_1.Get_Selected_Button()->Set_Name("Kontynuuj");
+					menu_1.Get_Buttons()[2]->Set_Name("Zapisz Wynik i Wyjdü");
+				}
 				Input = ' ';
 			}
+		}
+
+		//////////////////////////////////////////////////////////////////////////////////////
+
+		if (In_Menu == true && In_Leaderboard == true)
+		{
+
+			if (Input == 'q')
+			{
+				In_Leaderboard = false;
+			}
+
 		}
 
 		//////////////////////////////////////////////////////////////////////////////////////

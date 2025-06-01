@@ -12,7 +12,7 @@ public:
 	Load_Game();
 	~Load_Game();
 
-	virtual void Do(bool&, bool&);
+	virtual void Do(bool&, bool&, bool&);
 
 };
 

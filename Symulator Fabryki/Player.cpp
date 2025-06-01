@@ -16,7 +16,7 @@
 #include "Staff_Welfare_Area.h"
 #include "Warehouse.h"
 
-Player::Player(Building_Container& buildings) : Packed_Products_Price(10), Buildings(buildings)
+Player::Player(Building_Container& buildings, std::string nickname) : Packed_Products_Price(10), Buildings(buildings), Nickname(nickname)
 {
 	Money = 0;
 	Packed_Products_Price = 10;
@@ -26,6 +26,11 @@ Player::Player(Building_Container& buildings) : Packed_Products_Price(10), Build
 Player::~Player()
 {
 
+}
+
+void Player::Set_Nickname(std::string nickname)
+{
+	Nickname = nickname;
 }
 
 void Player::Set_Money(int param)
@@ -46,6 +51,11 @@ void Player::Set_Max_Workers(int param)
 void Player::Change_Money(int param)
 {
 	Money += param;
+}
+
+std::string Player::Get_Nickname()
+{
+	return Nickname;
 }
 
 int Player::Get_Money()

@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ask_Nickname.cpp" />
     <ClCompile Include="Building.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="check_If_Busy.cpp" />
@@ -144,6 +145,7 @@
     <ClCompile Include="framerate.cpp" />
     <ClCompile Include="generate_Empty_Lines.cpp" />
     <ClCompile Include="initial_Buffer.cpp" />
+    <ClCompile Include="Leaderboard.cpp" />
     <ClCompile Include="List_Element.cpp" />
     <ClCompile Include="Loading_Ramp.cpp" />
     <ClCompile Include="Load_Game.cpp" />
@@ -155,6 +157,7 @@
     <ClCompile Include="Own_List.cpp" />
     <ClCompile Include="Packaging_Area.cpp" />
     <ClCompile Include="print_All_Objects.cpp" />
+    <ClCompile Include="print_Leaderboard.cpp" />
     <ClCompile Include="print_Selected.cpp" />
     <ClCompile Include="print_Time.cpp" />
     <ClCompile Include="Production_Hall.cpp" />
@@ -164,10 +167,12 @@
     <ClCompile Include="Quit.cpp" />
     <ClCompile Include="Road.cpp" />
     <ClCompile Include="Road_Container.cpp" />
+    <ClCompile Include="Score.cpp" />
     <ClCompile Include="Screen.cpp" />
     <ClCompile Include="Screen_Object.cpp" />
     <ClCompile Include="Building_Container.cpp" />
     <ClCompile Include="sell_Building.cpp" />
+    <ClCompile Include="setConsoleSize.cpp" />
     <ClCompile Include="simulation.cpp" />
     <ClCompile Include="single_Sound.cpp" />
     <ClCompile Include="Sorting_Area.cpp" />
@@ -182,6 +187,7 @@
     <ClCompile Include="Worker_Container.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ask_Nickname.h" />
     <ClInclude Include="Building.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="check_If_Busy.h" />
@@ -198,6 +204,7 @@
     <ClInclude Include="framerate.h" />
     <ClInclude Include="generate_Empty_Lines.h" />
     <ClInclude Include="initial_Buffer.h" />
+    <ClInclude Include="Leaderboard.h" />
     <ClInclude Include="List_Element.h" />
     <ClInclude Include="Loading_Ramp.h" />
     <ClInclude Include="Load_Game.h" />
@@ -206,9 +213,11 @@
     <ClInclude Include="Menu.h" />
     <ClInclude Include="New_Game.h" />
     <ClInclude Include="next_Frame.h" />
+    <ClInclude Include="Operators.h" />
     <ClInclude Include="Own_List.h" />
     <ClInclude Include="Packaging_Area.h" />
     <ClInclude Include="print_All_Objects.h" />
+    <ClInclude Include="print_Leaderboard.h" />
     <ClInclude Include="print_Selected.h" />
     <ClInclude Include="print_Time.h" />
     <ClInclude Include="Production_Hall.h" />
@@ -217,10 +226,12 @@
     <ClInclude Include="Quit.h" />
     <ClInclude Include="Road.h" />
     <ClInclude Include="Road_Container.h" />
+    <ClInclude Include="Score.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="Screen_Object.h" />
     <ClInclude Include="Building_Container.h" />
     <ClInclude Include="sell_Building.h" />
+    <ClInclude Include="setConsoleSize.h" />
     <ClInclude Include="simulation.h" />
     <ClInclude Include="single_Sound.h" />
     <ClInclude Include="Sorting_Area.h" />

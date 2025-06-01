@@ -18,7 +18,7 @@ public:
 	std::string Get_Name();
 	void Set_Name(std::string);
 
-	virtual void Do(bool&, bool&) = 0;
+	virtual void Do(bool&, bool&, bool&) = 0;
 
 };
 

@@ -19,11 +19,11 @@ std::string print_Time()
 	// U¿ywamy ctime_s z przestrzeni globalnej
 	if (ctime_s(buffer, sizeof(buffer), &czas) == 0)
 	{
-		str = str + "Aktualny czas: " + buffer + '\n';
+		str = str + buffer;
 	}
 	else
 	{
-		str = str +  "B³¹d przy pobieraniu czasu!" + '\n';
+		str = str + "B³¹d przy pobieraniu czasu!";
 	}
 
 

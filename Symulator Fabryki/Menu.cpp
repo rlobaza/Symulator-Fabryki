@@ -3,6 +3,7 @@
 #include "Own_List.h"
 #include "New_Game.h"
 #include "Load_Game.h"
+#include "Leaderboard.h"
 #include "Quit.h"
 #include "single_Sound.h"
 
@@ -15,7 +16,8 @@ Menu::Menu()
 	Selected_Button_Number = 0;
 
 	Buttons.Push_Back(new New_Game);
-	Buttons.Push_Back(new Load_Game);
+	//Buttons.Push_Back(new Load_Game);
+	Buttons.Push_Back(new Leaderboard);
 	Buttons.Push_Back(new Quit);
 
 	Selected_Button = Buttons[0];
@@ -89,12 +91,12 @@ std::string Menu::Print_Menu()
 
 		if (i == Get_Selected_Button_Number())
 		{
-			str = str + "                                                     -> " + Get_Buttons()[i]->Get_Name() + "\n";
+			str = str + "                                         -> " + Get_Buttons()[i]->Get_Name() + "\n";
 		}
 		
 		if (i != Get_Selected_Button_Number())
 		{
-			str = str + "                                                        " + Get_Buttons()[i]->Get_Name() + "\n";
+			str = str + "                                            " + Get_Buttons()[i]->Get_Name() + "\n";
 		}
 
 	}

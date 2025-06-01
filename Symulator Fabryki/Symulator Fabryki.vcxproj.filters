@@ -67,6 +67,12 @@
     <Filter Include="Pliki źródłowe\UI\Menu\Buttons">
       <UniqueIdentifier>{c5e3e9c3-1ebd-4bcf-8bc5-59df0d15588a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki źródłowe\Score">
+      <UniqueIdentifier>{d166110c-db80-40cb-ae47-dc6fd0e07d27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\Score">
+      <UniqueIdentifier>{cf723b6d-46bf-4d7c-acc0-04249f1228dd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -225,6 +231,21 @@
     <ClCompile Include="print_Selected.cpp">
       <Filter>Pliki źródłowe\UI</Filter>
     </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>Pliki źródłowe\Score</Filter>
+    </ClCompile>
+    <ClCompile Include="Leaderboard.cpp">
+      <Filter>Pliki źródłowe\UI\Menu\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="ask_Nickname.cpp">
+      <Filter>Pliki źródłowe\Score</Filter>
+    </ClCompile>
+    <ClCompile Include="print_Leaderboard.cpp">
+      <Filter>Pliki źródłowe\Score</Filter>
+    </ClCompile>
+    <ClCompile Include="setConsoleSize.cpp">
+      <Filter>Pliki źródłowe\Functions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -379,6 +400,24 @@
     </ClInclude>
     <ClInclude Include="print_Selected.h">
       <Filter>Pliki nagłówkowe\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Operators.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>Pliki nagłówkowe\Score</Filter>
+    </ClInclude>
+    <ClInclude Include="Leaderboard.h">
+      <Filter>Pliki nagłówkowe\UI\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="ask_Nickname.h">
+      <Filter>Pliki nagłówkowe\Score</Filter>
+    </ClInclude>
+    <ClInclude Include="print_Leaderboard.h">
+      <Filter>Pliki nagłówkowe\Score</Filter>
+    </ClInclude>
+    <ClInclude Include="setConsoleSize.h">
+      <Filter>Pliki nagłówkowe\Functions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

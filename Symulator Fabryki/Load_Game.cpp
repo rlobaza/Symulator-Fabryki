@@ -14,7 +14,7 @@ Load_Game::~Load_Game()
 
 }
 
-void Load_Game::Do(bool& Gameover, bool& In_Menu)
+void Load_Game::Do(bool& Gameover, bool& In_Menu, bool& In_Leaderboard)
 {
 	single_Sound("Sounds/SELECT");
 }

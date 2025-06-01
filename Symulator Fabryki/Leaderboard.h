@@ -1,19 +1,18 @@
 #pragma once
-
 #include "Button.h"
 
 
 
 
-class Quit : public Button
+class Leaderboard : public Button
 {
 
 public:
 
-	Quit();
-	~Quit();
+	Leaderboard();
+	~Leaderboard();
 
 	virtual void Do(bool&, bool&, bool&);
 
-};
 
+};
