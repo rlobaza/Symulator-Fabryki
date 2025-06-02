@@ -38,7 +38,9 @@ std::string print_Selected(Building_Container& Buildings, Cursor& c1)
 		str = str + '\n';
 		str = str + "e -> Zaznacz: X " + std::to_string(c1.Get_PosX()) + ", Y " + std::to_string(c1.Get_PosY()) + '\n';
 		str = str + "w, s, a, d -> Kursor" + '\n';
-		str = str + "\n\n\n\n\n\n\n\n";
+		str = str + '\n';
+		str = str + "- -> Zwolnij Pracownika" + '\n';
+		str = str + "\n\n\n\n\n\n";
 	}
 
 	if (str == "" && c1.Get_Is_Locked() == true)

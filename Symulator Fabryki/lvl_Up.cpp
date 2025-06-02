@@ -20,7 +20,7 @@ bool lvl_Up(Cursor c1, Building_Container& Buildings, Player& p1)
 	{
 		if (Buildings.Get_Buildings()[i]->Get_PosX() == c1.Get_PosX() && Buildings.Get_Buildings()[i]->Get_PosY() == c1.Get_PosY())
 		{
-			if (Buildings.Get_Buildings()[i]->Get_Cost() * (Buildings.Get_Buildings()[i]->Get_Lvl() + 1) <= p1.Get_Money())
+			if (Buildings.Get_Buildings()[i]->Get_Cost() * (Buildings.Get_Buildings()[i]->Get_Lvl() + 1) <= p1.Get_Money() && Buildings.Get_Buildings()[i]->Get_Name() != "Road")
 			{
 				p1.Change_Money(-Buildings.Get_Buildings()[i]->Get_Cost() * (Buildings.Get_Buildings()[i]->Get_Lvl() + 1));
 				Buildings.Get_Buildings()[i]->Lvl_Up();

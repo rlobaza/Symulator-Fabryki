@@ -35,9 +35,11 @@
 
 #include "Task.h"
 #include "Control_Laboratory.h"
+#include "add_Score.h"
+#include "Own_List.h"
 
 
-void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Building_Container& Buildings, Worker_Container& Workers, Road_Container& Roads, Task_Container& Tasks, bool& In_Menu, Menu& menu_1, bool& In_Leaderboard)
+void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player& p1, Building_Container& Buildings, Worker_Container& Workers, Road_Container& Roads, Task_Container& Tasks, bool& In_Menu, Menu& menu_1, bool& In_Leaderboard, Own_List<Score*>& Leaderboard)
 {
 
 	Clock clk(framerate());
@@ -70,6 +72,10 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 					menu_1.Get_Selected_Button()->Set_Name("Kontynuuj");
 					menu_1.Get_Buttons()[2]->Set_Name("Zapisz Wynik i Wyjdü");
 				}
+				if (menu_1.Get_Selected_Button()->Get_Name() == "Zapisz Wynik i Wyjdü")
+				{
+					add_Score(Leaderboard, p1);
+				}
 				Input = ' ';
 			}
 		}
@@ -82,6 +88,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 			if (Input == 'q')
 			{
 				In_Leaderboard = false;
+				single_Sound("Sounds/MENU");
 			}
 
 		}

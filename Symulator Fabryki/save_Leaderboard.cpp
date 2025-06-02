@@ -28,6 +28,8 @@ void save_Leaderboard(Own_List<Score*>& Leaderboard)
 			file << Leaderboard[i];
 		}
 
+		file.close();
+
 		system("cls");
 
 		std::cout << "Zapisywanie zakoñczone sukcesem." << std::endl;

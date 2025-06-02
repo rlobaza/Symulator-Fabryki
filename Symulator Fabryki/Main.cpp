@@ -69,6 +69,9 @@
 //Score
 #include "Score.h"
 #include "print_Leaderboard.h"
+#include "add_Score.h"
+#include "load_Leaderboard.h"
+#include "sort_Leaderboard.h"
 
 int main()
 {
@@ -86,26 +89,8 @@ int main()
 	Task_Container Tasks;
 
 	Own_List<Score*> Leaderboard;
-
-	/////////////////////////////////////////////////////////////////
-	Leaderboard.Push_Back(new Score("Rafal", print_Time(), 100000));
-	//std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-
-	Leaderboard.Push_Back(new Score("Rafal", print_Time(), 200000));
-	//std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-
-	Leaderboard.Push_Back(new Score("Slawek", print_Time(), 300000));
-	//std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-
-	Leaderboard.Push_Back(new Score("Renata", print_Time(), 400000));
-	//std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-
-	Leaderboard.Push_Back(new Score("Weronika", print_Time(), 500000));
-	//std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-
-	Leaderboard.Push_Back(new Score("Rafal", print_Time(), 600000));
-	//std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-	////////////////////////////////////////////////////////////////
+	load_Leaderboard(Leaderboard);
+	sort_Leaderboard(Leaderboard);
 
 	Screen s1;
 	Cursor c1;
@@ -116,13 +101,11 @@ int main()
 
 	Menu menu_1;
 
-
-
 	p1.Change_Money(10000);
 
 	std::thread Input_Thread(user_Input, std::ref(Input), std::ref(Gameover));
 
-	std::thread Input_Keys_Thread(user_Input_Keys, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Buildings), std::ref(Workers), std::ref(Roads), std::ref(Tasks), std::ref(In_Menu), std::ref(menu_1), std::ref(In_Leaderboard));
+	std::thread Input_Keys_Thread(user_Input_Keys, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Buildings), std::ref(Workers), std::ref(Roads), std::ref(Tasks), std::ref(In_Menu), std::ref(menu_1), std::ref(In_Leaderboard), std::ref(Leaderboard));
 
 	std::thread Simulation_Thread(simulation, std::ref(s1), std::ref(c1), std::ref(Input), std::ref(Gameover), std::ref(p1), std::ref(Buildings), std::ref(Workers), std::ref(Tasks), std::ref(Roads));
 

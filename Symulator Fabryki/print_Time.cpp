@@ -26,6 +26,14 @@ std::string print_Time()
 		str = str + "B³¹d przy pobieraniu czasu!";
 	}
 
+	if (str.size() >= 2)
+	{
+		for (int i = 0; i < 2; i++)
+		{
+			str.erase(str.size() - 1);
+		}
+	}
+
 
 	return str;
 }

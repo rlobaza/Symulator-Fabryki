@@ -252,6 +252,15 @@
     <ClCompile Include="save_Leaderboard.cpp">
       <Filter>Pliki źródłowe\Score</Filter>
     </ClCompile>
+    <ClCompile Include="add_Score.cpp">
+      <Filter>Pliki źródłowe\Score</Filter>
+    </ClCompile>
+    <ClCompile Include="load_Leaderboard.cpp">
+      <Filter>Pliki źródłowe\Score</Filter>
+    </ClCompile>
+    <ClCompile Include="sort_Leaderboard.cpp">
+      <Filter>Pliki źródłowe\Score</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -426,6 +435,15 @@
       <Filter>Pliki nagłówkowe\Score</Filter>
     </ClInclude>
     <ClInclude Include="save_Leaderboard.h">
+      <Filter>Pliki nagłówkowe\Score</Filter>
+    </ClInclude>
+    <ClInclude Include="add_Score.h">
+      <Filter>Pliki nagłówkowe\Score</Filter>
+    </ClInclude>
+    <ClInclude Include="load_Leaderboard.h">
+      <Filter>Pliki nagłówkowe\Score</Filter>
+    </ClInclude>
+    <ClInclude Include="sort_Leaderboard.h">
       <Filter>Pliki nagłówkowe\Score</Filter>
     </ClInclude>
   </ItemGroup>

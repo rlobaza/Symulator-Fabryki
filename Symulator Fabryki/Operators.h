@@ -7,4 +7,8 @@
 #include "Score.h"
 
 
-std::ofstream& operator<<(std::ofstream& ofs, Score* score);
+std::ofstream& operator<<(std::ofstream& fs, Score* score);
+
+Own_List<Score*>& operator>>(std::ifstream& ifs, Own_List<Score*>& Leaderboard);
+
+

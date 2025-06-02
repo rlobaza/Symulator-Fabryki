@@ -67,7 +67,7 @@ std::string Clock::Print_FPS()
 	std::string str;
 	str = str + "Frame Duration: " + std::to_string(duration2) + " ms" + '\n';
 	str = str + "FPS: " + std::to_string(FPS) + '\n';
-	str = str + "Pominiete klatki: " + std::to_string(duration2/SleepForMS - 1) + '\n';
+	//str = str + "Pominiête klatki: " + std::to_string(duration2/SleepForMS - 1) + '\n';
 	str = str + '\n';
 
 	return str;

@@ -16,4 +16,6 @@
 #include "Task.h"
 #include "Task_Container.h"
 
-void user_Input_Keys(Screen&, Cursor&, char&, bool&, Player&, Building_Container&, Worker_Container&, Road_Container&, Task_Container&, bool&, Menu&, bool&);
+#include "Score.h"
+
+void user_Input_Keys(Screen&, Cursor&, char&, bool&, Player&, Building_Container&, Worker_Container&, Road_Container&, Task_Container&, bool&, Menu&, bool&, Own_List<Score*>&);

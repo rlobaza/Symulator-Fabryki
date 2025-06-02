@@ -52,11 +52,6 @@ std::string Score::print_Score()
 
 	str = str + Nickname + "    " + Date;
 
-	if (str.size() >= 2)
-	{
-		str.erase(str.size() - 2); // usuwa 2 ostatnie znaki
-	}
-
 	str += "  --->  " + std::to_string(Get_Money());
 
 	return str;
