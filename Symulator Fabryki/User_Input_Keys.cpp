@@ -336,6 +336,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 				{
 					Worker* worker = new Worker(c1.Get_SelX(), c1.Get_SelY(), Roads, Buildings, Tasks);
 					Workers.Add_Workers(worker);
+					single_Sound("Sounds/WORKER");
 					c1.Unselect();
 				}
 				else
@@ -358,6 +359,7 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 							{
 								delete Tasks.Get_Tasks()[i];
 								Tasks.Get_Tasks().Erase(i);
+								single_Sound("Sounds/UNWORKER");
 							}
 						}
 					}
