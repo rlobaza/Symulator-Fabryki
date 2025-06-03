@@ -359,11 +359,11 @@ void user_Input_Keys(Screen& s1, Cursor& c1, char& Input, bool& Gameover, Player
 							{
 								delete Tasks.Get_Tasks()[i];
 								Tasks.Get_Tasks().Erase(i);
-								single_Sound("Sounds/UNWORKER");
 							}
 						}
 					}
 					Workers.Get_Workers().Erase(Workers.Get_Workers().Get_Size() - 1);
+					single_Sound("Sounds/UNWORKER");
 				}
 			}
 
