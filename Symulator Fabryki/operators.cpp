@@ -54,10 +54,12 @@ Own_List<Score*>& operator>>(std::ifstream& ifs, Own_List<Score*>& Leaderboard)
 			}
 		}
 
-		Score* ptr = new Score(Nickname, Date, std::stoi(Money));
+		if (line.empty() == false)
+		{
+			Score* ptr = new Score(Nickname, Date, std::stoi(Money));
 
-		add_Score(Leaderboard, ptr);
-
+			add_Score(Leaderboard, ptr);
+		}
 	}
 
 	return Leaderboard;
