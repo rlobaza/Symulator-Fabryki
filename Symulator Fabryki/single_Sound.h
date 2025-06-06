@@ -2,4 +2,4 @@
 
 #include <string>
 
-void single_Sound(const std::string str);
+void single_Sound(const std::string);
